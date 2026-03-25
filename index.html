@@ -1,0 +1,1103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Rowly Studios — Brand Development & Strategy</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://use.typekit.net/zkw4lrb.css">
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
+:root{
+  --navy:#2B4780;--navy-dark:#1A2E52;--navy-deep:#0F1B33;
+  --electric:#4A90E2;--cyan:#00C2E0;
+  --white:#FFFFFF;--off-white:#F4F7FC;--light-gray:#E8EDF5;
+  --mid-gray:#8A96AA;--text:#1A2030;
+}
+html{scroll-behavior:smooth;width:100%;overflow-x:hidden;}
+body{font-family:'DM Sans',sans-serif;background:var(--white);color:var(--text);overflow-x:hidden;cursor:none;width:100%;max-width:100%;margin:0;padding:0;box-sizing:border-box;}
+*{box-sizing:border-box;}
+
+/* CURSOR */
+.cur{position:fixed;width:10px;height:10px;background:var(--cyan);border-radius:50%;pointer-events:none;z-index:9999;transform:translate(-50%,-50%);}
+.ring{position:fixed;width:40px;height:40px;border:1.5px solid rgba(0,194,224,.45);border-radius:50%;pointer-events:none;z-index:9998;transform:translate(-50%,-50%);transition:width .3s,height .3s,border-color .3s;}
+
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;width:100%;z-index:200;display:flex;align-items:center;justify-content:space-between;padding:1.4rem 5%;background:rgba(15,27,51,.95);backdrop-filter:blur(14px);border-bottom:1px solid rgba(255,255,255,.07);}
+.nav-logo{display:flex;align-items:center;gap:.9rem;text-decoration:none;cursor:none;}
+.nav-logo-ring{width:40px;height:40px;border-radius:50%;border:2.5px solid var(--electric);display:flex;align-items:center;justify-content:center;}
+.nav-logo-text{font-family:"brandon-grotesque",sans-serif;font-weight:400;font-style:normal;font-size:.9rem;letter-spacing:.28em;text-transform:uppercase;color:var(--white);}
+.nav-links{display:flex;gap:2.5rem;list-style:none;}
+.nav-links a{font-family:"brandon-grotesque",sans-serif;font-weight:400;font-style:normal;font-size:.75rem;letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,.55);text-decoration:none;transition:color .3s;cursor:none;}
+.nav-links a:hover,.nav-links a.active{color:var(--cyan);}
+.nav-btn{font-family:"brandon-grotesque",sans-serif;font-weight:400;font-style:normal;display:inline-flex;align-items:center;gap:.6rem;padding:.65rem 1.4rem;background:var(--cyan);color:var(--navy-deep);font-size:.75rem;letter-spacing:.18em;text-transform:uppercase;text-decoration:none;border-radius:2px;transition:background .3s,transform .2s;cursor:none;}
+.nav-btn:hover{background:#00d9f9;transform:translateY(-1px);}
+
+/* PAGES */
+
+
+
+/* ============================================================
+   HOME PAGE
+   ============================================================ */
+
+/* HERO */
+.hero{min-height:100vh;background:var(--navy-deep);display:flex;flex-direction:column;justify-content:center;padding:10rem 5% 6rem;position:relative;overflow:hidden;}
+.hero-grid{position:absolute;inset:0;background-image:linear-gradient(rgba(74,144,226,.055) 1px,transparent 1px),linear-gradient(90deg,rgba(74,144,226,.055) 1px,transparent 1px);background-size:60px 60px;animation:gridShift 22s linear infinite;}
+@keyframes gridShift{from{background-position:0 0;}to{background-position:60px 60px;}}
+.orb{position:absolute;border-radius:50%;filter:blur(80px);pointer-events:none;}
+.o1{width:520px;height:520px;background:rgba(43,71,128,.55);top:-120px;right:-80px;animation:fl 9s ease-in-out infinite;}
+.o2{width:360px;height:360px;background:rgba(0,194,224,.13);bottom:-60px;left:8%;animation:fl 11s ease-in-out infinite reverse;}
+.o3{width:260px;height:260px;background:rgba(74,144,226,.1);top:45%;right:18%;animation:fl 13s ease-in-out infinite;}
+@keyframes fl{0%,100%{transform:translateY(0);}50%{transform:translateY(-28px);}}
+.hero-bg-logo{position:absolute;right:4%;top:50%;transform:translateY(-50%);opacity:.035;z-index:1;pointer-events:none;}
+.hero-inner{position:relative;z-index:2;max-width:1100px;}
+.hero-badge{font-family:"brandon-grotesque",sans-serif;font-weight:400;font-style:normal;display:inline-flex;align-items:center;gap:.8rem;padding:.5rem 1.2rem;border:1px solid rgba(0,194,224,.35);border-radius:100px;font-size:.72rem;letter-spacing:.22em;text-transform:uppercase;color:var(--cyan);margin-bottom:2.5rem;opacity:0;animation:fadeUp .8s ease .2s forwards;}
+.badge-dot{width:6px;height:6px;background:var(--cyan);border-radius:50%;animation:pulse 2s ease infinite;}
+@keyframes pulse{0%,100%{opacity:1;transform:scale(1);}50%{opacity:.4;transform:scale(1.5);}}
+.hero-headline{font-family:'Playfair Display',serif;font-size:clamp(3.2rem,7vw,7rem);font-weight:900;line-height:1.0;color:var(--white);margin-bottom:1.5rem;opacity:0;animation:fadeUp 1s ease .4s forwards;}
+.hero-headline .accent{color:var(--cyan);font-style:italic;}
+.hero-headline .outline{-webkit-text-stroke:2px rgba(0,194,224,.38);color:transparent;}
+.hero-sub{font-size:1.05rem;font-weight:300;line-height:1.85;color:rgba(255,255,255,.58);max-width:540px;margin-bottom:3rem;opacity:0;animation:fadeUp .9s ease .6s forwards;}
+.hero-sub strong{color:rgba(255,255,255,.9);font-weight:500;}
+.hero-ctas{display:flex;align-items:center;gap:1.5rem;flex-wrap:wrap;opacity:0;animation:fadeUp .9s ease .8s forwards;}
+.btn-primary{font-family:"brandon-grotesque",sans-serif;font-weight:400;font-style:normal;display:inline-flex;align-items:center;gap:.8rem;padding:1rem 2.2rem;background:var(--cyan);color:var(--navy-deep);font-size:.85rem;letter-spacing:.18em;text-transform:uppercase;text-decoration:none;border-radius:2px;transition:background .3s,transform .25s,box-shadow .3s;box-shadow:0 0 30px rgba(0,194,224,.28);cursor:none;}
+.btn-primary:hover{background:#00d9f9;transform:translateY(-3px);box-shadow:0 8px 40px rgba(0,194,224,.42);}
+.btn-secondary{font-family:"brandon-grotesque",sans-serif;font-weight:400;font-style:normal;display:inline-flex;align-items:center;gap:.8rem;padding:1rem 2.2rem;border:1.5px solid rgba(255,255,255,.18);color:rgba(255,255,255,.75);font-size:.85rem;letter-spacing:.18em;text-transform:uppercase;text-decoration:none;border-radius:2px;transition:border-color .3s,color .3s;cursor:none;}
+.btn-secondary:hover{border-color:var(--cyan);color:var(--cyan);}
+.hero-stats{display:flex;gap:3rem;margin-top:5rem;padding-top:3rem;border-top:1px solid rgba(255,255,255,.08);opacity:0;animation:fadeUp .9s ease 1s forwards;}
+.stat-num{font-family:'Playfair Display',serif;font-size:2.8rem;font-weight:700;color:var(--white);line-height:1;display:block;}
+.stat-num span{color:var(--cyan);}
+.stat-lbl{font-size:.62rem;font-weight:400;letter-spacing:.16em;text-transform:uppercase;color:var(--mid-gray);margin-top:.4rem;display:block;}
+@keyframes fadeUp{from{opacity:0;transform:translateY(28px);}to{opacity:1;transform:none;}}
+
+/* MARQUEE */
+.mq{background:var(--navy);padding:1.4rem 0;overflow:hidden;border-top:1px solid rgba(255,255,255,.06);border-bottom:1px solid rgba(255,255,255,.06);}
+.mq-track{display:flex;gap:3rem;animation:marquee 26s linear infinite;width:max-content;}
+.mq-item{display:flex;align-items:center;gap:3rem;font-size:.63rem;font-weight:600;letter-spacing:.28em;text-transform:uppercase;color:rgba(255,255,255,.4);white-space:nowrap;}
+.mq-dot{width:4px;height:4px;background:var(--cyan);border-radius:50%;flex-shrink:0;}
+@keyframes marquee{from{transform:translateX(0);}to{transform:translateX(-50%);}}
+
+/* SHARED */
+.stag{font-family:"brandon-grotesque",sans-serif;font-weight:400;font-style:normal;display:inline-flex;align-items:center;gap:.8rem;font-size:.72rem;letter-spacing:.3em;text-transform:uppercase;color:var(--electric);margin-bottom:1.1rem;}
+.stag::before{content:'';display:block;width:26px;height:2px;background:var(--cyan);border-radius:2px;}
+.stitle{font-family:'Playfair Display',serif;font-size:clamp(2.2rem,4.5vw,3.8rem);font-weight:800;line-height:1.15;color:var(--navy-dark);}
+.stitle em{font-style:italic;color:var(--electric);}
+.stitle.light{color:var(--white);}
+.stitle.light em{color:var(--cyan);}
+.reveal{opacity:0;transform:translateY(36px);transition:opacity .85s ease,transform .85s ease;}
+.reveal.visible{opacity:1;transform:none;}
+.d1{transition-delay:.12s;}.d2{transition-delay:.24s;}.d3{transition-delay:.36s;}.d4{transition-delay:.48s;}
+
+/* INTRO */
+.intro{background:var(--off-white);padding:5.5rem 5%;display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:center;}
+.intro-quote{font-family:'Playfair Display',serif;font-size:clamp(1.3rem,2.2vw,1.85rem);font-style:italic;font-weight:400;line-height:1.65;color:var(--navy-dark);border-left:3px solid var(--cyan);padding-left:2rem;}
+.intro-body{font-size:.92rem;font-weight:300;line-height:1.95;color:#4A5568;}
+.intro-body strong{color:var(--navy);font-weight:600;}
+.intro-body p+p{margin-top:1.1rem;}
+
+/* HOME SERVICES GRID */
+.home-svc{background:var(--navy-deep);padding:7rem 5%;}
+.home-svc-head{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:3.5rem;flex-wrap:wrap;gap:1.5rem;}
+.home-svc-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1.5px;background:rgba(255,255,255,.05);}
+.svc-card{background:var(--navy-dark);padding:3rem;position:relative;overflow:hidden;transition:background .4s;cursor:none;}
+.svc-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--electric),var(--cyan));transform:scaleX(0);transform-origin:left;transition:transform .5s ease;}
+.svc-card:hover{background:#1E3A6E;}
+.svc-card:hover::before{transform:scaleX(1);}
+.svc-n{font-family:'Playfair Display',serif;font-size:3.5rem;font-weight:900;color:rgba(255,255,255,.04);position:absolute;top:1.5rem;right:2rem;line-height:1;}
+.svc-icon{width:64px;height:64px;background:rgba(0,194,224,.06);border-radius:8px;display:flex;align-items:center;justify-content:center;margin-bottom:1.8rem;transition:background .3s;border:1px solid rgba(0,194,224,.15);}
+.svc-card:hover .svc-icon{background:rgba(0,194,224,.12);border-color:rgba(0,194,224,.3);}
+.svc-icon svg{width:40px;height:40px;stroke:var(--cyan);fill:none;stroke-width:1.2;stroke-linecap:round;stroke-linejoin:round;}
+.svc-name{font-family:'Playfair Display',serif;font-size:1.55rem;font-weight:700;color:var(--white);margin-bottom:.9rem;line-height:1.2;}
+.svc-desc{font-size:.8rem;line-height:1.88;font-weight:300;color:rgba(255,255,255,.52);}
+.svc-tags{display:flex;flex-wrap:wrap;gap:.45rem;margin-top:1.8rem;}
+.svc-tag{font-size:.56rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;padding:.28rem .75rem;border:1px solid rgba(0,194,224,.22);color:rgba(0,194,224,.65);border-radius:100px;transition:border-color .3s,color .3s;}
+.svc-card:hover .svc-tag{border-color:rgba(0,194,224,.48);color:var(--cyan);}
+.view-all-services{display:inline-flex;align-items:center;gap:.8rem;margin-top:3rem;font-size:.7rem;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--cyan);text-decoration:none;transition:gap .3s;cursor:none;}
+.view-all-services:hover{gap:1.4rem;}
+.view-all-services::after{content:'→';}
+
+/* WHY */
+.why{background:var(--white);padding:7rem 5%;}
+.why-grid{display:grid;grid-template-columns:1fr 1fr;gap:4.5rem;align-items:center;margin-top:4rem;}
+.why-vis{position:relative;height:520px;background:var(--navy-deep);border-radius:4px;overflow:hidden;display:flex;align-items:center;justify-content:center;}
+.why-vis-bg{position:absolute;inset:0;background:linear-gradient(135deg,var(--navy-deep) 0%,var(--navy) 60%,#1A4A8A 100%);}
+.why-vis-glow{position:absolute;width:320px;height:320px;background:radial-gradient(circle,rgba(0,194,224,.14) 0%,transparent 70%);border-radius:50%;animation:fl 7s ease-in-out infinite;}
+.rs-wrap{position:relative;z-index:2;display:flex;flex-direction:column;align-items:center;gap:1.5rem;}
+.rs-ring{width:155px;height:155px;border-radius:50%;border:3.5px solid rgba(0,194,224,.65);display:flex;align-items:center;justify-content:center;animation:glow 4s ease-in-out infinite;}
+@keyframes glow{0%,100%{box-shadow:0 0 0 0 rgba(0,194,224,.2);}50%{box-shadow:0 0 40px 12px rgba(0,194,224,.14);}}
+.rs-txt{font-family:'DM Sans',sans-serif;font-size:3.4rem;font-weight:700;color:white;letter-spacing:-.02em;}
+.rs-sub{font-size:.62rem;font-weight:500;letter-spacing:.28em;text-transform:uppercase;color:rgba(255,255,255,.35);}
+.why-yrs{position:absolute;bottom:2.5rem;right:2.5rem;text-align:right;}
+.why-yrs-n{font-family:'Playfair Display',serif;font-size:4.5rem;font-weight:900;color:var(--cyan);line-height:1;display:block;}
+.why-yrs-l{font-size:.58rem;font-weight:500;letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,.3);display:block;}
+.why-pts{display:flex;flex-direction:column;gap:2.5rem;}
+.why-pt{display:flex;gap:1.5rem;align-items:flex-start;padding-bottom:2.5rem;border-bottom:1px solid var(--light-gray);}
+.why-pt:last-child{border-bottom:none;padding-bottom:0;}
+.why-pt-ico{width:44px;height:44px;border-radius:8px;flex-shrink:0;background:linear-gradient(135deg,var(--navy),var(--electric));display:flex;align-items:center;justify-content:center;}
+.why-pt-ico svg{width:20px;height:20px;stroke:white;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;}
+.why-pt-t{font-family:'Playfair Display',serif;font-size:1.1rem;font-weight:700;color:var(--navy-dark);margin-bottom:.35rem;}
+.why-pt-b{font-size:.8rem;line-height:1.82;font-weight:300;color:#5A6478;}
+
+/* PORTFOLIO */
+.portfolio{background:var(--off-white);padding:7rem 5%;}
+.port-head{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:3rem;flex-wrap:wrap;gap:1.5rem;}
+.port-grid{display:grid;grid-template-columns:1.5fr 1fr;grid-template-rows:380px 280px;gap:1rem;}
+.p-card{position:relative;overflow:hidden;border-radius:3px;cursor:none;background:var(--navy-dark);}
+.p-card:first-child{grid-row:1/3;}
+.p-bg{position:absolute;inset:0;transition:transform .8s ease;}
+.p-card:hover .p-bg{transform:scale(1.05);}
+.bg1{background:linear-gradient(145deg,#0F2A5C 0%,#1A4A8A 40%,#0A3060 100%);}
+.bg2{background:linear-gradient(145deg,#0D2B3E 0%,#1A4A6A 50%,#0A2030 100%);}
+.bg3{background:linear-gradient(145deg,#1A1A3E 0%,#2A2A6A 50%,#101030 100%);}
+.p-art{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;opacity:.2;transition:opacity .5s;}
+.p-card:hover .p-art{opacity:.1;}
+.p-info{position:absolute;bottom:0;left:0;right:0;padding:2rem;background:linear-gradient(to top,rgba(10,18,40,.96) 0%,transparent 100%);transform:translateY(8px);transition:transform .4s ease;}
+.p-card:hover .p-info{transform:translateY(0);}
+.p-tag{font-size:.57rem;font-weight:600;letter-spacing:.24em;text-transform:uppercase;color:var(--cyan);margin-bottom:.45rem;}
+.p-name{font-family:'Playfair Display',serif;font-size:1.45rem;font-weight:700;color:var(--white);}
+.p-card:first-child .p-name{font-size:2.2rem;}
+.p-more{font-size:.6rem;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--cyan);margin-top:.75rem;opacity:0;transition:opacity .3s ease .1s;display:flex;align-items:center;gap:.6rem;}
+.p-more::before{content:'';display:block;width:14px;height:1px;background:var(--cyan);}
+.p-card:hover .p-more{opacity:1;}
+
+/* TESTIMONIAL */
+.testi{background:var(--navy);text-align:center;padding:4rem 5%;position:relative;overflow:hidden;}
+.testi::before{content:'';}
+.testi-inner{position:relative;z-index:2;max-width:780px;margin:0 auto;}
+.testi-q{font-family:'Playfair Display',serif;font-size:clamp(1.35rem,2.6vw,2.1rem);font-style:italic;font-weight:400;line-height:1.68;color:var(--white);margin-bottom:2.5rem;}
+.testi-q em{color:var(--cyan);font-style:normal;}
+.testi-attr{font-size:.66rem;font-weight:600;letter-spacing:.24em;text-transform:uppercase;color:var(--mid-gray);}
+
+/* HOME CTA */
+.home-cta{background:var(--navy-deep);padding:5rem 5%;display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:center;position:relative;overflow:hidden;}
+.home-cta::before{content:'';position:absolute;width:700px;height:700px;border-radius:50%;border:1px solid rgba(0,194,224,.05);right:-200px;top:50%;transform:translateY(-50%);pointer-events:none;}
+.home-cta::after{content:'';position:absolute;width:480px;height:480px;border-radius:50%;border:1px solid rgba(0,194,224,.04);right:-90px;top:50%;transform:translateY(-50%);pointer-events:none;}
+.cta-l{position:relative;z-index:2;}
+.cta-title{font-family:'Playfair Display',serif;font-size:clamp(2.4rem,5vw,4.4rem);font-weight:900;line-height:1.05;color:var(--white);margin-bottom:1.5rem;}
+.cta-title em{font-style:italic;color:var(--cyan);}
+.cta-body-txt{font-size:.88rem;line-height:1.95;font-weight:300;color:rgba(255,255,255,.5);max-width:440px;}
+.cta-card{position:relative;z-index:2;background:rgba(255,255,255,.04);border:1px solid rgba(0,194,224,.18);border-radius:4px;padding:3rem;backdrop-filter:blur(10px);}
+.cta-card-t{font-family:'Playfair Display',serif;font-size:1.5rem;font-weight:700;color:var(--white);margin-bottom:.45rem;}
+.cta-card-s{font-size:.7rem;font-weight:400;line-height:1.72;color:rgba(255,255,255,.42);margin-bottom:2rem;padding-bottom:2rem;border-bottom:1px solid rgba(255,255,255,.07);}
+.cta-perks{display:flex;flex-direction:column;gap:1rem;margin-bottom:2.5rem;}
+.cta-perk{display:flex;align-items:center;gap:1rem;}
+.cta-chk{width:20px;height:20px;border-radius:50%;flex-shrink:0;background:rgba(0,194,224,.14);display:flex;align-items:center;justify-content:center;}
+.cta-chk svg{width:10px;height:10px;stroke:var(--cyan);stroke-width:2.5;fill:none;}
+.cta-pt{font-size:.78rem;font-weight:400;color:rgba(255,255,255,.68);}
+.cta-btn{font-family:"brandon-grotesque",sans-serif;font-weight:400;font-style:normal;display:flex;align-items:center;justify-content:center;gap:1rem;width:100%;padding:1.1rem;background:var(--cyan);color:var(--navy-deep);font-size:.82rem;letter-spacing:.18em;text-transform:uppercase;text-decoration:none;border-radius:2px;transition:background .3s,box-shadow .3s,transform .2s;box-shadow:0 0 30px rgba(0,194,224,.22);cursor:none;}
+.cta-btn:hover{background:#00d9f9;box-shadow:0 8px 40px rgba(0,194,224,.38);transform:translateY(-2px);}
+.cta-note{text-align:center;margin-top:.9rem;font-size:.62rem;color:rgba(255,255,255,.28);letter-spacing:.05em;}
+
+/* ============================================================
+   SERVICES PAGE
+   ============================================================ */
+.page-hero{background:var(--navy-deep);padding:6.5rem 5% 3.5rem;position:relative;overflow:hidden;}
+.page-hero-inner{position:relative;z-index:2;max-width:800px;}
+.page-hero-tag{display:inline-flex;align-items:center;gap:.8rem;padding:.45rem 1.1rem;border:1px solid rgba(0,194,224,.32);border-radius:100px;font-size:.6rem;font-weight:600;letter-spacing:.24em;text-transform:uppercase;color:var(--cyan);margin-bottom:2rem;opacity:0;animation:fadeUp .8s ease .2s forwards;}
+.page-hero-tag span{width:5px;height:5px;background:var(--cyan);border-radius:50%;animation:pulse 2s ease infinite;}
+.page-hero-h{font-family:'Playfair Display',serif;font-size:clamp(3rem,6.5vw,6rem);font-weight:900;line-height:1.0;color:var(--white);margin-bottom:1.5rem;opacity:0;animation:fadeUp 1s ease .35s forwards;}
+.page-hero-h em{font-style:italic;color:var(--cyan);}
+.page-hero-sub{font-size:1.05rem;font-weight:300;line-height:1.85;color:rgba(255,255,255,.55);max-width:580px;opacity:0;animation:fadeUp .9s ease .5s forwards;}
+.page-hero-sub strong{color:rgba(255,255,255,.9);font-weight:500;}
+
+/* PROCESS STRIP */
+.proc-strip{background:var(--navy);padding:2rem 5%;display:flex;gap:0;overflow:hidden;}
+.proc-step{flex:1;padding:1.5rem 2rem;border-right:1px solid rgba(255,255,255,.08);}
+.proc-step:last-child{border-right:none;}
+.proc-num{font-family:'Playfair Display',serif;font-size:2rem;font-weight:900;color:rgba(0,194,224,.18);line-height:1;margin-bottom:.6rem;}
+.proc-label{font-size:.62rem;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,.55);}
+
+/* SERVICE SECTIONS */
+.svc-sec{padding:8rem 5%;}
+.svc-sec.alt{background:var(--off-white);}
+.svc-sec.wht{background:var(--white);padding:5rem 5% 4rem;}
+.svc-layout{display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:start;}
+.svc-layout.flip{direction:rtl;}
+.svc-layout.flip>*{direction:ltr;}
+.svc-label-strip{display:flex;align-items:center;gap:1rem;margin-bottom:2.5rem;}
+.svc-number{font-family:'Playfair Display',serif;font-size:5rem;font-weight:900;line-height:1;color:rgba(43,71,128,.08);}
+.svc-divider{flex:1;height:1px;background:linear-gradient(to right,rgba(43,71,128,.15),transparent);}
+.svc-heading{font-family:'Playfair Display',serif;font-size:clamp(2rem,3.5vw,3rem);font-weight:800;line-height:1.15;color:var(--navy-dark);margin-bottom:1.5rem;}
+.svc-heading em{font-style:italic;color:var(--electric);}
+.svc-intro{font-size:1rem;font-weight:400;line-height:1.9;color:#4A5568;margin-bottom:2rem;}
+.svc-body-txt{font-size:.85rem;font-weight:300;line-height:1.95;color:#5A6478;margin-bottom:2.5rem;}
+.deliverables-title{font-size:.6rem;font-weight:700;letter-spacing:.25em;text-transform:uppercase;color:var(--navy);margin-bottom:1rem;}
+.deliverable-item{display:flex;align-items:flex-start;gap:1rem;padding:.8rem 0;border-bottom:1px solid var(--light-gray);}
+.deliverable-item:last-child{border-bottom:none;}
+.del-icon{width:28px;height:28px;border-radius:6px;background:linear-gradient(135deg,var(--navy),var(--electric));display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:.1rem;}
+.del-icon svg{width:13px;height:13px;stroke:white;fill:none;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round;}
+.del-text-t{font-size:.8rem;font-weight:600;color:var(--navy-dark);margin-bottom:.15rem;}
+.del-text-b{font-size:.72rem;font-weight:300;color:var(--mid-gray);line-height:1.6;}
+.svc-cta-link{display:inline-flex;align-items:center;gap:.8rem;font-size:.7rem;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--electric);text-decoration:none;transition:gap .3s;cursor:none;margin-top:2rem;}
+.svc-cta-link:hover{gap:1.3rem;}
+.svc-cta-link::after{content:'→';}
+.who-grid{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-top:1.8rem;}
+.who-col{padding:1.2rem 1.5rem;border-radius:3px;}
+.who-col.good{background:rgba(0,194,224,.06);border:1px solid rgba(0,194,224,.18);}
+.who-col.bad{background:rgba(138,150,170,.05);border:1px solid rgba(138,150,170,.12);}
+.who-col-title{font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;margin-bottom:.9rem;}
+.who-col.good .who-col-title{color:var(--electric);}
+.who-col.bad .who-col-title{color:var(--mid-gray);}
+.who-item{display:flex;align-items:flex-start;gap:.6rem;margin-bottom:.55rem;}
+.who-item:last-child{margin-bottom:0;}
+.who-dot{width:5px;height:5px;border-radius:50%;flex-shrink:0;margin-top:.35rem;}
+.who-col.good .who-dot{background:var(--cyan);}
+.who-col.bad .who-dot{background:var(--mid-gray);opacity:.4;}
+.who-item-txt{font-size:.72rem;font-weight:300;line-height:1.6;color:#4A5568;}
+.ps-item{display:flex;gap:1.5rem;align-items:flex-start;padding:1.4rem 0;border-bottom:1px solid var(--light-gray);}
+.ps-item:last-child{border-bottom:none;}
+.ps-num-col{display:flex;flex-direction:column;align-items:center;flex-shrink:0;}
+.ps-num{width:32px;height:32px;border-radius:50%;background:linear-gradient(135deg,var(--navy),var(--electric));display:flex;align-items:center;justify-content:center;font-size:.62rem;font-weight:700;color:white;flex-shrink:0;}
+.ps-line{width:1px;height:24px;background:linear-gradient(to bottom,rgba(74,144,226,.3),transparent);margin-top:4px;}
+.ps-item:last-child .ps-line{display:none;}
+.ps-t{font-size:.82rem;font-weight:600;color:var(--navy-dark);margin-bottom:.2rem;}
+.ps-b{font-size:.75rem;font-weight:300;line-height:1.72;color:#6A7588;}
+.svc-sep{height:1px;background:linear-gradient(to right,transparent,rgba(43,71,128,.12) 20%,rgba(43,71,128,.12) 80%,transparent);margin:0 5%;}
+
+/* Service Visual Panels */
+.svc-visual{border-radius:4px;overflow:hidden;}
+.vis-panel{min-height:680px;display:flex;flex-direction:column;align-items:center;justify-content:center;position:relative;padding:2rem;gap:1.5rem;}
+.vis-01{background:linear-gradient(145deg,#00C2E0 0%,#4A90E2 50%,#2B4780 100%);}
+.vis-02{background:linear-gradient(145deg,#060E1F 0%,#0F2A4A 50%,#060E1F 100%);}
+.vis-03{background:linear-gradient(145deg,#E2C97E 0%,#C9A84C 50%,#8B6914 100%);}
+.vis-04{background:linear-gradient(145deg,#7B2FFF 0%,#4A1A8A 50%,#1A0A3A 100%);}
+.vis-glow{position:absolute;border-radius:50%;filter:blur(60px);pointer-events:none;}
+.vis-glow-01{width:260px;height:260px;background:rgba(0,194,224,.16);animation:fl 6s ease-in-out infinite;}
+.vis-glow-02{width:260px;height:260px;background:rgba(0,194,224,.12);animation:fl 7s ease-in-out infinite reverse;}
+.vis-glow-03{width:260px;height:260px;background:rgba(255,255,255,.2);animation:fl 8s ease-in-out infinite;}
+.vis-glow-04{width:260px;height:260px;background:rgba(255,255,255,.15);animation:fl 6.5s ease-in-out infinite reverse;}
+.vis-art{position:relative;z-index:2;display:flex;flex-direction:column;align-items:center;gap:1rem;}
+.vis-tag{font-size:.55rem;font-weight:600;letter-spacing:.28em;text-transform:uppercase;color:rgba(255,255,255,.35);}
+.ideal-strip{position:relative;z-index:2;width:100%;background:rgba(15,27,51,.2);border:1px solid rgba(255,255,255,.2);border-radius:3px;padding:1.2rem 1.5rem;}
+.ideal-label{font-size:.55rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:rgba(255,255,255,.3);margin-bottom:.8rem;}
+.ideal-tags{display:flex;flex-wrap:wrap;gap:.5rem;}
+.ideal-tag{font-size:.6rem;font-weight:500;letter-spacing:.12em;text-transform:uppercase;padding:.3rem .8rem;border:1px solid rgba(255,255,255,.35);color:rgba(255,255,255,.85);border-radius:100px;}
+
+/* SERVICES CTA BANNER */
+.svc-cta-banner{background:var(--navy-deep);padding:7rem 5%;display:grid;grid-template-columns:1fr auto;gap:4rem;align-items:center;position:relative;overflow:hidden;}
+.svc-cta-banner::before{content:'';position:absolute;width:600px;height:600px;border-radius:50%;border:1px solid rgba(0,194,224,.05);right:-150px;top:50%;transform:translateY(-50%);pointer-events:none;}
+.svc-cta-banner-inner{position:relative;z-index:2;}
+.svc-cta-banner-tag{font-size:.58rem;font-weight:600;letter-spacing:.3em;text-transform:uppercase;color:var(--cyan);margin-bottom:1rem;display:flex;align-items:center;gap:.8rem;}
+.svc-cta-banner-tag::before{content:'';display:block;width:22px;height:2px;background:var(--cyan);}
+.svc-cta-banner-h{font-family:'Playfair Display',serif;font-size:clamp(2rem,4vw,3.5rem);font-weight:800;line-height:1.1;color:var(--white);margin-bottom:1rem;}
+.svc-cta-banner-h em{font-style:italic;color:var(--cyan);}
+.svc-cta-banner-sub{font-size:.88rem;font-weight:300;line-height:1.8;color:rgba(255,255,255,.48);max-width:520px;}
+.svc-cta-right{position:relative;z-index:2;display:flex;flex-direction:column;align-items:center;gap:1rem;text-align:center;flex-shrink:0;}
+.cta-big-btn{display:flex;align-items:center;justify-content:center;gap:.8rem;padding:1.2rem 2.8rem;background:var(--cyan);color:var(--navy-deep);font-size:.75rem;font-weight:700;letter-spacing:.15em;text-transform:uppercase;text-decoration:none;white-space:nowrap;border-radius:2px;transition:background .3s,box-shadow .3s,transform .2s;box-shadow:0 0 30px rgba(0,194,224,.25);cursor:none;}
+.cta-big-btn:hover{background:#00d9f9;box-shadow:0 8px 40px rgba(0,194,224,.38);transform:translateY(-2px);}
+.cta-or{font-size:.6rem;letter-spacing:.15em;color:rgba(255,255,255,.2);}
+.cta-email-lnk{font-size:.68rem;font-weight:500;letter-spacing:.1em;color:rgba(0,194,224,.65);text-decoration:none;transition:color .3s;cursor:none;}
+.cta-email-lnk:hover{color:var(--cyan);}
+
+/* FOOTER */
+footer{background:var(--navy-deep);border-top:1px solid rgba(255,255,255,.06);padding:2.8rem 5%;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1.5rem;}
+.ft-logo{display:flex;align-items:center;gap:.8rem;}
+.ft-ring{width:34px;height:34px;border-radius:50%;border:2px solid rgba(74,144,226,.5);display:flex;align-items:center;justify-content:center;}
+.ft-brand{font-family:"brandon-grotesque",sans-serif;font-weight:400;font-style:normal;font-size:.9rem;letter-spacing:.28em;text-transform:uppercase;color:rgba(255,255,255,.65);}
+.ft-links{display:flex;gap:2rem;list-style:none;}
+.ft-links a{font-family:"brandon-grotesque",sans-serif;font-weight:400;font-style:normal;font-size:.7rem;letter-spacing:.18em;text-transform:uppercase;color:rgba(255,255,255,.3);text-decoration:none;transition:color .3s;cursor:none;}
+.ft-links a:hover{color:var(--cyan);}
+.ft-copy{font-size:.58rem;color:rgba(255,255,255,.18);letter-spacing:.1em;}
+</style>
+</head>
+<body>
+
+<div class="cur" id="cur"></div>
+<div class="ring" id="ring"></div>
+
+<!-- ═══ NAV ═══ -->
+<nav>
+  <a href="#" class="nav-logo" onclick="showPage('home');return false;">
+    <div class="nav-logo-ring">
+      <svg width="24" height="24" viewBox="0 0 40 40" fill="none">
+        <text x="20" y="27" text-anchor="middle" font-family="DM Sans,sans-serif" font-weight="700" font-size="18" fill="white">RS</text>
+      </svg>
+    </div>
+    <span class="nav-logo-text">Rowly Studios</span>
+  </a>
+  <ul class="nav-links">
+    <li><a href="#" id="nav-home" class="active" onclick="showPage('home');return false;">Home</a></li>
+    <li><a href="#" id="nav-services" href="services.html">Services</a></li>
+    <li><a href="#" href="#work" onclick="scrollToSection('work');return false;">Work</a></li>
+    <li><a href="#" href="#about" onclick="scrollToSection('about');return false;">About</a></li>
+  </ul>
+  <a href="/cdn-cgi/l/email-protection#cba3aea7a7a48bb9a4bca7b2b8bfbeafa2a4b8e5a8a4a6f4b8bea9a1aea8bff68db9aeaeebfafee686a2a5bebfaeeb88a4a5b8bea7bfaabfa2a4a5" class="nav-btn">Book Free Consult</a>
+</nav>
+
+<!-- ═══════════════════════════════════════════════════════════
+     HOME PAGE
+     ═══════════════════════════════════════════════════════════ -->
+
+
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-grid"></div>
+  <div class="orb o1"></div><div class="orb o2"></div><div class="orb o3"></div>
+  <div class="hero-bg-logo" style="opacity:.035;">
+    <svg width="680" height="680" viewBox="0 0 400 400" fill="none">
+      <circle cx="200" cy="200" r="188" stroke="white" stroke-width="7"/>
+      <text x="200" y="258" text-anchor="middle" font-family="DM Sans,sans-serif" font-weight="800" font-size="158" fill="white">RS</text>
+    </svg>
+  </div>
+  <div class="hero-inner">
+    <h1 class="hero-headline">
+      We help brands<br><span class="accent">demand</span><br><span class="outline">attention.</span>
+    </h1>
+    <p class="hero-sub">Rowly Studios works <strong>alongside ambitious businesses</strong> to develop the brand identity, strategy, and content that makes them impossible to ignore — in any room, on any platform, in any market.</p>
+    <div class="hero-ctas">
+      <a href="/cdn-cgi/l/email-protection#127a777e7e7d52607d657e6b616667767b7d613c717d7f2d616770787771662f546077773223273f5f7b7c67667732517d7c61677e6673667b7d7c" class="btn-primary">Book Free 15-Min Consult →</a>
+      <a href="#" class="btn-secondary" onclick="showPage('home');scrollToSection('work');return false;">View Our Work</a>
+    </div>
+    <div class="hero-stats">
+      <div><span class="stat-num">20<span>+</span></span><span class="stat-lbl">Years in LA</span></div>
+      <div><span class="stat-num">400<span>%+</span></span><span class="stat-lbl">Avg. Client ROAS</span></div>
+      <div><span class="stat-num">All<span style="font-size:2rem"> ✦</span></span><span class="stat-lbl">Startups · Corporates · Luxury</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- MARQUEE -->
+<div class="mq">
+  <div class="mq-track">
+    <div class="mq-item">Brand Identity<span class="mq-dot"></span></div>
+    <div class="mq-item">Content Production<span class="mq-dot"></span></div>
+    <div class="mq-item">Marketing Strategy<span class="mq-dot"></span></div>
+    <div class="mq-item">Brand Consultancy<span class="mq-dot"></span></div>
+    <div class="mq-item">Campaign Development<span class="mq-dot"></span></div>
+    <div class="mq-item">Visual Direction<span class="mq-dot"></span></div>
+    <div class="mq-item">Brand Analytics<span class="mq-dot"></span></div>
+    <div class="mq-item">Brand Identity<span class="mq-dot"></span></div>
+    <div class="mq-item">Content Production<span class="mq-dot"></span></div>
+    <div class="mq-item">Marketing Strategy<span class="mq-dot"></span></div>
+    <div class="mq-item">Brand Consultancy<span class="mq-dot"></span></div>
+    <div class="mq-item">Campaign Development<span class="mq-dot"></span></div>
+    <div class="mq-item">Visual Direction<span class="mq-dot"></span></div>
+    <div class="mq-item">Brand Analytics<span class="mq-dot"></span></div>
+  </div>
+</div>
+
+<!-- INTRO -->
+<div class="intro">
+  <p class="intro-quote reveal">"People buy into the story of the brand, not the product — make sure your story is on point."</p>
+  <div class="intro-body reveal d1">
+    <p>At Rowly Studios, we believe a great brand isn't just designed — it's <strong>strategically engineered</strong> to connect, convert, and endure.</p>
+    <p>With over <strong>20 years of Los Angeles industry experience</strong>, we bring a rare combination of creative excellence and strategic depth — working with startups, law firms, luxury brands, corporates, and everything in between.</p>
+  </div>
+</div>
+
+<!-- HOME SERVICES -->
+<section class="home-svc">
+  <div class="home-svc-head">
+    <div>
+      <div class="stag reveal">What We Do</div>
+      <h2 class="stitle light reveal d1">Our <em>Services</em></h2>
+    </div>
+  </div>
+  <div class="home-svc-grid">
+    <div class="svc-card reveal">
+      <div class="svc-n">01</div>
+      <div class="svc-icon"><svg viewBox="0 0 40 40" fill="none" stroke="var(--cyan)" stroke-linecap="round" stroke-linejoin="round">
+  <!-- Logo mark: circle with RS -->
+  <circle cx="10" cy="10" r="7" stroke-width="1.2"/>
+  <text x="10" y="13" text-anchor="middle" font-size="5" fill="var(--cyan)" stroke="none" font-weight="700" font-family="DM Sans,sans-serif">RS</text>
+  <!-- Colour swatches top right -->
+  <rect x="20" y="4" width="7" height="7" rx="1" stroke-width="1.2"/>
+  <rect x="28" y="4" width="7" height="7" rx="1" stroke-width="1.2" fill="rgba(0,194,224,.25)"/>
+  <!-- Typography line -->
+  <rect x="20" y="14" width="15" height="4" rx="1" stroke-width="1"/>
+  <line x1="20" y1="21" x2="35" y2="21" stroke-width=".8" opacity=".5"/>
+  <line x1="20" y1="24" x2="30" y2="24" stroke-width=".8" opacity=".5"/>
+  <!-- Guideline grid bottom -->
+  <line x1="3" y1="30" x2="37" y2="30" stroke-width=".7" opacity=".35" stroke-dasharray="2 2"/>
+  <line x1="3" y1="35" x2="37" y2="35" stroke-width=".7" opacity=".35" stroke-dasharray="2 2"/>
+  <line x1="12" y1="27" x2="12" y2="38" stroke-width=".7" opacity=".35" stroke-dasharray="2 2"/>
+  <line x1="24" y1="27" x2="24" y2="38" stroke-width=".7" opacity=".35" stroke-dasharray="2 2"/>
+  <!-- Corner crop marks -->
+  <line x1="3" y1="27" x2="7" y2="27" stroke-width="1" opacity=".5"/>
+  <line x1="3" y1="27" x2="3" y2="31" stroke-width="1" opacity=".5"/>
+  <line x1="37" y1="27" x2="33" y2="27" stroke-width="1" opacity=".5"/>
+  <line x1="37" y1="27" x2="37" y2="31" stroke-width="1" opacity=".5"/>
+</svg></div>
+      <h3 class="svc-name">Brand Identity</h3>
+      <p class="svc-desc">We create distinctive visual identities that make your business instantly recognisable — from logo design and colour systems to full brand guidelines your team can use confidently.</p>
+      <div class="svc-tags"><span class="svc-tag">Logo Design</span><span class="svc-tag">Brand Guidelines</span><span class="svc-tag">Visual Identity</span></div>
+    </div>
+    <div class="svc-card reveal d1">
+      <div class="svc-n">02</div>
+      <div class="svc-icon"><svg viewBox="0 0 40 40" fill="none" stroke="var(--cyan)" stroke-linecap="round" stroke-linejoin="round">
+  <!-- Camera body -->
+  <rect x="6" y="13" width="22" height="16" rx="2" stroke-width="1.2"/>
+  <!-- Top handle -->
+  <rect x="10" y="10" width="14" height="4" rx="2" stroke-width="1"/>
+  <!-- PL lens mount -->
+  <circle cx="17" cy="21" r="5.5" stroke-width="1.2"/>
+  <circle cx="17" cy="21" r="3" stroke-width="1"/>
+  <circle cx="17" cy="21" r="1" stroke-width=".8" fill="rgba(0,194,224,.3)"/>
+  <!-- Viewfinder -->
+  <path d="M28 16 L34 14 L34 20 L28 18 Z" stroke-width="1.2"/>
+  <!-- Lens element left -->
+  <rect x="1" y="17" width="6" height="8" rx="1" stroke-width="1"/>
+  <circle cx="4" cy="21" r="2" stroke-width=".8"/>
+  <!-- Record light -->
+  <circle cx="25" cy="15" r="1.2" fill="rgba(0,194,224,.6)" stroke="none"/>
+  <!-- Body detail lines -->
+  <line x1="8" y1="13" x2="8" y2="29" stroke-width=".7" opacity=".4"/>
+  <!-- Tripod mount -->
+  <line x1="12" y1="29" x2="12" y2="32" stroke-width="1"/>
+  <line x1="22" y1="29" x2="22" y2="32" stroke-width="1"/>
+  <line x1="10" y1="32" x2="24" y2="32" stroke-width="1"/>
+</svg></div>
+      <h3 class="svc-name">Content Production</h3>
+      <p class="svc-desc">High-end photo, video, and social content that captures your brand at its best — creative direction, production, and delivery all under one roof, across any industry.</p>
+      <div class="svc-tags"><span class="svc-tag">Photography</span><span class="svc-tag">Video</span><span class="svc-tag">Social Content</span></div>
+    </div>
+    <div class="svc-card reveal d2">
+      <div class="svc-n">03</div>
+      <div class="svc-icon"><svg viewBox="0 0 40 40" fill="none" stroke="var(--cyan)" stroke-linecap="round" stroke-linejoin="round">
+  <!-- Concentric target rings -->
+  <circle cx="20" cy="20" r="17" stroke-width=".8" opacity=".4"/>
+  <circle cx="20" cy="20" r="12" stroke-width=".9" opacity=".55"/>
+  <circle cx="20" cy="20" r="7" stroke-width="1.1" opacity=".75"/>
+  <circle cx="20" cy="20" r="3" stroke-width="1.2"/>
+  <!-- Cross hairs -->
+  <line x1="20" y1="3" x2="20" y2="8" stroke-width="1" opacity=".4"/>
+  <line x1="20" y1="32" x2="20" y2="37" stroke-width="1" opacity=".4"/>
+  <line x1="3" y1="20" x2="8" y2="20" stroke-width="1" opacity=".4"/>
+  <line x1="32" y1="20" x2="37" y2="20" stroke-width="1" opacity=".4"/>
+  <!-- POD marker — arrow hitting bullseye from top right -->
+  <line x1="32" y1="8" x2="22" y2="18" stroke-width="1.5"/>
+  <polygon points="22,18 24,13 27,16" fill="var(--cyan)" stroke="none"/>
+  <!-- Signal nodes radiating -->
+  <circle cx="8" cy="8" r="2" stroke-width="1"/>
+  <circle cx="32" cy="8" r="2" stroke-width="1"/>
+  <circle cx="8" cy="32" r="2" stroke-width="1"/>
+  <circle cx="32" cy="32" r="2" stroke-width="1"/>
+  <line x1="10" y1="10" x2="14" y2="14" stroke-width=".8" opacity=".4" stroke-dasharray="2 2"/>
+  <line x1="30" y1="32" x2="26" y2="27" stroke-width=".8" opacity=".4" stroke-dasharray="2 2"/>
+  <line x1="10" y1="30" x2="14" y2="26" stroke-width=".8" opacity=".4" stroke-dasharray="2 2"/>
+</svg></div>
+      <h3 class="svc-name">Marketing Strategy</h3>
+      <p class="svc-desc">Data-informed strategies and integrated campaigns that drive measurable growth — built entirely around your business goals, not a generic playbook.</p>
+      <div class="svc-tags"><span class="svc-tag">Campaign Planning</span><span class="svc-tag">Analytics</span><span class="svc-tag">Growth</span></div>
+    </div>
+    <div class="svc-card reveal d3">
+      <div class="svc-n">04</div>
+      <div class="svc-icon"><svg viewBox="0 0 40 40" fill="none" stroke="var(--cyan)" stroke-linecap="round" stroke-linejoin="round">
+  <!-- Brain outline simplified -->
+  <path d="M14 8 C14 5 17 3 20 4 C22 2 26 2 27 5 C30 4 33 6 33 9 C35 10 36 13 34 16 C35 18 34 22 31 23 C31 26 28 28 25 27 C24 29 22 30 20 29 C18 30 16 29 15 27 C12 26 10 24 10 21 C8 19 8 16 10 14 C9 12 10 9 14 8Z" stroke-width="1.2"/>
+  <!-- Centre divide -->
+  <line x1="20" y1="5" x2="20" y2="28" stroke-width=".7" stroke-dasharray="2 3" opacity=".4"/>
+  <!-- Brain fold lines -->
+  <path d="M13 13 C12 16 13 18 15 19" stroke-width=".8" opacity=".5"/>
+  <path d="M27 13 C28 16 27 18 25 19" stroke-width=".8" opacity=".5"/>
+  <path d="M15 22 C14 24 15 26 17 27" stroke-width=".8" opacity=".4"/>
+  <path d="M25 22 C26 24 25 26 23 27" stroke-width=".8" opacity=".4"/>
+  <!-- Circuit nodes -->
+  <circle cx="16" cy="14" r="1.8" stroke-width="1.1"/>
+  <circle cx="24" cy="14" r="1.8" stroke-width="1.1"/>
+  <circle cx="20" cy="20" r="2.2" stroke-width="1.2"/>
+  <circle cx="15" cy="23" r="1.8" stroke-width="1.1"/>
+  <circle cx="25" cy="23" r="1.8" stroke-width="1.1"/>
+  <!-- Connections -->
+  <line x1="16" y1="16" x2="18" y2="18" stroke-width=".9"/>
+  <line x1="24" y1="16" x2="22" y2="18" stroke-width=".9"/>
+  <line x1="18" y1="21" x2="15" y2="22" stroke-width=".9"/>
+  <line x1="22" y1="21" x2="25" y2="22" stroke-width=".9"/>
+  <!-- Signal out left -->
+  <line x1="10" y1="16" x2="14" y2="16" stroke-width=".9" opacity=".5"/>
+  <circle cx="8" cy="16" r="1.5" stroke-width="1" opacity=".6"/>
+  <!-- Signal out right -->
+  <line x1="30" y1="16" x2="26" y2="16" stroke-width=".9" opacity=".5"/>
+  <circle cx="32" cy="16" r="1.5" stroke-width="1" opacity=".6"/>
+  <!-- Signal out bottom -->
+  <line x1="20" y1="30" x2="20" y2="33" stroke-width=".9" opacity=".5"/>
+  <circle cx="20" cy="35" r="1.5" stroke-width="1" opacity=".6"/>
+</svg></div>
+      <h3 class="svc-name">Brand Consultancy</h3>
+      <p class="svc-desc">20 years of Los Angeles brand strategy at your disposal. We audit where your brand stands, identify the gaps, and map a precise path forward — fast.</p>
+      <div class="svc-tags"><span class="svc-tag">Brand Audit</span><span class="svc-tag">Positioning</span><span class="svc-tag">Strategy</span></div>
+    </div>
+  </div>
+  <a href="#" class="view-all-services reveal" onclick="showPage('services');return false;">See Full Service Details</a>
+</section>
+
+<!-- WHY -->
+<section class="why" id="about">
+  <div class="stag reveal">Why Rowly Studios</div>
+  <h2 class="stitle reveal d1">Not your typical <em>agency</em></h2>
+
+  <!-- EDITORIAL MAGAZINE LAYOUT -->
+  <div style="margin-top:3.5rem;display:grid;grid-template-columns:1fr 1fr;grid-template-rows:auto auto;gap:1.5px;background:var(--light-gray);" class="reveal d1">
+
+    <!-- PANEL 1 — Large image placeholder + 20 Years stat (left, tall) -->
+    <div style="grid-row:1/3;background:var(--navy-deep);position:relative;overflow:hidden;min-height:580px;display:flex;flex-direction:column;justify-content:flex-end;padding:2.5rem;">
+      <!-- Wix image goes here — drag and drop in Wix editor -->
+      <div style="position:absolute;inset:0;background:linear-gradient(160deg,#0F1B33 0%,#1A2E52 40%,#0F1B33 100%);">
+        <!-- Editorial grid lines decoration -->
+        <div style="position:absolute;inset:0;opacity:.06;background-image:linear-gradient(rgba(0,194,224,1) 1px,transparent 1px),linear-gradient(90deg,rgba(0,194,224,1) 1px,transparent 1px);background-size:40px 40px;"></div>
+        <!-- Large background number -->
+        <div style="position:absolute;bottom:-2rem;right:-1rem;font-family:'Playfair Display',serif;font-size:14rem;font-weight:900;color:rgba(0,194,224,.05);line-height:1;pointer-events:none;">20</div>
+      </div>
+      <!-- Wix image placeholder marker -->
+      <div style="position:absolute;top:50%;left:50%;transform:translate(-50%,-60%);text-align:center;z-index:1;">
+        <div style="width:64px;height:64px;border:1.5px solid rgba(255,255,255,.15);border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 1rem;">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,.3)" stroke-width="1.2" stroke-linecap="round"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+        </div>
+        <div style="font-family:'brandon-grotesque','DM Sans',sans-serif;font-size:.55rem;letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,.2);">Add your image in Wix</div>
+      </div>
+      <!-- Overlay gradient -->
+      <div style="position:absolute;inset:0;background:linear-gradient(to top,rgba(10,18,40,.95) 0%,rgba(10,18,40,.3) 50%,transparent 100%);z-index:1;"></div>
+      <!-- Content -->
+      <div style="position:relative;z-index:2;">
+        <div style="font-family:'brandon-grotesque','DM Sans',sans-serif;font-size:.6rem;font-weight:400;letter-spacing:.3em;text-transform:uppercase;color:var(--cyan);margin-bottom:1rem;">Los Angeles</div>
+        <div style="font-family:'Playfair Display',serif;font-size:4rem;font-weight:900;color:white;line-height:1;">20<span style="color:var(--cyan);">+</span></div>
+        <div style="font-family:'brandon-grotesque','DM Sans',sans-serif;font-size:.65rem;letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,.5);margin-top:.3rem;">Years Building Brands in LA</div>
+        <div style="width:40px;height:2px;background:var(--cyan);margin-top:1.2rem;"></div>
+        <p style="font-family:'DM Sans',sans-serif;font-size:.8rem;line-height:1.8;color:rgba(255,255,255,.55);margin-top:1rem;font-weight:300;">Rooted in one of the world's most competitive creative markets — our network, instincts, and experience give clients an edge most agencies simply can't offer.</p>
+      </div>
+    </div>
+
+    <!-- PANEL 2 — IRL Activations (top right) -->
+    <div style="background:var(--navy);padding:2.5rem;position:relative;overflow:hidden;">
+      <div style="position:absolute;top:0;right:0;font-family:'Playfair Display',serif;font-size:6rem;font-weight:900;color:rgba(0,194,224,.04);line-height:1;pointer-events:none;">IRL</div>
+      <div style="font-family:'brandon-grotesque','DM Sans',sans-serif;font-size:.58rem;letter-spacing:.28em;text-transform:uppercase;color:var(--cyan);margin-bottom:1rem;display:flex;align-items:center;gap:.6rem;"><span style="display:block;width:20px;height:2px;background:var(--cyan);"></span>From Studio to Street</div>
+      <h3 style="font-family:'Playfair Display',serif;font-size:1.6rem;font-weight:800;color:white;line-height:1.2;margin-bottom:1.2rem;">We take brands <em style="color:var(--cyan);">from the studio</em> into the real world.</h3>
+      <p style="font-family:'DM Sans',sans-serif;font-size:.8rem;line-height:1.8;color:rgba(255,255,255,.5);font-weight:300;margin-bottom:1.5rem;">From high-end studio production to live brand activations, pop-up experiences and guerrilla campaigns — we create at every level. Whether it's a campaign shot in our studio or a brand moment that stops people in the street, we build experiences that are felt, not just seen.</p>
+      <!-- IRL Tags -->
+      <div style="display:flex;flex-wrap:wrap;gap:.5rem;">
+        <span style="font-family:'brandon-grotesque','DM Sans',sans-serif;font-size:.6rem;letter-spacing:.12em;text-transform:uppercase;padding:.4rem 1rem;border:1.5px solid rgba(0,194,224,.5);color:var(--cyan);border-radius:100px;">Studio Production</span>
+        <span style="font-family:'brandon-grotesque','DM Sans',sans-serif;font-size:.6rem;letter-spacing:.12em;text-transform:uppercase;padding:.4rem 1rem;border:1.5px solid rgba(0,194,224,.3);color:rgba(0,194,224,.65);border-radius:100px;">Brand Activations</span>
+        <span style="font-family:'brandon-grotesque','DM Sans',sans-serif;font-size:.6rem;letter-spacing:.12em;text-transform:uppercase;padding:.4rem 1rem;border:1.5px solid rgba(0,194,224,.3);color:rgba(0,194,224,.65);border-radius:100px;">Pop-Up Events</span>
+        <span style="font-family:'brandon-grotesque','DM Sans',sans-serif;font-size:.6rem;letter-spacing:.12em;text-transform:uppercase;padding:.4rem 1rem;border:1.5px solid rgba(0,194,224,.3);color:rgba(0,194,224,.65);border-radius:100px;">Guerrilla Campaigns</span>
+        <span style="font-family:'brandon-grotesque','DM Sans',sans-serif;font-size:.6rem;letter-spacing:.12em;text-transform:uppercase;padding:.4rem 1rem;border:1.5px solid rgba(0,194,224,.3);color:rgba(0,194,224,.65);border-radius:100px;">Live Experiences</span>
+      </div>
+    </div>
+
+    <!-- PANEL 3 — Two stat boxes side by side (bottom right) -->
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:1.5px;background:var(--light-gray);">
+
+      <!-- Bespoke box -->
+      <div style="background:var(--off-white);padding:2rem;position:relative;overflow:hidden;">
+        <div style="position:absolute;top:-1rem;right:-1rem;font-family:'Playfair Display',serif;font-size:5rem;font-weight:900;color:rgba(43,71,128,.06);line-height:1;pointer-events:none;">∞</div>
+        <div style="font-family:'brandon-grotesque','DM Sans',sans-serif;font-size:.55rem;letter-spacing:.22em;text-transform:uppercase;color:var(--electric);margin-bottom:.8rem;display:flex;align-items:center;gap:.5rem;"><span style="display:block;width:14px;height:2px;background:var(--cyan);"></span>Approach</div>
+        <div style="font-family:'Playfair Display',serif;font-size:1.5rem;font-weight:800;color:var(--navy-dark);line-height:1.2;margin-bottom:.8rem;">100% <em style="color:var(--electric);">Bespoke.</em> Zero templates.</div>
+        <p style="font-family:'DM Sans',sans-serif;font-size:.75rem;line-height:1.75;color:#5A6478;font-weight:300;">No two brands are the same. Neither are any two strategies we build.</p>
+      </div>
+
+      <!-- Industries box -->
+      <div style="background:var(--navy-dark);padding:2rem;position:relative;overflow:hidden;">
+        <div style="position:absolute;bottom:-1rem;right:-1rem;font-family:'Playfair Display',serif;font-size:5rem;font-weight:900;color:rgba(0,194,224,.05);line-height:1;pointer-events:none;">✦</div>
+        <div style="font-family:'brandon-grotesque','DM Sans',sans-serif;font-size:.55rem;letter-spacing:.22em;text-transform:uppercase;color:var(--cyan);margin-bottom:.8rem;display:flex;align-items:center;gap:.5rem;"><span style="display:block;width:14px;height:2px;background:var(--cyan);"></span>Clients</div>
+        <div style="font-family:'Playfair Display',serif;font-size:1.5rem;font-weight:800;color:white;line-height:1.2;margin-bottom:.8rem;">Every industry. Every <em style="color:var(--cyan);">ambition.</em></div>
+        <p style="font-family:'DM Sans',sans-serif;font-size:.75rem;line-height:1.75;color:rgba(255,255,255,.45);font-weight:300;">Startups, law firms, corporates, luxury brands — we adapt to your world.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- WORK SECTION -->
+<section class="portfolio" id="work" style="background:var(--navy-deep);padding:7rem 5% 0;">
+
+  <!-- Section header -->
+  <div class="port-head" style="margin-bottom:3rem;">
+    <div>
+      <div class="stag reveal">Selected Work</div>
+      <h2 class="stitle light reveal d1">Elevating brands<br>we <em>believe in</em></h2>
+    </div>
+  </div>
+
+  <!-- SHOWREEL — full width video -->
+  <div class="reveal" style="position:relative;width:100%;padding-bottom:56.25%;height:0;overflow:hidden;border-radius:4px;background:#000;">
+    <iframe
+      src="https://player.vimeo.com/video/1177044549?autoplay=1&muted=0&loop=1&title=0&byline=0&portrait=0&background=0"
+      style="position:absolute;top:0;left:0;width:100%;height:100%;border:0;"
+      allow="autoplay; fullscreen; picture-in-picture"
+      allowfullscreen>
+    </iframe>
+  </div>
+
+  <!-- Showreel caption -->
+  <div style="display:flex;justify-content:space-between;align-items:center;padding:1.2rem 0 4rem;border-bottom:1px solid rgba(255,255,255,.07);" class="reveal">
+    <div style="font-family:'brandon-grotesque','DM Sans',sans-serif;font-size:.6rem;letter-spacing:.25em;text-transform:uppercase;color:rgba(255,255,255,.3);">Rowly Studios · Showreel</div>
+    <div style="font-family:'brandon-grotesque','DM Sans',sans-serif;font-size:.6rem;letter-spacing:.25em;text-transform:uppercase;color:rgba(255,255,255,.3);">Content Production · Los Angeles</div>
+  </div>
+
+</section>
+
+<!-- 3 CONTENT STYLE CARDS -->
+<section style="background:var(--off-white);padding:4rem 5% 3rem;">
+
+  <div class="stag reveal" style="color:var(--electric);">How We Create</div>
+  <h2 class="stitle reveal d1" style="margin-bottom:3rem;">Three distinct <em>production styles</em></h2>
+
+  <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:2rem;background:transparent;" class="reveal d1">
+
+    <!-- CARD 01 — Premium Production -->
+    <div style="background:linear-gradient(145deg,#00C2E0 0%,#4A90E2 50%,#2B4780 100%);border-radius:4px;overflow:hidden;display:flex;flex-direction:column;">
+      <div style="position:relative;width:100%;padding-bottom:56.25%;background:#ECEAE4;overflow:hidden;">
+        <svg style="position:absolute;inset:0;width:100%;height:100%;" viewBox="0 0 560 315" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect width="560" height="315" fill="#ECEAE4"/>
+          <!-- Ground shadow -->
+          <ellipse cx="280" cy="274" rx="170" ry="7" fill="rgba(0,0,0,.09)"/>
+
+          <!-- === SONY VENICE === -->
+          <!-- Main body — large boxy form -->
+          <rect x="140" y="90" width="220" height="148" rx="5" fill="none" stroke="#1A1A1A" stroke-width="2.2"/>
+          <!-- Top handle rail -->
+          <rect x="155" y="78" width="190" height="16" rx="4" fill="none" stroke="#1A1A1A" stroke-width="1.8"/>
+          <!-- Handle arch -->
+          <rect x="185" y="60" width="130" height="22" rx="8" fill="none" stroke="#1A1A1A" stroke-width="1.8"/>
+          <!-- Handle grip lines -->
+          <line x1="205" y1="62" x2="205" y2="80" stroke="#1A1A1A" stroke-width=".8" opacity=".4"/>
+          <line x1="215" y1="62" x2="215" y2="80" stroke="#1A1A1A" stroke-width=".8" opacity=".4"/>
+          <line x1="225" y1="62" x2="225" y2="80" stroke="#1A1A1A" stroke-width=".8" opacity=".4"/>
+          <line x1="285" y1="62" x2="285" y2="80" stroke="#1A1A1A" stroke-width=".8" opacity=".4"/>
+          <line x1="295" y1="62" x2="295" y2="80" stroke="#1A1A1A" stroke-width=".8" opacity=".4"/>
+          <line x1="305" y1="62" x2="305" y2="80" stroke="#1A1A1A" stroke-width=".8" opacity=".4"/>
+
+          <!-- Front face plate with PL mount ring -->
+          <rect x="140" y="90" width="58" height="148" rx="3" fill="none" stroke="#1A1A1A" stroke-width="1.5"/>
+          <!-- PL Mount — large outer ring -->
+          <circle cx="169" cy="168" r="46" fill="none" stroke="#1A1A1A" stroke-width="2"/>
+          <circle cx="169" cy="168" r="38" fill="none" stroke="#1A1A1A" stroke-width="1.2"/>
+          <circle cx="169" cy="168" r="28" fill="none" stroke="#1A1A1A" stroke-width="1.5"/>
+          <circle cx="169" cy="168" r="18" fill="none" stroke="#1A1A1A" stroke-width="1.2"/>
+          <circle cx="169" cy="168" r="8" fill="none" stroke="#1A1A1A" stroke-width="1"/>
+          <circle cx="169" cy="168" r="3" fill="#1A1A1A"/>
+          <!-- PL mount notch -->
+          <rect x="162" y="120" width="14" height="8" rx="2" fill="none" stroke="#1A1A1A" stroke-width="1.2"/>
+          <!-- PL lock pins -->
+          <circle cx="169" cy="122" r="3" fill="none" stroke="#1A1A1A" stroke-width="1"/>
+          <circle cx="215" cy="168" r="3" fill="none" stroke="#1A1A1A" stroke-width="1"/>
+          <circle cx="123" cy="168" r="3" fill="none" stroke="#1A1A1A" stroke-width="1"/>
+          <circle cx="169" cy="214" r="3" fill="none" stroke="#1A1A1A" stroke-width="1"/>
+
+          <!-- LENS attached — Cooke S7i style -->
+          <rect x="68" y="128" width="76" height="80" rx="3" fill="none" stroke="#1A1A1A" stroke-width="1.8"/>
+          <!-- Focus ring -->
+          <rect x="72" y="135" width="20" height="66" rx="1" fill="none" stroke="#1A1A1A" stroke-width="1"/>
+          <!-- Focus ring lines -->
+          <line x1="74" y1="142" x2="90" y2="142" stroke="#1A1A1A" stroke-width=".7" opacity=".5"/>
+          <line x1="74" y1="150" x2="90" y2="150" stroke="#1A1A1A" stroke-width=".7" opacity=".5"/>
+          <line x1="74" y1="158" x2="90" y2="158" stroke="#1A1A1A" stroke-width=".7" opacity=".5"/>
+          <line x1="74" y1="166" x2="90" y2="166" stroke="#1A1A1A" stroke-width=".7" opacity=".5"/>
+          <line x1="74" y1="174" x2="90" y2="174" stroke="#1A1A1A" stroke-width=".7" opacity=".5"/>
+          <line x1="74" y1="182" x2="90" y2="182" stroke="#1A1A1A" stroke-width=".7" opacity=".5"/>
+          <line x1="74" y1="190" x2="90" y2="190" stroke="#1A1A1A" stroke-width=".7" opacity=".5"/>
+          <!-- Iris ring -->
+          <rect x="92" y="133" width="18" height="70" rx="1" fill="none" stroke="#1A1A1A" stroke-width="1"/>
+          <!-- Front element -->
+          <circle cx="128" cy="168" r="26" fill="none" stroke="#1A1A1A" stroke-width="1.5"/>
+          <circle cx="128" cy="168" r="18" fill="none" stroke="#1A1A1A" stroke-width="1"/>
+          <circle cx="128" cy="168" r="10" fill="none" stroke="#1A1A1A" stroke-width="1"/>
+          <circle cx="128" cy="168" r="4" fill="#1A1A1A" opacity=".3"/>
+          <!-- Lens highlight -->
+          <path d="M116 157 Q118 152 126 155" stroke="#1A1A1A" stroke-width=".8" fill="none" opacity=".3"/>
+
+          <!-- Main body right section — I/O ports & controls -->
+          <rect x="358" y="90" width="62" height="148" rx="3" fill="none" stroke="#1A1A1A" stroke-width="1.5"/>
+          <!-- Side LCD / monitor -->
+          <rect x="365" y="100" width="48" height="36" rx="2" fill="none" stroke="#1A1A1A" stroke-width="1.2"/>
+          <!-- LCD content — waveform -->
+          <polyline points="369,126 374,116 379,122 384,112 389,118 394,110 399,116 404,120 409,115" stroke="#1A1A1A" stroke-width=".8" fill="none" opacity=".4"/>
+          <!-- Record button -->
+          <circle cx="388" cy="152" r="9" fill="none" stroke="#1A1A1A" stroke-width="1.5"/>
+          <circle cx="388" cy="152" r="5" fill="none" stroke="#1A1A1A" stroke-width="1"/>
+          <!-- Ports panel -->
+          <rect x="365" y="168" width="48" height="55" rx="2" fill="none" stroke="#1A1A1A" stroke-width="1"/>
+          <!-- SDI ports -->
+          <circle cx="378" cy="180" r="5" fill="none" stroke="#1A1A1A" stroke-width="1"/>
+          <circle cx="393" cy="180" r="5" fill="none" stroke="#1A1A1A" stroke-width="1"/>
+          <circle cx="408" cy="180" r="5" fill="none" stroke="#1A1A1A" stroke-width="1"/>
+          <!-- HDMI port -->
+          <rect x="370" y="193" width="14" height="8" rx="1" fill="none" stroke="#1A1A1A" stroke-width=".8"/>
+          <!-- USB -->
+          <rect x="390" y="194" width="10" height="7" rx="1" fill="none" stroke="#1A1A1A" stroke-width=".8"/>
+          <!-- Audio XLR -->
+          <circle cx="378" cy="212" r="5" fill="none" stroke="#1A1A1A" stroke-width="1"/>
+          <circle cx="395" cy="212" r="5" fill="none" stroke="#1A1A1A" stroke-width="1"/>
+
+          <!-- Body texture — ventilation slits -->
+          <line x1="210" y1="98" x2="210" y2="112" stroke="#1A1A1A" stroke-width=".7" opacity=".25"/>
+          <line x1="220" y1="98" x2="220" y2="112" stroke="#1A1A1A" stroke-width=".7" opacity=".25"/>
+          <line x1="230" y1="98" x2="230" y2="112" stroke="#1A1A1A" stroke-width=".7" opacity=".25"/>
+          <line x1="240" y1="98" x2="240" y2="112" stroke="#1A1A1A" stroke-width=".7" opacity=".25"/>
+          <line x1="250" y1="98" x2="250" y2="112" stroke="#1A1A1A" stroke-width=".7" opacity=".25"/>
+          <line x1="260" y1="98" x2="260" y2="112" stroke="#1A1A1A" stroke-width=".7" opacity=".25"/>
+          <line x1="270" y1="98" x2="270" y2="112" stroke="#1A1A1A" stroke-width=".7" opacity=".25"/>
+          <line x1="280" y1="98" x2="280" y2="112" stroke="#1A1A1A" stroke-width=".7" opacity=".25"/>
+
+          <!-- VENICE logo area -->
+          <text x="255" y="145" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="10" fill="#1A1A1A" opacity=".18" letter-spacing="4" font-weight="700">VENICE</text>
+          <text x="255" y="158" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="7" fill="#1A1A1A" opacity=".15" letter-spacing="3">SONY</text>
+
+          <!-- Body control buttons cluster -->
+          <circle cx="230" cy="195" r="6" fill="none" stroke="#1A1A1A" stroke-width="1.2"/>
+          <circle cx="250" cy="195" r="6" fill="none" stroke="#1A1A1A" stroke-width="1.2"/>
+          <circle cx="270" cy="195" r="6" fill="none" stroke="#1A1A1A" stroke-width="1.2"/>
+          <circle cx="290" cy="195" r="6" fill="none" stroke="#1A1A1A" stroke-width="1.2"/>
+          <circle cx="310" cy="195" r="6" fill="none" stroke="#1A1A1A" stroke-width="1.2"/>
+          <circle cx="330" cy="195" r="6" fill="none" stroke="#1A1A1A" stroke-width="1.2"/>
+
+          <!-- Bottom base plate -->
+          <rect x="145" y="236" width="210" height="10" rx="2" fill="none" stroke="#1A1A1A" stroke-width="1.2"/>
+          <!-- Tripod mount holes -->
+          <circle cx="200" cy="241" r="4" fill="none" stroke="#1A1A1A" stroke-width="1"/>
+          <circle cx="280" cy="241" r="4" fill="none" stroke="#1A1A1A" stroke-width="1"/>
+          <circle cx="350" cy="241" r="4" fill="none" stroke="#1A1A1A" stroke-width="1"/>
+        </svg>
+      </div>
+      <div style="padding:2rem;display:flex;flex-direction:column;gap:1.2rem;flex:1;">
+        <div style="font-family:'brandon-grotesque','DM Sans',sans-serif;font-size:.6rem;letter-spacing:.28em;text-transform:uppercase;color:rgba(15,27,51,.65);">Premium Production</div>
+        <h3 style="font-family:'Playfair Display',serif;font-size:1.45rem;font-weight:800;color:#0F1B33;line-height:1.2;">High-end studio &amp; location <em style="color:#0F1B33;font-style:italic;">production</em></h3>
+        <p style="font-family:'DM Sans',sans-serif;font-size:.78rem;line-height:1.85;color:rgba(15,27,51,.7);font-weight:400;">From fully directed studio shoots to cinematic location productions — this is brand content at its highest level. Precise lighting, expert direction, post-production finishing that meets broadcast standard.</p>
+        <div style="display:flex;flex-wrap:wrap;gap:.4rem;margin-top:auto;">
+          <span style="font-family:'brandon-grotesque','DM Sans',sans-serif;font-size:.52rem;letter-spacing:.12em;text-transform:uppercase;padding:.3rem .7rem;border:1px solid rgba(15,27,51,.5);color:rgba(15,27,51,.85);border-radius:100px;">Studio Shoots</span>
+          <span style="font-family:'brandon-grotesque','DM Sans',sans-serif;font-size:.52rem;letter-spacing:.12em;text-transform:uppercase;padding:.3rem .7rem;border:1px solid rgba(15,27,51,.3);color:rgba(15,27,51,.65);border-radius:100px;">Location Production</span>
+          <span style="font-family:'brandon-grotesque','DM Sans',sans-serif;font-size:.52rem;letter-spacing:.12em;text-transform:uppercase;padding:.3rem .7rem;border:1px solid rgba(15,27,51,.3);color:rgba(15,27,51,.65);border-radius:100px;">Colour Grading</span>
+          <span style="font-family:'brandon-grotesque','DM Sans',sans-serif;font-size:.52rem;letter-spacing:.12em;text-transform:uppercase;padding:.3rem .7rem;border:1px solid rgba(15,27,51,.3);color:rgba(15,27,51,.65);border-radius:100px;">Brand Film</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- CARD 02 — Analogue Film -->
+    <div style="background:linear-gradient(145deg,#E2C97E 0%,#C9A84C 40%,#8B6914 100%);border-radius:4px;overflow:hidden;display:flex;flex-direction:column;">
+      <div style="position:relative;width:100%;padding-bottom:56.25%;background:#F5F0E6;overflow:hidden;">
+        <svg style="position:absolute;inset:0;width:100%;height:100%;" viewBox="0 0 560 315" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect width="560" height="315" fill="#F5F0E6"/>
+          <ellipse cx="280" cy="276" rx="175" ry="7" fill="rgba(0,0,0,.07)"/>
+
+          <!-- === PANAVISION FILM REEL === -->
+          <!-- Outer rim -->
+          <circle cx="195" cy="158" r="115" fill="none" stroke="#1A1A1A" stroke-width="2.5"/>
+          <!-- Rim detail ring -->
+          <circle cx="195" cy="158" r="108" fill="none" stroke="#1A1A1A" stroke-width="1"/>
+          <!-- Inner hub ring -->
+          <circle cx="195" cy="158" r="38" fill="none" stroke="#1A1A1A" stroke-width="2"/>
+          <circle cx="195" cy="158" r="28" fill="none" stroke="#1A1A1A" stroke-width="1.2"/>
+          <circle cx="195" cy="158" r="16" fill="none" stroke="#1A1A1A" stroke-width="1.5"/>
+          <circle cx="195" cy="158" r="8" fill="none" stroke="#1A1A1A" stroke-width="1"/>
+          <circle cx="195" cy="158" r="3" fill="#1A1A1A"/>
+          <!-- Hub mount holes — 3 bolt pattern -->
+          <circle cx="195" cy="130" r="5" fill="none" stroke="#1A1A1A" stroke-width="1.2"/>
+          <circle cx="220" cy="172" r="5" fill="none" stroke="#1A1A1A" stroke-width="1.2"/>
+          <circle cx="170" cy="172" r="5" fill="none" stroke="#1A1A1A" stroke-width="1.2"/>
+
+          <!-- Reel spokes — 6 spokes -->
+          <line x1="195" y1="120" x2="195" y2="44" stroke="#1A1A1A" stroke-width="2.5"/>
+          <line x1="228" y1="139" x2="286" y2="100" stroke="#1A1A1A" stroke-width="2.5"/>
+          <line x1="228" y1="177" x2="286" y2="216" stroke="#1A1A1A" stroke-width="2.5"/>
+          <line x1="195" y1="196" x2="195" y2="272" stroke="#1A1A1A" stroke-width="2.5"/>
+          <line x1="162" y1="177" x2="104" y2="216" stroke="#1A1A1A" stroke-width="2.5"/>
+          <line x1="162" y1="139" x2="104" y2="100" stroke="#1A1A1A" stroke-width="2.5"/>
+          <!-- Spoke flanges -->
+          <rect x="188" y="40" width="14" height="10" rx="2" fill="none" stroke="#1A1A1A" stroke-width="1"/>
+          <rect x="283" y="96" width="10" height="10" rx="2" fill="none" stroke="#1A1A1A" stroke-width="1" transform="rotate(30 283 96)"/>
+          <rect x="283" y="212" width="10" height="10" rx="2" fill="none" stroke="#1A1A1A" stroke-width="1" transform="rotate(-30 283 212)"/>
+          <rect x="188" y="267" width="14" height="10" rx="2" fill="none" stroke="#1A1A1A" stroke-width="1"/>
+          <rect x="97" y="212" width="10" height="10" rx="2" fill="none" stroke="#1A1A1A" stroke-width="1" transform="rotate(30 97 212)"/>
+          <rect x="97" y="96" width="10" height="10" rx="2" fill="none" stroke="#1A1A1A" stroke-width="1" transform="rotate(-30 97 96)"/>
+
+          <!-- Film wound on reel — concentric arcs suggesting wound film -->
+          <path d="M195 65 A93 93 0 0 1 288 158" fill="none" stroke="#1A1A1A" stroke-width="1" opacity=".2" stroke-dasharray="6 4"/>
+          <path d="M195 72 A86 86 0 0 1 281 158" fill="none" stroke="#1A1A1A" stroke-width="1" opacity=".2" stroke-dasharray="6 4"/>
+          <path d="M195 79 A79 79 0 0 1 274 158" fill="none" stroke="#1A1A1A" stroke-width="1" opacity=".15" stroke-dasharray="6 4"/>
+          <path d="M195 86 A72 72 0 0 1 267 158" fill="none" stroke="#1A1A1A" stroke-width="1" opacity=".15" stroke-dasharray="6 4"/>
+
+          <!-- PANAVISION label on reel -->
+          <path id="rlabel" d="M 100 158 A 95 95 0 0 1 290 158" fill="none"/>
+          <text font-family="DM Sans,sans-serif" font-size="9" fill="#1A1A1A" opacity=".2" letter-spacing="5" font-weight="700">
+            <textPath href="#rlabel" startOffset="10%">PANAVISION</textPath>
+          </text>
+
+          <!-- === FILM STRIP unfurling from reel === -->
+          <!-- Strip body -->
+          <path d="M305 130 Q340 100 380 95 Q420 92 455 100 Q490 108 520 118" fill="none" stroke="#1A1A1A" stroke-width="22" stroke-linecap="round" opacity=".05"/>
+          <!-- Strip top edge -->
+          <path d="M305 119 Q340 89 380 84 Q420 81 455 89 Q490 97 520 107" fill="none" stroke="#1A1A1A" stroke-width="1.8"/>
+          <!-- Strip bottom edge -->
+          <path d="M305 141 Q340 111 380 106 Q420 103 455 111 Q490 119 520 129" fill="none" stroke="#1A1A1A" stroke-width="1.8"/>
+
+          <!-- Sprocket holes top strip -->
+          <rect x="318" y="111" width="9" height="7" rx="1" fill="none" stroke="#1A1A1A" stroke-width="1.1"/>
+          <rect x="340" y="104" width="9" height="7" rx="1" fill="none" stroke="#1A1A1A" stroke-width="1.1"/>
+          <rect x="363" y="98" width="9" height="7" rx="1" fill="none" stroke="#1A1A1A" stroke-width="1.1"/>
+          <rect x="387" y="95" width="9" height="7" rx="1" fill="none" stroke="#1A1A1A" stroke-width="1.1"/>
+          <rect x="412" y="95" width="9" height="7" rx="1" fill="none" stroke="#1A1A1A" stroke-width="1.1"/>
+          <rect x="437" y="97" width="9" height="7" rx="1" fill="none" stroke="#1A1A1A" stroke-width="1.1"/>
+          <rect x="462" y="101" width="9" height="7" rx="1" fill="none" stroke="#1A1A1A" stroke-width="1.1"/>
+          <rect x="487" y="108" width="9" height="7" rx="1" fill="none" stroke="#1A1A1A" stroke-width="1.1"/>
+          <!-- Sprocket holes bottom strip -->
+          <rect x="318" y="143" width="9" height="7" rx="1" fill="none" stroke="#1A1A1A" stroke-width="1.1"/>
+          <rect x="340" y="137" width="9" height="7" rx="1" fill="none" stroke="#1A1A1A" stroke-width="1.1"/>
+          <rect x="363" y="131" width="9" height="7" rx="1" fill="none" stroke="#1A1A1A" stroke-width="1.1"/>
+          <rect x="387" y="127" width="9" height="7" rx="1" fill="none" stroke="#1A1A1A" stroke-width="1.1"/>
+          <rect x="412" y="127" width="9" height="7" rx="1" fill="none" stroke="#1A1A1A" stroke-width="1.1"/>
+          <rect x="437" y="129" width="9" height="7" rx="1" fill="none" stroke="#1A1A1A" stroke-width="1.1"/>
+          <rect x="462" y="133" width="9" height="7" rx="1" fill="none" stroke="#1A1A1A" stroke-width="1.1"/>
+          <rect x="487" y="138" width="9" height="7" rx="1" fill="none" stroke="#1A1A1A" stroke-width="1.1"/>
+
+          <!-- Frame windows -->
+          <rect x="344" y="120" width="22" height="17" rx="1" fill="none" stroke="#1A1A1A" stroke-width=".8" opacity=".45"/>
+          <rect x="373" y="115" width="22" height="17" rx="1" fill="none" stroke="#1A1A1A" stroke-width=".8" opacity=".45"/>
+          <rect x="402" y="112" width="22" height="17" rx="1" fill="none" stroke="#1A1A1A" stroke-width=".8" opacity=".45"/>
+          <rect x="432" y="112" width="22" height="17" rx="1" fill="none" stroke="#1A1A1A" stroke-width=".8" opacity=".45"/>
+          <rect x="461" y="114" width="22" height="17" rx="1" fill="none" stroke="#1A1A1A" stroke-width=".8" opacity=".45"/>
+
+          <!-- Frame numbers -->
+          <text x="355" y="145" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="5" fill="#1A1A1A" opacity=".3">24</text>
+          <text x="384" y="140" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="5" fill="#1A1A1A" opacity=".3">25</text>
+          <text x="413" y="137" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="5" fill="#1A1A1A" opacity=".3">26</text>
+          <text x="443" y="137" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="5" fill="#1A1A1A" opacity=".3">27</text>
+
+          <!-- Second strip below — returning -->
+          <path d="M310 185 Q345 210 385 215 Q425 218 460 210 Q495 202 522 192" fill="none" stroke="#1A1A1A" stroke-width="1.5" opacity=".4" stroke-dasharray="8 4"/>
+
+          <line x1="80" y1="273" x2="530" y2="273" stroke="#1A1A1A" stroke-width=".5" opacity=".1"/>
+        </svg>
+      </div>
+      <div style="padding:2rem;display:flex;flex-direction:column;gap:1.2rem;flex:1;">
+        <div style="font-family:'brandon-grotesque','DM Sans',sans-serif;font-size:.6rem;letter-spacing:.28em;text-transform:uppercase;color:rgba(30,15,0,.6);">Analogue Film</div>
+        <h3 style="font-family:'Playfair Display',serif;font-size:1.45rem;font-weight:800;color:#1E0F00;line-height:1.2;">The timeless warmth of <em style="color:#1E0F00;font-style:italic;">real film</em></h3>
+        <p style="font-family:'DM Sans',sans-serif;font-size:.78rem;line-height:1.85;color:rgba(30,15,0,.7);font-weight:400;">In a world of digital perfection, analogue film stands apart. Grain, warmth, depth — qualities that digital simply can't replicate. We shoot on film to give your brand content a character and soul that audiences feel immediately.</p>
+        <div style="display:flex;flex-wrap:wrap;gap:.4rem;margin-top:auto;">
+          <span style="font-family:'brandon-grotesque','DM Sans',sans-serif;font-size:.52rem;letter-spacing:.12em;text-transform:uppercase;padding:.3rem .7rem;border:1px solid rgba(30,15,0,.45);color:rgba(30,15,0,.85);border-radius:100px;">16mm &amp; 35mm</span>
+          <span style="font-family:'brandon-grotesque','DM Sans',sans-serif;font-size:.52rem;letter-spacing:.12em;text-transform:uppercase;padding:.3rem .7rem;border:1px solid rgba(30,15,0,.25);color:rgba(30,15,0,.65);border-radius:100px;">Film Photography</span>
+          <span style="font-family:'brandon-grotesque','DM Sans',sans-serif;font-size:.52rem;letter-spacing:.12em;text-transform:uppercase;padding:.3rem .7rem;border:1px solid rgba(30,15,0,.25);color:rgba(30,15,0,.65);border-radius:100px;">Grain &amp; Texture</span>
+          <span style="font-family:'brandon-grotesque','DM Sans',sans-serif;font-size:.52rem;letter-spacing:.12em;text-transform:uppercase;padding:.3rem .7rem;border:1px solid rgba(30,15,0,.25);color:rgba(30,15,0,.65);border-radius:100px;">Editorial Style</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- CARD 03 — AI Enhanced -->
+    <div style="background:linear-gradient(145deg,#7B2FFF 0%,#4A1A8A 40%,#1A0A3A 100%);border-radius:4px;overflow:hidden;display:flex;flex-direction:column;">
+      <div style="position:relative;width:100%;padding-bottom:56.25%;background:#EEE9F8;overflow:hidden;">
+        <svg style="position:absolute;inset:0;width:100%;height:100%;" viewBox="0 0 560 315" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect width="560" height="315" fill="#EEE9F8"/>
+          <ellipse cx="280" cy="276" rx="160" ry="6" fill="rgba(80,40,160,.08)"/>
+
+          <!-- === FILM LENS left side === -->
+          <!-- Lens barrel outer -->
+          <rect x="38" y="105" width="155" height="105" rx="5" fill="none" stroke="#2A1A5A" stroke-width="2"/>
+          <!-- Focus ring -->
+          <rect x="43" y="110" width="28" height="95" rx="2" fill="none" stroke="#2A1A5A" stroke-width="1.2"/>
+          <!-- Focus ring markings -->
+          <line x1="47" y1="120" x2="67" y2="120" stroke="#2A1A5A" stroke-width=".7" opacity=".5"/>
+          <line x1="47" y1="130" x2="60" y2="130" stroke="#2A1A5A" stroke-width=".6" opacity=".4"/>
+          <line x1="47" y1="140" x2="67" y2="140" stroke="#2A1A5A" stroke-width=".7" opacity=".5"/>
+          <line x1="47" y1="150" x2="60" y2="150" stroke="#2A1A5A" stroke-width=".6" opacity=".4"/>
+          <line x1="47" y1="160" x2="67" y2="160" stroke="#2A1A5A" stroke-width=".7" opacity=".5"/>
+          <line x1="47" y1="170" x2="60" y2="170" stroke="#2A1A5A" stroke-width=".6" opacity=".4"/>
+          <line x1="47" y1="180" x2="67" y2="180" stroke="#2A1A5A" stroke-width=".7" opacity=".5"/>
+          <line x1="47" y1="190" x2="60" y2="190" stroke="#2A1A5A" stroke-width=".6" opacity=".4"/>
+          <text x="55" y="158" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="5.5" fill="#2A1A5A" opacity=".35" transform="rotate(-90 55 158)">T2.8</text>
+          <!-- Iris ring -->
+          <rect x="71" y="108" width="22" height="99" rx="2" fill="none" stroke="#2A1A5A" stroke-width="1.2"/>
+          <line x1="73" y1="125" x2="91" y2="125" stroke="#2A1A5A" stroke-width=".6" opacity=".35"/>
+          <line x1="73" y1="145" x2="91" y2="145" stroke="#2A1A5A" stroke-width=".6" opacity=".35"/>
+          <line x1="73" y1="165" x2="91" y2="165" stroke="#2A1A5A" stroke-width=".6" opacity=".35"/>
+          <line x1="73" y1="185" x2="91" y2="185" stroke="#2A1A5A" stroke-width=".6" opacity=".35"/>
+          <!-- Front glass element — large concave -->
+          <circle cx="155" cy="158" r="46" fill="none" stroke="#2A1A5A" stroke-width="2"/>
+          <circle cx="155" cy="158" r="36" fill="none" stroke="#2A1A5A" stroke-width="1.2"/>
+          <circle cx="155" cy="158" r="24" fill="none" stroke="#2A1A5A" stroke-width="1.5"/>
+          <circle cx="155" cy="158" r="14" fill="none" stroke="#2A1A5A" stroke-width="1"/>
+          <circle cx="155" cy="158" r="6" fill="none" stroke="#2A1A5A" stroke-width="1"/>
+          <!-- Lens coating shimmer arcs -->
+          <path d="M135 138 Q138 132 148 136" stroke="#2A1A5A" stroke-width=".8" fill="none" opacity=".25"/>
+          <path d="M130 145 Q133 140 140 143" stroke="#2A1A5A" stroke-width=".7" fill="none" opacity=".2"/>
+          <!-- Lens barrel brand -->
+          <text x="120" y="112" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="6" fill="#2A1A5A" opacity=".2" letter-spacing="2">COOKE 50mm</text>
+
+          <!-- === LIGHT BEAM / DATA STREAM from lens === -->
+          <!-- Beam shape widening right -->
+          <path d="M193 140 L560 60 L560 255 L193 176 Z" fill="rgba(90,32,204,.03)"/>
+          <!-- Beam edges -->
+          <line x1="193" y1="140" x2="560" y2="60" stroke="#5A20CC" stroke-width="1" opacity=".2"/>
+          <line x1="193" y1="176" x2="560" y2="255" stroke="#5A20CC" stroke-width="1" opacity=".2"/>
+
+          <!-- Data particles streaming through beam -->
+          <circle cx="230" cy="155" r="2" fill="#5A20CC" opacity=".5"/>
+          <circle cx="255" cy="148" r="1.5" fill="#5A20CC" opacity=".4"/>
+          <circle cx="255" cy="165" r="1.5" fill="#5A20CC" opacity=".4"/>
+          <circle cx="278" cy="143" r="2" fill="#5A20CC" opacity=".45"/>
+          <circle cx="278" cy="170" r="2" fill="#5A20CC" opacity=".45"/>
+          <circle cx="300" cy="138" r="1.5" fill="#5A20CC" opacity=".35"/>
+          <circle cx="300" cy="175" r="1.5" fill="#5A20CC" opacity=".35"/>
+          <circle cx="322" cy="132" r="2" fill="#5A20CC" opacity=".3"/>
+          <circle cx="322" cy="180" r="2" fill="#5A20CC" opacity=".3"/>
+
+          <!-- === BLOCKCHAIN / AI WEB on right === -->
+          <!-- Blockchain nodes — hexagonal arrangement -->
+          <!-- Central node -->
+          <circle cx="400" cy="158" r="18" fill="none" stroke="#2A1A5A" stroke-width="2"/>
+          <circle cx="400" cy="158" r="10" fill="none" stroke="#5A20CC" stroke-width="1.2"/>
+          <circle cx="400" cy="158" r="4" fill="#5A20CC" opacity=".4"/>
+          <!-- Hex shape on central -->
+          <polygon points="400,142 413,150 413,166 400,174 387,166 387,150" fill="none" stroke="#5A20CC" stroke-width=".8" opacity=".4"/>
+
+          <!-- Node ring 1 — 6 nodes around centre -->
+          <circle cx="400" cy="100" r="14" fill="none" stroke="#2A1A5A" stroke-width="1.5"/>
+          <polygon points="400,88 410,94 410,106 400,112 390,106 390,94" fill="none" stroke="#5A20CC" stroke-width=".8" opacity=".35"/>
+          <circle cx="400" cy="100" r="5" fill="none" stroke="#5A20CC" stroke-width="1"/>
+
+          <circle cx="450" cy="128" r="14" fill="none" stroke="#2A1A5A" stroke-width="1.5"/>
+          <polygon points="450,116 460,122 460,134 450,140 440,134 440,122" fill="none" stroke="#5A20CC" stroke-width=".8" opacity=".35"/>
+          <circle cx="450" cy="128" r="5" fill="none" stroke="#5A20CC" stroke-width="1"/>
+
+          <circle cx="450" cy="188" r="14" fill="none" stroke="#2A1A5A" stroke-width="1.5"/>
+          <polygon points="450,176 460,182 460,194 450,200 440,194 440,182" fill="none" stroke="#5A20CC" stroke-width=".8" opacity=".35"/>
+          <circle cx="450" cy="188" r="5" fill="none" stroke="#5A20CC" stroke-width="1"/>
+
+          <circle cx="400" cy="216" r="14" fill="none" stroke="#2A1A5A" stroke-width="1.5"/>
+          <polygon points="400,204 410,210 410,222 400,228 390,222 390,210" fill="none" stroke="#5A20CC" stroke-width=".8" opacity=".35"/>
+          <circle cx="400" cy="216" r="5" fill="none" stroke="#5A20CC" stroke-width="1"/>
+
+          <circle cx="350" cy="188" r="14" fill="none" stroke="#2A1A5A" stroke-width="1.5"/>
+          <polygon points="350,176 360,182 360,194 350,200 340,194 340,182" fill="none" stroke="#5A20CC" stroke-width=".8" opacity=".35"/>
+          <circle cx="350" cy="188" r="5" fill="none" stroke="#5A20CC" stroke-width="1"/>
+
+          <circle cx="350" cy="128" r="14" fill="none" stroke="#2A1A5A" stroke-width="1.5"/>
+          <polygon points="350,116 360,122 360,134 350,140 340,134 340,122" fill="none" stroke="#5A20CC" stroke-width=".8" opacity=".35"/>
+          <circle cx="350" cy="128" r="5" fill="none" stroke="#5A20CC" stroke-width="1"/>
+
+          <!-- Chain links between nodes -->
+          <line x1="400" y1="114" x2="400" y2="140" stroke="#2A1A5A" stroke-width="1.5"/>
+          <line x1="436" y1="134" x2="416" y2="146" stroke="#2A1A5A" stroke-width="1.5"/>
+          <line x1="436" y1="182" x2="416" y2="170" stroke="#2A1A5A" stroke-width="1.5"/>
+          <line x1="400" y1="202" x2="400" y2="176" stroke="#2A1A5A" stroke-width="1.5"/>
+          <line x1="364" y1="182" x2="384" y2="170" stroke="#2A1A5A" stroke-width="1.5"/>
+          <line x1="364" y1="134" x2="384" y2="146" stroke="#2A1A5A" stroke-width="1.5"/>
+
+          <!-- Outer ring nodes — smaller -->
+          <circle cx="400" cy="70" r="8" fill="none" stroke="#2A1A5A" stroke-width="1"/>
+          <circle cx="480" cy="105" r="8" fill="none" stroke="#2A1A5A" stroke-width="1"/>
+          <circle cx="510" cy="158" r="8" fill="none" stroke="#2A1A5A" stroke-width="1"/>
+          <circle cx="480" cy="211" r="8" fill="none" stroke="#2A1A5A" stroke-width="1"/>
+          <circle cx="400" cy="246" r="8" fill="none" stroke="#2A1A5A" stroke-width="1"/>
+          <circle cx="320" cy="211" r="8" fill="none" stroke="#2A1A5A" stroke-width="1"/>
+          <circle cx="290" cy="158" r="8" fill="none" stroke="#2A1A5A" stroke-width="1"/>
+          <circle cx="320" cy="105" r="8" fill="none" stroke="#2A1A5A" stroke-width="1"/>
+
+          <!-- Outer ring connections -->
+          <line x1="400" y1="78" x2="400" y2="86" stroke="#2A1A5A" stroke-width="1" opacity=".5"/>
+          <line x1="472" y1="110" x2="462" y2="118" stroke="#2A1A5A" stroke-width="1" opacity=".5"/>
+          <line x1="504" y1="158" x2="464" y2="158" stroke="#2A1A5A" stroke-width="1" opacity=".5"/>
+          <line x1="472" y1="206" x2="462" y2="198" stroke="#2A1A5A" stroke-width="1" opacity=".5"/>
+          <line x1="400" y1="238" x2="400" y2="230" stroke="#2A1A5A" stroke-width="1" opacity=".5"/>
+          <line x1="328" y1="206" x2="338" y2="198" stroke="#2A1A5A" stroke-width="1" opacity=".5"/>
+          <line x1="297" y1="158" x2="218" y2="158" stroke="#2A1A5A" stroke-width="1" opacity=".3"/>
+          <line x1="328" y1="110" x2="338" y2="118" stroke="#2A1A5A" stroke-width="1" opacity=".5"/>
+
+          <!-- Beam meets blockchain -->
+          <line x1="218" y1="155" x2="290" y2="158" stroke="#5A20CC" stroke-width="1.2" opacity=".5"/>
+          <line x1="218" y1="162" x2="290" y2="158" stroke="#5A20CC" stroke-width="1.2" opacity=".5"/>
+
+          <line x1="80" y1="274" x2="530" y2="274" stroke="#2A1A5A" stroke-width=".5" opacity=".1"/>
+        </svg>
+      </div>
+      <div style="padding:2rem;display:flex;flex-direction:column;gap:1.2rem;flex:1;">
+        <div style="font-family:'brandon-grotesque','DM Sans',sans-serif;font-size:.6rem;letter-spacing:.28em;text-transform:uppercase;color:rgba(255,255,255,.6);">AI-Enhanced</div>
+        <h3 style="font-family:'Playfair Display',serif;font-size:1.45rem;font-weight:800;color:#ffffff;line-height:1.2;">The future of content, <em style="color:#E8D4FF;font-style:italic;">intelligently made</em></h3>
+        <p style="font-family:'DM Sans',sans-serif;font-size:.78rem;line-height:1.85;color:rgba(255,255,255,.75);font-weight:300;">AI doesn't replace great creative thinking — it amplifies it. We incorporate cutting-edge AI tools into our production process to push creative boundaries, accelerate delivery, and produce content at a scale and quality that wasn't possible before.</p>
+        <div style="display:flex;flex-wrap:wrap;gap:.4rem;margin-top:auto;">
+          <span style="font-family:'brandon-grotesque','DM Sans',sans-serif;font-size:.52rem;letter-spacing:.12em;text-transform:uppercase;padding:.3rem .7rem;border:1px solid rgba(255,255,255,.5);color:rgba(255,255,255,.9);border-radius:100px;">AI Imagery</span>
+          <span style="font-family:'brandon-grotesque','DM Sans',sans-serif;font-size:.52rem;letter-spacing:.12em;text-transform:uppercase;padding:.3rem .7rem;border:1px solid rgba(255,255,255,.3);color:rgba(255,255,255,.7);border-radius:100px;">Generative Video</span>
+          <span style="font-family:'brandon-grotesque','DM Sans',sans-serif;font-size:.52rem;letter-spacing:.12em;text-transform:uppercase;padding:.3rem .7rem;border:1px solid rgba(255,255,255,.3);color:rgba(255,255,255,.7);border-radius:100px;">Smart Editing</span>
+          <span style="font-family:'brandon-grotesque','DM Sans',sans-serif;font-size:.52rem;letter-spacing:.12em;text-transform:uppercase;padding:.3rem .7rem;border:1px solid rgba(255,255,255,.3);color:rgba(255,255,255,.7);border-radius:100px;">Scale &amp; Speed</span>
+        </div>
+      </div>
+    </div>
+
+  </div>  </div>
+
+  <!-- CTA below cards -->
+  <div style="text-align:center;margin-top:2rem;" class="reveal d2">
+    <a href="/cdn-cgi/l/email-protection#3159545d5d5e71435e465d4842454455585e421f525e5c0e4244535b5452450c725e5f45545f451161435e55445245585e5f11745f4044584348" style="display:inline-flex;align-items:center;gap:.8rem;font-family:'brandon-grotesque','DM Sans',sans-serif;font-size:.72rem;font-weight:400;letter-spacing:.2em;text-transform:uppercase;color:var(--electric);text-decoration:none;transition:gap .3s;">
+      Discuss Your Production →
+    </a>
+  </div>
+
+</section>
+
+<!-- STATEMENT -->
+<div style="background:var(--cream,#F5F0E8);padding:6rem 5%;text-align:center;position:relative;overflow:hidden;">
+  <div style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);font-family:'Playfair Display',serif;font-size:16rem;font-weight:900;color:rgba(26,24,20,.04);line-height:1;pointer-events:none;white-space:nowrap;">&#8220;</div>
+  <div style="position:relative;z-index:2;max-width:820px;margin:0 auto;">
+    <div style="display:inline-flex;align-items:center;gap:1.5rem;font-family:'brandon-grotesque','DM Sans',sans-serif;font-size:.58rem;font-weight:400;letter-spacing:.35em;text-transform:uppercase;color:var(--gold,#C9A84C);margin-bottom:2rem;">
+      <span style="display:block;width:30px;height:1px;background:var(--navy,#2B4780);"></span>
+      The Rowly Studios Difference
+      <span style="display:block;width:30px;height:1px;background:var(--navy,#2B4780);"></span>
+    </div>
+    <p style="font-family:'Playfair Display',serif;font-size:clamp(1.6rem,3.5vw,2.8rem);font-weight:400;line-height:1.5;color:var(--navy-dark,#1A2E52);">Rowly Studios doesn't just redesign brands — they redefine <em style="font-style:italic;color:var(--navy,#2B4780);">how customers see them.</em></p>
+  </div>
+</div>
+
+<!-- HOME CTA -->
+<section class="home-cta" id="contact">
+  <div class="cta-l reveal">
+    <div class="stag">Free 15-Minute Consultation</div>
+    <h2 class="cta-title">Ready to build something <em>remarkable?</em></h2>
+    <p class="cta-body-txt">Whether you're a startup finding your feet, a corporate looking to sharpen your brand, or a luxury business ready to evolve — let's spend 15 minutes together. No pressure, no pitch. Just 20 years of strategy and proven ROAS growth focused entirely on your business.</p>
+  </div>
+  <div class="cta-card reveal d2">
+    <div class="cta-card-t">Book Your Free Consult</div>
+    <div class="cta-card-s">A complimentary 15-minute strategy call with our founder — 20 years of LA brand expertise, focused entirely on you.</div>
+    <div class="cta-perks">
+      <div class="cta-perk"><div class="cta-chk"><svg viewBox="0 0 12 12"><polyline points="2,6 5,9 10,3"/></svg></div><span class="cta-pt">Brand snapshot — what's working, what isn't</span></div>
+      <div class="cta-perk"><div class="cta-chk"><svg viewBox="0 0 12 12"><polyline points="2,6 5,9 10,3"/></svg></div><span class="cta-pt">Clear next steps tailored to your goals</span></div>
+      <div class="cta-perk"><div class="cta-chk"><svg viewBox="0 0 12 12"><polyline points="2,6 5,9 10,3"/></svg></div><span class="cta-pt">No obligation — just genuine expertise</span></div>
+      <div class="cta-perk"><div class="cta-chk"><svg viewBox="0 0 12 12"><polyline points="2,6 5,9 10,3"/></svg></div><span class="cta-pt">Open to startups, mid-size & luxury brands</span></div>
+    </div>
+    <a href="/cdn-cgi/l/email-protection#89e1ece5e5e6c9fbe6fee5f0fafdfcede0e6faa7eae6e4b6fafcebe3eceafdb4cffbececa9b8bca4c4e0e7fcfdeca9cae6e7fafce5fde8fde0e6e7a9dbecf8fcecfafd" class="cta-btn">Email Us to Book → <span class="__cf_email__" data-cfemail="4d25282121220d3f223a21343e39382924223e632e2220">[email&#160;protected]</span></a>
+    <div class="cta-note">We typically respond within 24 hours</div>
+  </div>
+</section>
+
+
+<script>
+// Cursor
+const cur = document.getElementById('cur');
+const ring = document.getElementById('ring');
+if(cur && ring){
+  document.addEventListener('mousemove', e => {
+    cur.style.left = e.clientX + 'px';
+    cur.style.top = e.clientY + 'px';
+    ring.style.left = e.clientX + 'px';
+    ring.style.top = e.clientY + 'px';
+  });
+}
+
+// Scroll to section
+function scrollToSection(id){
+  const el = document.getElementById(id);
+  if(el) el.scrollIntoView({behavior:'smooth'});
+}
+
+// Reveal on scroll
+function initReveal(){
+  const obs = new IntersectionObserver(entries=>{
+    entries.forEach(e=>{ if(e.isIntersecting) e.target.classList.add('visible'); });
+  },{threshold:.1});
+  document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+}
+initReveal();
+
+// Tell Wix iframe height
+function sendHeight(){
+  const h = document.body.scrollHeight;
+  window.parent.postMessage({type:'wix-height',height:h},'*');
+  if(window.Wix) window.Wix.setHeight(h);
+}
+sendHeight();
+window.addEventListener('load', sendHeight);
+setTimeout(sendHeight, 500);
+setTimeout(sendHeight, 1500);
+new ResizeObserver(sendHeight).observe(document.body);
+</script>
+</body>
+</html>
