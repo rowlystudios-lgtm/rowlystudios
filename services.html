@@ -394,6 +394,18 @@ footer{background:var(--navy-deep);border-top:1px solid rgba(255,255,255,.06);pa
   *{cursor:auto !important;}
   .nav-logo,.nav-links a,.nav-btn,.btn-primary,.btn-secondary,.view-all-services,.svc-cta-link,.cta-btn,.cta-big-btn{cursor:pointer !important;}
 }
+
+/* Content Production Panel */
+.cp-wrap{width:100%;padding:1rem;display:flex;flex-direction:column;gap:10px;flex:1;}
+.cp-still{width:100%;height:180px;border-radius:3px;overflow:hidden;position:relative;flex-shrink:0;}
+.cp-still img{width:100%;height:100%;object-fit:cover;object-position:center;display:block;}
+.cp-video{width:100%;border-radius:3px;overflow:hidden;position:relative;flex-shrink:0;}
+.cp-video iframe{position:absolute;top:0;left:0;width:100%;height:100%;border:none;}
+.cp-campaign{width:100%;height:180px;border-radius:3px;overflow:hidden;position:relative;flex-shrink:0;}
+.cp-campaign img{width:100%;height:100%;object-fit:cover;object-position:center;display:block;}
+@media(max-width:768px){
+  .cp-still,.cp-campaign{height:200px;}
+}
 </style>
 </head>
 <body>
@@ -558,31 +570,30 @@ footer{background:var(--navy-deep);border-top:1px solid rgba(255,255,255,.06);pa
     <div class="svc-visual">
       <div class="vis-panel vis-02">
         <div class="vis-glow vis-glow-02"></div>
-        <div class="vis-art" style="width:100%;padding:1rem;display:flex;flex-direction:column;gap:10px;flex:1;">
+        <div class="vis-art cp-wrap">
 
           <!-- Still 01 — top -->
-          <div style="width:100%;height:160px;border-radius:3px;overflow:hidden;position:relative;">
-            <img src="https://rowlystudios-lgtm.github.io/rowlystudios/NINJASEAMLESS2.jpg" alt="Still 01" style="width:100%;height:100%;object-fit:cover;object-position:center;display:block;">
+          <div class="cp-still">
+            <img src="https://rowlystudios-lgtm.github.io/rowlystudios/NINJASEAMLESS2.jpg" alt="Still 01">
           </div>
 
-          <!-- Brand Film — 4x5 video in centre -->
-          <div style="width:100%;aspect-ratio:4/5;background:#000;border-radius:3px;overflow:hidden;position:relative;">
+          <!-- Brand Film — 4x5 video -->
+          <div class="cp-video" style="aspect-ratio:4/5;background:#000;">
             <iframe
               src="https://player.vimeo.com/video/1177158647?autoplay=1&muted=1&loop=1&title=0&byline=0&portrait=0&color=00C2E0&background=1"
-              style="position:absolute;top:0;left:0;width:100%;height:100%;border:none;"
               allow="autoplay; fullscreen; picture-in-picture"
               allowfullscreen>
             </iframe>
           </div>
 
           <!-- Still 02 — below video -->
-          <div style="width:100%;height:160px;border-radius:3px;overflow:hidden;position:relative;">
-            <img src="https://rowlystudios-lgtm.github.io/rowlystudios/chrisfrost.png" alt="Still 02" style="width:100%;height:100%;object-fit:cover;object-position:center;display:block;">
+          <div class="cp-still">
+            <img src="https://rowlystudios-lgtm.github.io/rowlystudios/chrisfrost.png" alt="Still 02">
           </div>
 
           <!-- Campaign image — bottom -->
-          <div style="width:100%;height:160px;border-radius:3px;overflow:hidden;position:relative;">
-            <img src="https://rowlystudios-lgtm.github.io/rowlystudios/longimage.jpg" alt="Campaign" style="width:100%;height:100%;object-fit:cover;object-position:center;display:block;">
+          <div class="cp-campaign">
+            <img src="https://rowlystudios-lgtm.github.io/rowlystudios/longimage.jpg" alt="Campaign">
           </div>
 
         </div>
