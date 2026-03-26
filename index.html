@@ -275,7 +275,7 @@ nav{position:fixed;top:0;left:0;right:0;width:100%;z-index:200;display:flex;alig
 .ideal-tag{font-size:.6rem;font-weight:500;letter-spacing:.12em;text-transform:uppercase;padding:.3rem .8rem;border:1px solid rgba(255,255,255,.35);color:rgba(255,255,255,.85);border-radius:100px;}
 
 /* SERVICES CTA BANNER */
-.svc-cta-banner{background:var(--navy-deep);padding:7rem 5%;display:grid;grid-template-columns:1fr auto;gap:4rem;align-items:center;position:relative;overflow:hidden;}
+.svc-cta-banner{background:var(--navy-deep);padding:7rem 5%;display:grid;grid-template-columns:1fr auto;gap:4rem;align-items:center;position:relative;overflow:hidden;width:100%;box-sizing:border-box;}
 .svc-cta-banner::before{content:'';position:absolute;width:600px;height:600px;border-radius:50%;border:1px solid rgba(0,194,224,.05);right:-150px;top:50%;transform:translateY(-50%);pointer-events:none;}
 .svc-cta-banner-inner{position:relative;z-index:2;}
 .svc-cta-banner-tag{font-size:.58rem;font-weight:600;letter-spacing:.3em;text-transform:uppercase;color:var(--cyan);margin-bottom:1rem;display:flex;align-items:center;gap:.8rem;}
@@ -368,12 +368,41 @@ footer{background:var(--navy-deep);border-top:1px solid rgba(255,255,255,.06);pa
   div[style*="padding:6rem 5%;text-align:center"]{padding:3rem 5% !important;}
 
   /* Home CTA */
-  .home-cta{grid-template-columns:1fr;gap:2.5rem;padding:3.5rem 5%;}
-  .cta-title{font-size:2rem;}
-  .cta-card{padding:2rem;}
-
   /* Work/showreel */
   .portfolio{padding:3.5rem 5% 0;}
+
+  /* CTA Banner — stack vertically on mobile */
+  .svc-cta-banner{
+    display:flex !important;
+    flex-direction:column !important;
+    padding:3rem 5% !important;
+    gap:2rem !important;
+    width:100% !important;
+    box-sizing:border-box !important;
+    overflow:hidden !important;
+  }
+  .svc-cta-banner::before{display:none !important;}
+  .svc-cta-banner-inner{
+    width:100% !important;
+    box-sizing:border-box !important;
+  }
+  .svc-cta-banner-h{font-size:clamp(1.8rem,7vw,2.5rem) !important;}
+  .svc-cta-banner-sub{font-size:.85rem !important;max-width:100% !important;}
+  .svc-cta-right{
+    width:100% !important;
+    box-sizing:border-box !important;
+    align-items:stretch !important;
+    text-align:center !important;
+    flex-shrink:0 !important;
+  }
+  .cta-big-btn{
+    width:100% !important;
+    box-sizing:border-box !important;
+    white-space:normal !important;
+    padding:1rem !important;
+    font-size:.72rem !important;
+    justify-content:center !important;
+  }
 
   /* Marquee */
   .mq-track{animation-duration:16s;}
