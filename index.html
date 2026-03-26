@@ -304,77 +304,93 @@ footer{background:var(--navy-deep);border-top:1px solid rgba(255,255,255,.06);pa
    MOBILE RESPONSIVE
 ═══════════════════════════════ */
 @media(max-width:768px){
+  /* Base */
+  body{overflow-x:hidden;}
+  img,video,iframe{max-width:100%;}
+
   /* Nav */
   nav{padding:1rem 5%;}
   .nav-links{display:none;}
-  .nav-btn{font-size:.65rem;padding:.5rem 1rem;letter-spacing:.1em;}
+  .nav-btn{font-size:.62rem;padding:.5rem .9rem;letter-spacing:.08em;}
 
   /* Hero */
-  .hero{padding:7rem 5% 4rem;}
-  .hero-headline{font-size:clamp(2.6rem,11vw,4rem);}
+  .hero{padding:7rem 5% 4rem;min-height:auto;}
+  .hero-headline{font-size:clamp(2.4rem,10vw,3.8rem);}
   .hero-headline .outline{-webkit-text-stroke:1.5px rgba(0,194,224,.38);}
-  .hero-sub{font-size:.9rem;}
-  .hero-ctas{gap:1rem;}
-  .btn-primary,.btn-secondary{font-size:.75rem;padding:.85rem 1.5rem;}
-  .hero-stats{gap:1.5rem;flex-wrap:wrap;}
+  .hero-sub{font-size:.88rem;max-width:100%;}
+  .hero-ctas{flex-direction:column;align-items:flex-start;gap:.8rem;}
+  .btn-primary,.btn-secondary{width:100%;justify-content:center;font-size:.75rem;padding:.9rem 1.5rem;}
+  .hero-stats{gap:2rem;flex-wrap:wrap;padding-top:2rem;margin-top:3rem;}
   .stat-num{font-size:2rem;}
   .hero-bg-logo{display:none;}
 
   /* Intro */
-  .intro{grid-template-columns:1fr;gap:2rem;padding:3.5rem 5%;}
+  .intro{grid-template-columns:1fr;gap:2rem;padding:3rem 5%;}
+  .intro-quote{font-size:1.2rem;}
 
-  /* Services grid */
-  .home-svc{padding:4rem 5%;}
-  .home-svc-grid{grid-template-columns:1fr;}
-  .home-svc-head{flex-direction:column;align-items:flex-start;}
+  /* Services */
+  .home-svc{padding:3.5rem 5%;}
+  .home-svc-grid{grid-template-columns:1fr;gap:1px;}
+  .home-svc-head{flex-direction:column;align-items:flex-start;gap:1rem;}
+  .svc-card{padding:2rem;}
 
-  /* Why grid — magazine layout */
-  .why{padding:4rem 5%;}
-  section.why>div[style*="grid-template-columns:1fr 1fr"]{
+  /* Why — magazine layout single col */
+  .why{padding:3.5rem 5%;}
+  .why-grid{grid-template-columns:1fr;gap:2rem;}
+  div[style*="grid-row:1/3"]{grid-row:auto !important;min-height:320px !important;}
+  div[style*="grid-template-columns:1fr 1fr"][style*="grid-template-rows"]{
     grid-template-columns:1fr !important;
   }
-  div[style*="grid-row:1/3"]{
-    grid-row:auto !important;
-    min-height:360px !important;
+  div[style*="display:grid;grid-template-columns:1fr 1fr;grid-template-rows:auto auto"]{
+    grid-template-columns:1fr !important;
   }
 
   /* Portfolio */
-  .portfolio{padding:4rem 5%;}
-  .port-grid{grid-template-columns:1fr !important;grid-template-rows:auto !important;}
-  .p-card:first-child{grid-row:auto;}
-  .p-card{height:260px;}
+  .portfolio{padding:3.5rem 5%;}
+  .port-grid{grid-template-columns:1fr !important;grid-template-rows:280px 200px 200px !important;}
+  .p-card:first-child{grid-row:auto !important;}
+  .p-card{min-height:220px;}
+  .p-name{font-size:1.3rem !important;}
+  .p-card:first-child .p-name{font-size:1.6rem !important;}
+  .p-info{transform:none !important;padding:1.5rem;}
 
-  /* Production cards */
-  section[style*="grid-template-columns:repeat(3"]{
+  /* Production style cards — 3 → 1 col */
+  div[style*="grid-template-columns:repeat(3,1fr)"]{
     grid-template-columns:1fr !important;
+    gap:1.5rem !important;
   }
 
+  /* Production card illustrations — reduce height */
+  div[style*="padding-bottom:56.25%"]{padding-bottom:45% !important;}
+
   /* Statement */
-  div[style*="padding:6rem 5%"]{padding:3rem 5% !important;}
+  div[style*="padding:6rem 5%;text-align:center"]{padding:3rem 5% !important;}
 
-  /* CTA */
-  .home-cta{grid-template-columns:1fr;gap:2.5rem;padding:4rem 5%;}
-  .cta-title{font-size:2.2rem;}
+  /* Home CTA */
+  .home-cta{grid-template-columns:1fr;gap:2.5rem;padding:3.5rem 5%;}
+  .cta-title{font-size:2rem;}
+  .cta-card{padding:2rem;}
 
-  /* Work section */
-  section[id="work"]{padding:4rem 5%;}
+  /* Work/showreel */
+  .portfolio{padding:3.5rem 5% 0;}
 
   /* Marquee */
-  .mq-track{animation-duration:18s;}
+  .mq-track{animation-duration:16s;}
 
-  /* General spacing */
-  .stitle{font-size:clamp(1.8rem,7vw,2.8rem);}
-  section[style*="padding:7rem 5%"]{padding:4rem 5% !important;}
-  section[style*="padding:6rem 5%"]{padding:3.5rem 5% !important;}
+  /* General */
+  .stitle{font-size:clamp(1.7rem,6.5vw,2.6rem) !important;}
+  section[style*="padding:7rem 5%"]{padding:3.5rem 5% !important;}
+  section[style*="padding:6rem 5%"]{padding:3rem 5% !important;}
+  section[style*="padding:4rem 5% 3rem"]{padding:3rem 5% 2rem !important;}
 }
 
 @media(max-width:480px){
-  .hero-headline{font-size:clamp(2.2rem,12vw,3rem);}
-  .hero-stats{gap:1rem;}
-  .stat-num{font-size:1.8rem;}
-  .btn-primary,.btn-secondary{font-size:.7rem;padding:.75rem 1.2rem;letter-spacing:.1em;}
+  .hero-headline{font-size:clamp(2rem,11vw,2.8rem);}
+  .hero-stats{gap:1.5rem;}
+  .stat-num{font-size:1.7rem;}
   .home-svc-grid{gap:1px;}
-  .svc-card{padding:2rem;}
+  .svc-card{padding:1.5rem;}
+  .port-grid{grid-template-rows:240px 180px 180px !important;}
 }
 </style>
 </head>
@@ -399,7 +415,7 @@ footer{background:var(--navy-deep);border-top:1px solid rgba(255,255,255,.06);pa
     <li><a href="#work" onclick="scrollToSection('work');return false;">Work</a></li>
     <li><a href="#about" onclick="scrollToSection('about');return false;">About</a></li>
   </ul>
-  <a href="mailto:hello@rowlystudios.com?subject=Free%2015-Minute%20Consultation" class="nav-btn">Book Free Consult</a>
+  <a href="mailto:rowlystudios@gmail.com?subject=Free%2015-Minute%20Consultation" class="nav-btn">Book Free Consult</a>
 </nav>
 
 <!-- ═══════════════════════════════════════════════════════════
@@ -424,7 +440,7 @@ footer{background:var(--navy-deep);border-top:1px solid rgba(255,255,255,.06);pa
     </h1>
     <p class="hero-sub">Rowly Studios works <strong>alongside ambitious businesses</strong> to develop the brand identity, strategy, and content that makes them impossible to ignore — in any room, on any platform, in any market.</p>
     <div class="hero-ctas">
-      <a href="mailto:hello@rowlystudios.com?subject=Free%2015-Minute%20Consultation" class="btn-primary">Book Free 15-Min Consult →</a>
+      <a href="mailto:rowlystudios@gmail.com?subject=Free%2015-Minute%20Consultation" class="btn-primary">Book Free 15-Min Consult →</a>
       <a href="#work" class="btn-secondary" onclick="scrollToSection('work');return false;">View Our Work</a>
     </div>
     <div class="hero-stats">
@@ -616,14 +632,7 @@ footer{background:var(--navy-deep);border-top:1px solid rgba(255,255,255,.06);pa
       </div>
       <!-- Overlay gradient -->
       <div style="position:absolute;inset:0;background:linear-gradient(to top,rgba(10,18,40,.95) 0%,rgba(10,18,40,.2) 55%,transparent 100%);z-index:1;"></div>
-      <!-- Content -->
-      <div style="position:relative;z-index:2;">
-        <div style="font-family:'brandon-grotesque','DM Sans',sans-serif;font-size:.6rem;font-weight:400;letter-spacing:.3em;text-transform:uppercase;color:var(--cyan);margin-bottom:1rem;">Los Angeles</div>
-        <div style="font-family:'Playfair Display',serif;font-size:4rem;font-weight:900;color:white;line-height:1;">20<span style="color:var(--cyan);">+</span></div>
-        <div style="font-family:'brandon-grotesque','DM Sans',sans-serif;font-size:.65rem;letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,.5);margin-top:.3rem;">Years Building Brands in LA</div>
-        <div style="width:40px;height:2px;background:var(--cyan);margin-top:1.2rem;"></div>
-        <p style="font-family:'DM Sans',sans-serif;font-size:.8rem;line-height:1.8;color:rgba(255,255,255,.55);margin-top:1rem;font-weight:300;">Rooted in one of the world's most competitive creative markets — our network, instincts, and experience give clients an edge most agencies simply can't offer.</p>
-      </div>
+      <!-- Image only — no text overlay -->
     </div>
 
     <!-- PANEL 2 — IRL Activations (top right) -->
@@ -1084,7 +1093,7 @@ footer{background:var(--navy-deep);border-top:1px solid rgba(255,255,255,.06);pa
 
   <!-- CTA below cards -->
   <div style="text-align:center;margin-top:2rem;" class="reveal d2">
-    <a href="mailto:hello@rowlystudios.com?subject=Free%2015-Minute%20Consultation" style="display:inline-flex;align-items:center;gap:.8rem;font-family:'brandon-grotesque','DM Sans',sans-serif;font-size:.72rem;font-weight:400;letter-spacing:.2em;text-transform:uppercase;color:var(--electric);text-decoration:none;transition:gap .3s;">
+    <a href="mailto:rowlystudios@gmail.com?subject=Free%2015-Minute%20Consultation" style="display:inline-flex;align-items:center;gap:.8rem;font-family:'brandon-grotesque','DM Sans',sans-serif;font-size:.72rem;font-weight:400;letter-spacing:.2em;text-transform:uppercase;color:var(--electric);text-decoration:none;transition:gap .3s;">
       Discuss Your Production →
     </a>
   </div>
@@ -1120,7 +1129,7 @@ footer{background:var(--navy-deep);border-top:1px solid rgba(255,255,255,.06);pa
       <div class="cta-perk"><div class="cta-chk"><svg viewBox="0 0 12 12"><polyline points="2,6 5,9 10,3"/></svg></div><span class="cta-pt">No obligation — just genuine expertise</span></div>
       <div class="cta-perk"><div class="cta-chk"><svg viewBox="0 0 12 12"><polyline points="2,6 5,9 10,3"/></svg></div><span class="cta-pt">Open to startups, mid-size & luxury brands</span></div>
     </div>
-    <a href="mailto:hello@rowlystudios.com?subject=Free%2015-Minute%20Consultation" class="cta-btn">Email Us to Book → hello@rowlystudios.com</a>
+    <a href="mailto:rowlystudios@gmail.com?subject=Free%2015-Minute%20Consultation" class="cta-btn">Email Us to Book → hello@rowlystudios.com</a>
     <div class="cta-note">We typically respond within 24 hours</div>
   </div>
 </section>
