@@ -299,6 +299,50 @@ footer{background:var(--navy-deep);border-top:1px solid rgba(255,255,255,.06);pa
 .ft-links a{font-family:"brandon-grotesque",sans-serif;font-weight:400;font-style:normal;font-size:.7rem;letter-spacing:.18em;text-transform:uppercase;color:rgba(255,255,255,.3);text-decoration:none;transition:color .3s;cursor:none;}
 .ft-links a:hover{color:var(--cyan);}
 .ft-copy{font-size:.58rem;color:rgba(255,255,255,.18);letter-spacing:.1em;}
+
+/* ═══════════════════════════════
+   MOBILE RESPONSIVE — SERVICES
+═══════════════════════════════ */
+@media(max-width:768px){
+  nav{padding:1rem 5%;}
+  .nav-links{display:none;}
+  .nav-btn{font-size:.65rem;padding:.5rem 1rem;letter-spacing:.1em;}
+
+  /* Page hero */
+  .page-hero{padding:5rem 5% 2.5rem;}
+  .page-hero-h{font-size:clamp(2.2rem,9vw,3.5rem);}
+  .page-hero-sub{font-size:.9rem;}
+
+  /* Process strip */
+  .proc-strip{flex-wrap:wrap;}
+  .proc-step{flex:1 1 45%;border-right:none;border-bottom:1px solid rgba(255,255,255,.08);padding:1rem 1.5rem;}
+
+  /* Service sections */
+  .svc-sec{padding:4rem 5%;}
+  .svc-sec.wht{padding:3rem 5%;}
+  .svc-layout,.svc-layout.flip{grid-template-columns:1fr;direction:ltr;}
+  .svc-layout.flip>*{direction:ltr;}
+  .svc-number{font-size:3rem;}
+  .svc-heading{font-size:clamp(1.8rem,7vw,2.5rem);}
+
+  /* Visual panels */
+  .vis-panel{min-height:400px;padding:1.5rem;}
+
+  /* CTA banner */
+  .svc-cta-banner{grid-template-columns:1fr;gap:2rem;padding:4rem 5%;}
+  .svc-cta-right{width:100%;}
+  .cta-big-btn{width:100%;}
+
+  /* Footer */
+  footer{flex-direction:column;gap:1rem;text-align:center;}
+  .ft-links{justify-content:center;}
+}
+
+@media(max-width:480px){
+  .page-hero-h{font-size:clamp(1.9rem,10vw,2.5rem);}
+  .proc-step{flex:1 1 100%;}
+  .vis-panel{min-height:320px;}
+}
 </style>
 </head>
 <body>

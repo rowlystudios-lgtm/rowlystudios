@@ -299,6 +299,83 @@ footer{background:var(--navy-deep);border-top:1px solid rgba(255,255,255,.06);pa
 .ft-links a{font-family:"brandon-grotesque",sans-serif;font-weight:400;font-style:normal;font-size:.7rem;letter-spacing:.18em;text-transform:uppercase;color:rgba(255,255,255,.3);text-decoration:none;transition:color .3s;cursor:none;}
 .ft-links a:hover{color:var(--cyan);}
 .ft-copy{font-size:.58rem;color:rgba(255,255,255,.18);letter-spacing:.1em;}
+
+/* ═══════════════════════════════
+   MOBILE RESPONSIVE
+═══════════════════════════════ */
+@media(max-width:768px){
+  /* Nav */
+  nav{padding:1rem 5%;}
+  .nav-links{display:none;}
+  .nav-btn{font-size:.65rem;padding:.5rem 1rem;letter-spacing:.1em;}
+
+  /* Hero */
+  .hero{padding:7rem 5% 4rem;}
+  .hero-headline{font-size:clamp(2.6rem,11vw,4rem);}
+  .hero-headline .outline{-webkit-text-stroke:1.5px rgba(0,194,224,.38);}
+  .hero-sub{font-size:.9rem;}
+  .hero-ctas{gap:1rem;}
+  .btn-primary,.btn-secondary{font-size:.75rem;padding:.85rem 1.5rem;}
+  .hero-stats{gap:1.5rem;flex-wrap:wrap;}
+  .stat-num{font-size:2rem;}
+  .hero-bg-logo{display:none;}
+
+  /* Intro */
+  .intro{grid-template-columns:1fr;gap:2rem;padding:3.5rem 5%;}
+
+  /* Services grid */
+  .home-svc{padding:4rem 5%;}
+  .home-svc-grid{grid-template-columns:1fr;}
+  .home-svc-head{flex-direction:column;align-items:flex-start;}
+
+  /* Why grid — magazine layout */
+  .why{padding:4rem 5%;}
+  section.why>div[style*="grid-template-columns:1fr 1fr"]{
+    grid-template-columns:1fr !important;
+  }
+  div[style*="grid-row:1/3"]{
+    grid-row:auto !important;
+    min-height:360px !important;
+  }
+
+  /* Portfolio */
+  .portfolio{padding:4rem 5%;}
+  .port-grid{grid-template-columns:1fr !important;grid-template-rows:auto !important;}
+  .p-card:first-child{grid-row:auto;}
+  .p-card{height:260px;}
+
+  /* Production cards */
+  section[style*="grid-template-columns:repeat(3"]{
+    grid-template-columns:1fr !important;
+  }
+
+  /* Statement */
+  div[style*="padding:6rem 5%"]{padding:3rem 5% !important;}
+
+  /* CTA */
+  .home-cta{grid-template-columns:1fr;gap:2.5rem;padding:4rem 5%;}
+  .cta-title{font-size:2.2rem;}
+
+  /* Work section */
+  section[id="work"]{padding:4rem 5%;}
+
+  /* Marquee */
+  .mq-track{animation-duration:18s;}
+
+  /* General spacing */
+  .stitle{font-size:clamp(1.8rem,7vw,2.8rem);}
+  section[style*="padding:7rem 5%"]{padding:4rem 5% !important;}
+  section[style*="padding:6rem 5%"]{padding:3.5rem 5% !important;}
+}
+
+@media(max-width:480px){
+  .hero-headline{font-size:clamp(2.2rem,12vw,3rem);}
+  .hero-stats{gap:1rem;}
+  .stat-num{font-size:1.8rem;}
+  .btn-primary,.btn-secondary{font-size:.7rem;padding:.75rem 1.2rem;letter-spacing:.1em;}
+  .home-svc-grid{gap:1px;}
+  .svc-card{padding:2rem;}
+}
 </style>
 </head>
 <body>
@@ -531,24 +608,14 @@ footer{background:var(--navy-deep);border-top:1px solid rgba(255,255,255,.06);pa
   <!-- EDITORIAL MAGAZINE LAYOUT -->
   <div style="margin-top:3.5rem;display:grid;grid-template-columns:1fr 1fr;grid-template-rows:auto auto;gap:1.5px;background:var(--light-gray);" class="reveal d1">
 
-    <!-- PANEL 1 — Large image placeholder + 20 Years stat (left, tall) -->
+    <!-- PANEL 1 — Brand image + 20 Years stat (left, tall) -->
     <div style="grid-row:1/3;background:var(--navy-deep);position:relative;overflow:hidden;min-height:580px;display:flex;flex-direction:column;justify-content:flex-end;padding:2.5rem;">
-      <!-- Wix image goes here — drag and drop in Wix editor -->
-      <div style="position:absolute;inset:0;background:linear-gradient(160deg,#0F1B33 0%,#1A2E52 40%,#0F1B33 100%);">
-        <!-- Editorial grid lines decoration -->
-        <div style="position:absolute;inset:0;opacity:.06;background-image:linear-gradient(rgba(0,194,224,1) 1px,transparent 1px),linear-gradient(90deg,rgba(0,194,224,1) 1px,transparent 1px);background-size:40px 40px;"></div>
-        <!-- Large background number -->
-        <div style="position:absolute;bottom:-2rem;right:-1rem;font-family:'Playfair Display',serif;font-size:14rem;font-weight:900;color:rgba(0,194,224,.05);line-height:1;pointer-events:none;">20</div>
-      </div>
-      <!-- Wix image placeholder marker -->
-      <div style="position:absolute;top:50%;left:50%;transform:translate(-50%,-60%);text-align:center;z-index:1;">
-        <div style="width:64px;height:64px;border:1.5px solid rgba(255,255,255,.15);border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 1rem;">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,.3)" stroke-width="1.2" stroke-linecap="round"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
-        </div>
-        <div style="font-family:'brandon-grotesque','DM Sans',sans-serif;font-size:.55rem;letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,.2);">Add your image in Wix</div>
+      <!-- Brand image -->
+      <div style="position:absolute;inset:0;">
+        <img src="https://rowlystudios-lgtm.github.io/rowlystudios/RSimageweb(1).jpg" alt="Rowly Studios" style="width:100%;height:100%;object-fit:cover;object-position:center;display:block;">
       </div>
       <!-- Overlay gradient -->
-      <div style="position:absolute;inset:0;background:linear-gradient(to top,rgba(10,18,40,.95) 0%,rgba(10,18,40,.3) 50%,transparent 100%);z-index:1;"></div>
+      <div style="position:absolute;inset:0;background:linear-gradient(to top,rgba(10,18,40,.95) 0%,rgba(10,18,40,.2) 55%,transparent 100%);z-index:1;"></div>
       <!-- Content -->
       <div style="position:relative;z-index:2;">
         <div style="font-family:'brandon-grotesque','DM Sans',sans-serif;font-size:.6rem;font-weight:400;letter-spacing:.3em;text-transform:uppercase;color:var(--cyan);margin-bottom:1rem;">Los Angeles</div>
