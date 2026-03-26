@@ -558,34 +558,30 @@ footer{background:var(--navy-deep);border-top:1px solid rgba(255,255,255,.06);pa
     <div class="svc-visual">
       <div class="vis-panel vis-02">
         <div class="vis-glow vis-glow-02"></div>
-        <div class="vis-art" style="width:100%;padding:1rem;display:flex;flex-direction:column;gap:8px;flex:1;">
+        <div class="vis-art" style="width:100%;padding:1rem;display:flex;flex-direction:column;gap:10px;flex:1;">
 
-          <!-- Row 1: Brand Film (4x5 portrait) + small stills column -->
-          <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;align-items:stretch;">
-
-            <!-- Brand Film — 4x5 Vimeo embed -->
-            <div style="aspect-ratio:4/5;background:#000;border-radius:3px;overflow:hidden;position:relative;">
-              <iframe
-                src="https://player.vimeo.com/video/1177158647?autoplay=1&muted=1&loop=1&title=0&byline=0&portrait=0&color=00C2E0&background=1"
-                style="position:absolute;top:0;left:0;width:100%;height:100%;border:none;"
-                allow="autoplay; fullscreen; picture-in-picture"
-                allowfullscreen>
-              </iframe>
-            </div>
-
-            <!-- Right column: two portrait stills stacked -->
-            <div style="display:flex;flex-direction:column;gap:8px;">
-              <div style="flex:1;border-radius:3px;overflow:hidden;min-height:110px;position:relative;">
-                <img src="https://rowlystudios-lgtm.github.io/rowlystudios/NINJASEAMLESS2.jpg" alt="Still 01" style="width:100%;height:100%;object-fit:cover;object-position:center;display:block;">
-              </div>
-              <div style="flex:1;border-radius:3px;overflow:hidden;min-height:110px;position:relative;">
-                <img src="https://rowlystudios-lgtm.github.io/rowlystudios/chrisfrost.png" alt="Still 02" style="width:100%;height:100%;object-fit:cover;object-position:center;display:block;">
-              </div>
-            </div>
+          <!-- Still 01 — top -->
+          <div style="width:100%;height:160px;border-radius:3px;overflow:hidden;position:relative;">
+            <img src="https://rowlystudios-lgtm.github.io/rowlystudios/NINJASEAMLESS2.jpg" alt="Still 01" style="width:100%;height:100%;object-fit:cover;object-position:center;display:block;">
           </div>
 
-          <!-- Row 2: Campaign image -->
-          <div style="width:100%;height:180px;border-radius:3px;overflow:hidden;position:relative;">
+          <!-- Brand Film — 4x5 video in centre -->
+          <div style="width:100%;aspect-ratio:4/5;background:#000;border-radius:3px;overflow:hidden;position:relative;">
+            <iframe
+              src="https://player.vimeo.com/video/1177158647?autoplay=1&muted=1&loop=1&title=0&byline=0&portrait=0&color=00C2E0&background=1"
+              style="position:absolute;top:0;left:0;width:100%;height:100%;border:none;"
+              allow="autoplay; fullscreen; picture-in-picture"
+              allowfullscreen>
+            </iframe>
+          </div>
+
+          <!-- Still 02 — below video -->
+          <div style="width:100%;height:160px;border-radius:3px;overflow:hidden;position:relative;">
+            <img src="https://rowlystudios-lgtm.github.io/rowlystudios/chrisfrost.png" alt="Still 02" style="width:100%;height:100%;object-fit:cover;object-position:center;display:block;">
+          </div>
+
+          <!-- Campaign image — bottom -->
+          <div style="width:100%;height:160px;border-radius:3px;overflow:hidden;position:relative;">
             <img src="https://rowlystudios-lgtm.github.io/rowlystudios/longimage.jpg" alt="Campaign" style="width:100%;height:100%;object-fit:cover;object-position:center;display:block;">
           </div>
 

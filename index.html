@@ -15,7 +15,7 @@
   --mid-gray:#8A96AA;--text:#1A2030;
 }
 html{scroll-behavior:smooth;width:100%;overflow-x:hidden;}
-body{font-family:'DM Sans',sans-serif;background:var(--white);color:var(--text);overflow-x:hidden;cursor:none;width:100%;max-width:100%;margin:0;padding:0;box-sizing:border-box;}
+body{font-family:'DM Sans',sans-serif;background:var(--white);color:var(--text);overflow-x:hidden;cursor:none;width:100%;max-width:100vw;margin:0;padding:0;box-sizing:border-box;}
 *{box-sizing:border-box;}
 
 /* CURSOR */
@@ -170,8 +170,8 @@ nav{position:fixed;top:0;left:0;right:0;width:100%;z-index:200;display:flex;alig
 .testi-attr{font-size:.66rem;font-weight:600;letter-spacing:.24em;text-transform:uppercase;color:var(--mid-gray);}
 
 /* HOME CTA */
-.home-cta{background:var(--navy-deep);padding:5rem 5%;display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:center;position:relative;overflow:hidden;}
-.home-cta::before{content:'';position:absolute;width:700px;height:700px;border-radius:50%;border:1px solid rgba(0,194,224,.05);right:-200px;top:50%;transform:translateY(-50%);pointer-events:none;}
+.home-cta{background:var(--navy-deep);padding:5rem 5%;display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:center;position:relative;overflow:hidden;max-width:100%;}
+.home-cta::before{content:'';position:absolute;width:700px;height:700px;border-radius:50%;border:1px solid rgba(0,194,224,.05);right:-200px;top:50%;transform:translateY(-50%);pointer-events:none;overflow:hidden;}
 .home-cta::after{content:'';position:absolute;width:480px;height:480px;border-radius:50%;border:1px solid rgba(0,194,224,.04);right:-90px;top:50%;transform:translateY(-50%);pointer-events:none;}
 .cta-l{position:relative;z-index:2;}
 .cta-title{font-family:'Playfair Display',serif;font-size:clamp(2.4rem,5vw,4.4rem);font-weight:900;line-height:1.05;color:var(--white);margin-bottom:1.5rem;}
@@ -393,6 +393,12 @@ footer{background:var(--navy-deep);border-top:1px solid rgba(255,255,255,.06);pa
   .port-grid{grid-template-rows:240px 180px 180px !important;}
 }
 
+
+/* Prevent any section overflowing page width */
+section, .hero, .intro, .home-svc, .why, .portfolio, .home-cta, .testi, .mq{
+  max-width:100vw;
+  overflow-x:hidden;
+}
 @media(hover:none),(pointer:coarse){
   .cur,.ring{display:none !important;}
   *{cursor:auto !important;}
