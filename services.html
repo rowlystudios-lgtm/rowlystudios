@@ -512,19 +512,14 @@ footer{background:var(--navy-deep);border-top:1px solid rgba(255,255,255,.06);pa
           <!-- Row 1: Brand Film (4x5 portrait) + small stills column -->
           <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;align-items:stretch;">
 
-            <!-- Brand Film — 4x5 portrait ratio -->
-            <div style="aspect-ratio:4/5;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.18);border-radius:3px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;position:relative;overflow:hidden;">
-              <div style="position:absolute;inset:0;background:linear-gradient(160deg,rgba(0,194,224,.05) 0%,transparent 60%);"></div>
-              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,.3)" stroke-width="1.2" stroke-linecap="round"><polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2"/></svg>
-              <div style="text-align:center;">
-                <div style="font-family:'brandon-grotesque','DM Sans',sans-serif;font-size:.55rem;font-weight:400;letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,.35);">Brand Film</div>
-                <div style="font-family:'DM Sans',sans-serif;font-size:.45rem;color:rgba(255,255,255,.18);margin-top:3px;letter-spacing:.08em;">4 × 5</div>
-              </div>
-              <!-- Corner crop marks -->
-              <div style="position:absolute;top:8px;left:8px;width:12px;height:12px;border-top:1px solid rgba(255,255,255,.25);border-left:1px solid rgba(255,255,255,.25);"></div>
-              <div style="position:absolute;top:8px;right:8px;width:12px;height:12px;border-top:1px solid rgba(255,255,255,.25);border-right:1px solid rgba(255,255,255,.25);"></div>
-              <div style="position:absolute;bottom:8px;left:8px;width:12px;height:12px;border-bottom:1px solid rgba(255,255,255,.25);border-left:1px solid rgba(255,255,255,.25);"></div>
-              <div style="position:absolute;bottom:8px;right:8px;width:12px;height:12px;border-bottom:1px solid rgba(255,255,255,.25);border-right:1px solid rgba(255,255,255,.25);"></div>
+            <!-- Brand Film — 4x5 Vimeo embed -->
+            <div style="aspect-ratio:4/5;background:#000;border-radius:3px;overflow:hidden;position:relative;">
+              <iframe
+                src="https://player.vimeo.com/video/1177158647?autoplay=1&muted=1&loop=1&title=0&byline=0&portrait=0&color=00C2E0&background=1"
+                style="position:absolute;top:0;left:0;width:100%;height:100%;border:none;"
+                allow="autoplay; fullscreen; picture-in-picture"
+                allowfullscreen>
+              </iframe>
             </div>
 
             <!-- Right column: two portrait stills stacked -->
