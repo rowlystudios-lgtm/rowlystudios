@@ -385,7 +385,7 @@ footer{background:var(--navy-deep);border-top:1px solid rgba(255,255,255,.06);pa
 
 <!-- ═══ NAV ═══ -->
 <nav>
-  <a href="#" class="nav-logo" onclick="showPage('home');return false;">
+  <a href="index.html" class="nav-logo">
     <div class="nav-logo-ring">
       <svg width="24" height="24" viewBox="0 0 40 40" fill="none">
         <text x="20" y="27" text-anchor="middle" font-family="DM Sans,sans-serif" font-weight="700" font-size="18" fill="white">RS</text>
@@ -394,8 +394,8 @@ footer{background:var(--navy-deep);border-top:1px solid rgba(255,255,255,.06);pa
     <span class="nav-logo-text">Rowly Studios</span>
   </a>
   <ul class="nav-links">
-    <li><a href="#" id="nav-home" class="active" onclick="showPage('home');return false;">Home</a></li>
-    <li><a href="#" id="nav-services" href="services.html">Services</a></li>
+    <li><a href="index.html" id="nav-home" class="active">Home</a></li>
+    <li><a href="services.html" id="nav-services">Services</a></li>
     <li><a href="#" href="#work" onclick="scrollToSection('work');return false;">Work</a></li>
     <li><a href="#" href="#about" onclick="scrollToSection('about');return false;">About</a></li>
   </ul>
@@ -425,7 +425,7 @@ footer{background:var(--navy-deep);border-top:1px solid rgba(255,255,255,.06);pa
     <p class="hero-sub">Rowly Studios works <strong>alongside ambitious businesses</strong> to develop the brand identity, strategy, and content that makes them impossible to ignore — in any room, on any platform, in any market.</p>
     <div class="hero-ctas">
       <a href="/cdn-cgi/l/email-protection#127a777e7e7d52607d657e6b616667767b7d613c717d7f2d616770787771662f546077773223273f5f7b7c67667732517d7c61677e6673667b7d7c" class="btn-primary">Book Free 15-Min Consult →</a>
-      <a href="#" class="btn-secondary" onclick="showPage('home');scrollToSection('work');return false;">View Our Work</a>
+      <a href="#work" class="btn-secondary" onclick="scrollToSection('work');return false;">View Our Work</a>
     </div>
     <div class="hero-stats">
       <div><span class="stat-num">20<span>+</span></span><span class="stat-lbl">Years in LA</span></div>
@@ -597,7 +597,7 @@ footer{background:var(--navy-deep);border-top:1px solid rgba(255,255,255,.06);pa
       <div class="svc-tags"><span class="svc-tag">Brand Audit</span><span class="svc-tag">Positioning</span><span class="svc-tag">Strategy</span></div>
     </div>
   </div>
-  <a href="#" class="view-all-services reveal" onclick="showPage('services');return false;">See Full Service Details</a>
+  <a href="services.html" class="view-all-services reveal">See Full Service Details</a>
 </section>
 
 <!-- WHY -->
@@ -612,7 +612,7 @@ footer{background:var(--navy-deep);border-top:1px solid rgba(255,255,255,.06);pa
     <div style="grid-row:1/3;background:var(--navy-deep);position:relative;overflow:hidden;min-height:580px;display:flex;flex-direction:column;justify-content:flex-end;padding:2.5rem;">
       <!-- Brand image -->
       <div style="position:absolute;inset:0;">
-        <img src="https://rowlystudios-lgtm.github.io/rowlystudios/RSimageweb(1).jpg" alt="Rowly Studios" style="width:100%;height:100%;object-fit:cover;object-position:center;display:block;">
+        <img src="https://rowlystudios-lgtm.github.io/rowlystudios/RSimageweb(1).jpg" alt="Rowly Studios" style="width:100%;height:100%;object-fit:contain;object-position:center center;display:block;background:#0F1B33;">
       </div>
       <!-- Overlay gradient -->
       <div style="position:absolute;inset:0;background:linear-gradient(to top,rgba(10,18,40,.95) 0%,rgba(10,18,40,.2) 55%,transparent 100%);z-index:1;"></div>
