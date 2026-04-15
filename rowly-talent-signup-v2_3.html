@@ -1,0 +1,574 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Join Rowly Studios — Apply to the Network</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --navy:#2e4898;--navy-dk:#1e3070;--navy-lt:#eef1fb;
+  --teal:#1e6048;--teal-lt:#e0f4ee;
+  --grey:#f4f5f8;--rule:#d0d3dc;
+  --txt:#1a1f2e;--mid:#4a5068;--lt:#9098b0;
+  --white:#ffffff;--amber:#9a5800;--amber-lt:#fff8ec;
+  --green:#2d7a3a;--green-lt:#e8f5ec;--rose:#8b2252;
+}
+html{scroll-behavior:smooth}
+body{font-family:'DM Sans',sans-serif;background:var(--grey);color:var(--txt)}
+
+/* NAV */
+.nav{background:var(--navy);padding:0 40px;height:60px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:100;box-shadow:0 2px 12px rgba(30,48,112,.25)}
+.nav-logo{display:flex;align-items:center;gap:10px}
+.nb{width:34px;height:34px;border-radius:50%;background:#dde4f5;display:flex;align-items:center;justify-content:center;font-weight:700;color:var(--navy);font-size:12px}
+.nt{color:#fff;font-size:13px;font-weight:600;letter-spacing:2px}
+.nav-cta{color:#a8b8e0;font-size:12px;text-decoration:none;padding:7px 16px;border:1px solid rgba(255,255,255,.25);border-radius:6px;transition:.2s}
+.nav-cta:hover{color:#fff;background:rgba(255,255,255,.1)}
+
+/* HERO */
+.hero{background:linear-gradient(145deg,var(--navy-dk) 0%,var(--navy) 60%,#3a58b0 100%);padding:72px 40px 60px;overflow:hidden;position:relative}
+.hero::before{content:'';position:absolute;width:500px;height:500px;border-radius:50%;background:rgba(255,255,255,.03);top:-180px;right:-100px}
+.hero-inner{max-width:920px;margin:0 auto;display:grid;grid-template-columns:1.1fr 1fr;gap:60px;align-items:center;position:relative;z-index:1}
+.hero-eye{font-size:10px;letter-spacing:4px;color:#a8b8e0;text-transform:uppercase;margin-bottom:16px}
+.hero-h1{font-family:'Cormorant Garamond',serif;font-size:clamp(36px,5vw,56px);font-weight:300;color:#fff;line-height:1.1;margin-bottom:16px}
+.hero-h1 em{font-style:italic;color:#c8d8f8}
+.hero-sub{font-size:14px;color:#a8b8e0;line-height:1.8;margin-bottom:28px}
+.hero-btn{display:inline-block;padding:14px 28px;background:#fff;color:var(--navy);border-radius:8px;font-size:14px;font-weight:700;text-decoration:none;transition:.2s}
+.hero-btn:hover{background:#dde4f5;transform:translateY(-2px)}
+.hero-quote-box{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.12);border-radius:12px;padding:28px}
+.quote-main{font-family:'Cormorant Garamond',serif;font-size:19px;font-style:italic;color:#fff;line-height:1.6;margin-bottom:16px}
+.quote-divider{width:36px;height:2px;background:rgba(255,255,255,.3);margin-bottom:14px}
+.pills{display:flex;flex-wrap:wrap;gap:6px}
+.pill{padding:4px 12px;border-radius:20px;font-size:11px;border:1px solid rgba(255,255,255,.2);color:rgba(255,255,255,.75);background:rgba(255,255,255,.06)}
+
+/* BENEFITS */
+.benefits{padding:68px 40px;background:#fff}
+.bi{max-width:920px;margin:0 auto}
+.sec-eye{font-size:10px;letter-spacing:4px;color:var(--navy);text-transform:uppercase;margin-bottom:10px;font-weight:600}
+.sec-h{font-family:'Cormorant Garamond',serif;font-size:34px;font-weight:300;margin-bottom:8px;line-height:1.2}
+.sec-h em{font-style:italic;color:var(--navy)}
+.sec-sub{font-size:13px;color:var(--mid);line-height:1.7;max-width:540px;margin-bottom:40px}
+.bens{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-bottom:36px}
+.ben{padding:22px;border-radius:10px;border:1px solid var(--rule);transition:.2s}
+.ben:hover{transform:translateY(-2px);box-shadow:0 6px 18px rgba(0,0,0,.07)}
+.ben-i{font-size:24px;margin-bottom:12px}
+.ben-t{font-size:13px;font-weight:700;margin-bottom:5px}
+.ben-d{font-size:12px;color:var(--mid);line-height:1.65}
+
+/* RATES */
+.rates-strip{background:var(--navy);padding:36px 40px}
+.rates-inner{max-width:920px;margin:0 auto}
+.rates-title{color:#fff;font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:300;margin-bottom:4px}
+.rates-sub{color:#a8b8e0;font-size:12px;margin-bottom:20px}
+.rates-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:8px}
+.rate-item{background:rgba(255,255,255,.08);border-radius:8px;padding:14px 12px;border:1px solid rgba(255,255,255,.1)}
+.rate-disc{font-size:10px;color:#a8b8e0;text-transform:uppercase;letter-spacing:1px;margin-bottom:5px}
+.rate-num{font-family:'Cormorant Garamond',serif;font-size:18px;color:#fff}
+.rate-note{font-size:10px;color:rgba(255,255,255,.45);margin-top:2px}
+
+/* HOW IT WORKS */
+.how{padding:60px 40px;background:var(--grey)}
+.hi{max-width:920px;margin:0 auto}
+.how-steps{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:32px}
+.hs{background:#fff;border-radius:10px;padding:20px;border:1px solid var(--rule);position:relative}
+.hs-num{font-family:'Cormorant Garamond',serif;font-size:34px;color:var(--navy-lt);line-height:1;margin-bottom:8px}
+.hs-t{font-size:13px;font-weight:700;color:var(--navy);margin-bottom:5px}
+.hs-d{font-size:11.5px;color:var(--mid);line-height:1.6}
+.hs-arr{position:absolute;right:-8px;top:50%;transform:translateY(-50%);color:var(--lt);font-size:16px}
+
+/* FORM SECTION */
+.form-section{padding:60px 40px;background:var(--grey)}
+.fi{max-width:700px;margin:0 auto}
+.form-card{background:#fff;border-radius:14px;border:1px solid var(--rule);overflow:hidden;box-shadow:0 4px 28px rgba(0,0,0,.07)}
+.form-hdr{background:linear-gradient(135deg,var(--navy-dk),var(--navy));padding:28px 32px}
+.form-hdr-t{font-family:'Cormorant Garamond',serif;font-size:24px;font-weight:300;color:#fff;margin-bottom:6px}
+.form-hdr-s{font-size:12.5px;color:#a8b8e0;line-height:1.6}
+.form-body{padding:30px 32px}
+.step-label{font-size:9.5px;font-weight:700;letter-spacing:3px;color:var(--navy);text-transform:uppercase;padding:10px 0 10px;border-bottom:1px solid var(--rule);margin:20px 0 16px;display:flex;align-items:center;gap:8px}
+.step-label:first-child{margin-top:0}
+.step-num{width:20px;height:20px;border-radius:50%;background:var(--navy);color:#fff;font-size:9px;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.fg{margin-bottom:14px}
+.fl{font-size:11px;font-weight:600;color:var(--txt);margin-bottom:5px;display:block;letter-spacing:.3px}
+.fl .opt{color:var(--lt);font-weight:400}
+.fi2,.fs,.fta{width:100%;padding:11px 14px;border:1.5px solid var(--rule);border-radius:8px;font-size:13px;font-family:'DM Sans',sans-serif;color:var(--txt);background:#fff;outline:none;transition:all .2s}
+.fi2:focus,.fs:focus,.fta:focus{border-color:var(--navy);box-shadow:0 0 0 3px rgba(46,72,152,.07)}
+.fta{resize:vertical;min-height:80px;line-height:1.6}
+.fr{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.fi2::placeholder{color:var(--lt)}
+
+/* Reel upload */
+.reel-box{background:var(--grey);border:2px dashed var(--rule);border-radius:10px;padding:28px;text-align:center;transition:.2s;cursor:pointer;position:relative}
+.reel-box:hover,.reel-box.drag{border-color:var(--navy);background:var(--navy-lt)}
+.reel-box input[type=file]{position:absolute;inset:0;opacity:0;cursor:pointer;width:100%;height:100%}
+.reel-icon{font-size:28px;margin-bottom:8px}
+.reel-t{font-size:13px;font-weight:600;margin-bottom:4px}
+.reel-s{font-size:11.5px;color:var(--lt);line-height:1.6}
+.reel-spec{display:inline-block;margin-top:8px;padding:3px 10px;border-radius:4px;background:var(--navy-lt);color:var(--navy);font-size:10.5px;font-weight:600}
+.reel-preview{display:none;align-items:center;gap:10px;padding:10px 14px;background:var(--green-lt);border-radius:8px;border:1px solid var(--green);margin-top:10px}
+.reel-preview.show{display:flex}
+.reel-name{font-size:12px;font-weight:600;color:var(--green);flex:1;word-break:break-all}
+.reel-remove{font-size:11px;color:var(--lt);cursor:pointer;padding:3px 8px;border:1px solid var(--rule);border-radius:4px;background:#fff;white-space:nowrap}
+.reel-or{text-align:center;color:var(--lt);font-size:11px;margin:10px 0;position:relative}
+.reel-or::before,.reel-or::after{content:'';position:absolute;top:50%;width:42%;height:1px;background:var(--rule)}
+.reel-or::before{left:0}.reel-or::after{right:0}
+
+/* Agreement */
+.agree-box{border:1.5px solid var(--rule);border-radius:10px;overflow:hidden;margin-bottom:18px}
+.agree-hdr{background:var(--navy);padding:13px 18px;display:flex;justify-content:space-between;align-items:center}
+.agree-hdr-t{color:#fff;font-size:13px;font-weight:600}
+.agree-badge{background:rgba(255,255,255,.15);color:rgba(255,255,255,.8);font-size:9.5px;padding:3px 9px;border-radius:3px;font-weight:600;letter-spacing:1px}
+.agree-body{padding:16px 18px;max-height:240px;overflow-y:auto;background:#fff;font-size:11.5px;color:var(--mid);line-height:1.85}
+.agree-body h4{font-size:10.5px;font-weight:700;color:var(--txt);letter-spacing:1px;text-transform:uppercase;margin:14px 0 5px}
+.agree-body h4:first-child{margin-top:0}
+.agree-body p{margin-bottom:8px}
+.agree-body strong{color:var(--txt)}
+.agree-check-area{padding:14px 18px;background:var(--navy-lt);border-top:1px solid var(--rule);display:flex;gap:12px;align-items:flex-start}
+.agree-check-area input{width:18px;height:18px;margin-top:1px;accent-color:var(--navy);flex-shrink:0;cursor:pointer}
+.agree-check-area label{font-size:12px;color:var(--txt);line-height:1.65;cursor:pointer}
+.agree-check-area label strong{color:var(--navy)}
+
+/* Submit */
+.submit-btn{width:100%;padding:15px;background:var(--navy);color:#fff;border:none;border-radius:9px;font-size:14px;font-weight:700;cursor:pointer;font-family:'DM Sans',sans-serif;transition:.2s;margin-top:4px;letter-spacing:.3px}
+.submit-btn:hover:not(:disabled){background:var(--navy-dk);transform:translateY(-1px);box-shadow:0 6px 20px rgba(46,72,152,.28)}
+.submit-btn:disabled{background:var(--rule);color:var(--lt);cursor:default;transform:none;box-shadow:none}
+.submit-note{text-align:center;font-size:11px;color:var(--lt);margin-top:9px;line-height:1.6}
+.err-msg{background:#fef2f2;border:1px solid #fca5a5;border-radius:8px;padding:11px 15px;font-size:12px;color:#b91c1c;margin-bottom:14px;display:none}
+.err-msg.show{display:block}
+.loading{display:none;text-align:center;padding:12px}
+.loading.show{display:block}
+
+/* Success */
+.success{display:none;padding:44px 32px;text-align:center}
+.success.show{display:block}
+.success-tick{width:60px;height:60px;border-radius:50%;background:var(--green-lt);border:2px solid var(--green);display:flex;align-items:center;justify-content:center;margin:0 auto 18px;font-size:26px}
+.success-h{font-family:'Cormorant Garamond',serif;font-size:26px;font-weight:300;margin-bottom:8px}
+.success-p{font-size:13px;color:var(--mid);line-height:1.8;max-width:380px;margin:0 auto 22px}
+.next-steps{background:var(--navy-lt);border-radius:10px;padding:18px;text-align:left}
+.next-steps-t{font-size:10px;font-weight:700;color:var(--navy);letter-spacing:2px;text-transform:uppercase;margin-bottom:12px}
+.ns{display:flex;gap:10px;margin-bottom:9px;font-size:12px;color:var(--mid)}
+.ns-num{width:20px;height:20px;border-radius:50%;background:var(--navy);color:#fff;display:flex;align-items:center;justify-content:center;font-size:9px;font-weight:700;flex-shrink:0;margin-top:1px}
+
+/* Footer */
+footer{background:var(--txt);padding:32px 40px;text-align:center}
+footer p{font-size:12px;color:#4a5568;line-height:1.8}
+
+@media(max-width:720px){
+  .hero-inner,.fr,.bens,.how-steps,.rates-grid{grid-template-columns:1fr}
+  .hero-quote-box,.hs-arr{display:none}
+  .nav,.hero,.benefits,.rates-strip,.how,.form-section{padding-left:20px;padding-right:20px}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav">
+  <div class="nav-logo">
+    <div class="nb">RS</div>
+    <span class="nt">ROWLY STUDIOS</span>
+  </div>
+  <a href="#apply" class="nav-cta">Apply Now →</a>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-inner">
+    <div>
+      <div class="hero-eye">Rowly Studios · Los Angeles · Talent Network</div>
+      <h1 class="hero-h1">The only thing<br>you'll lose is the<br>feeling of being<br><em>undervalued.</em></h1>
+      <p class="hero-sub">Join the Rowly Studios talent network. We connect vetted creative professionals with brands that have the budget — and we actively promote your work to get you there.</p>
+      <a href="#apply" class="hero-btn">Apply to Join →</a>
+    </div>
+    <div class="hero-quote-box">
+      <div class="quote-main">"We don't just place you on jobs. We promote you, protect your rates, and make sure the right brands find you."</div>
+      <div class="quote-divider"></div>
+      <div class="pills">
+        <span class="pill">🎬 Directors & DPs</span>
+        <span class="pill">✂️ Editors</span>
+        <span class="pill">📸 Photographers</span>
+        <span class="pill">🎭 Actors</span>
+        <span class="pill">💄 MUAs & Stylists</span>
+        <span class="pill">🏙 IRL Activators</span>
+        <span class="pill">🎙 Sound Engineers</span>
+        <span class="pill">💡 Creative Directors</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BENEFITS -->
+<section class="benefits">
+  <div class="bi">
+    <div class="sec-eye">Why Join</div>
+    <h2 class="sec-h">What you gain.<br><em>What you never lose.</em></h2>
+    <p class="sec-sub">Rowly Studios Approved is more than a badge — it is a working infrastructure behind your freelance career that eliminates the worst parts of going it alone.</p>
+    <div class="bens">
+      <div class="ben" style="border-color:rgba(46,72,152,.2);background:var(--navy-lt)">
+        <div class="ben-i">💰</div>
+        <div class="ben-t" style="color:var(--navy)">Guaranteed Rate Floor</div>
+        <div class="ben-d">Starting at <strong>$450/day and up</strong> — confirmed personally at onboarding based on your discipline and experience. You never go out on a Rowly Studios job below that figure.</div>
+      </div>
+      <div class="ben">
+        <div class="ben-i">🔗</div>
+        <div class="ben-t">Consistent Pipeline</div>
+        <div class="ben-d">We source the work. You focus on the craft. No more grinding every platform for the next job — RS brings clients directly to you.</div>
+      </div>
+      <div class="ben">
+        <div class="ben-i">🎬</div>
+        <div class="ben-t">Your RS Spotlight Reel</div>
+        <div class="ben-d">We take your submitted demo, add our branding, and publish a spotlight reel across RS channels — straight to an audience of brands and marketing directors.</div>
+      </div>
+      <div class="ben">
+        <div class="ben-i">📱</div>
+        <div class="ben-t">Post On-Set &amp; Get Featured</div>
+        <div class="ben-d">Post your on-set work to your own social and tag RS — we reshare, amplify, and regularly feature your best content across our Instagram and LinkedIn to an active audience of brands and marketing directors.</div>
+      </div>
+      <div class="ben" style="border-color:rgba(30,96,72,.2);background:var(--teal-lt)">
+        <div class="ben-i">✅</div>
+        <div class="ben-t" style="color:var(--teal)">Your Clients Stay Yours</div>
+        <div class="ben-d">No exclusivity. No non-compete on your existing relationships. Every client you already have stays yours. <strong>Always. No exceptions.</strong></div>
+      </div>
+      <div class="ben">
+        <div class="ben-i">💳</div>
+        <div class="ben-t">Paid Within 14 Days</div>
+        <div class="ben-d">RS pays you within 14 days of invoice approval — regardless of when the client pays us. No chasing. No uncertainty.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- RATES -->
+<section class="rates-strip">
+  <div class="rates-inner">
+    <div class="rates-title">Guaranteed Rate Floors</div>
+    <div class="rates-sub">Starting at $450/day and up — floor confirmed personally at your onboarding call</div>
+    <div class="rates-grid">
+      <div class="rate-item"><div class="rate-disc">DP / Camera Op</div><div class="rate-num">$500–$900</div><div class="rate-note">per day</div></div>
+      <div class="rate-item"><div class="rate-disc">Editor</div><div class="rate-num">$450–$750</div><div class="rate-note">per day</div></div>
+      <div class="rate-item"><div class="rate-disc">Photographer</div><div class="rate-num">$500–$950</div><div class="rate-note">per day</div></div>
+      <div class="rate-item"><div class="rate-disc">MUA / Hair / Stylist</div><div class="rate-num">$450–$900</div><div class="rate-note">per day</div></div>
+      <div class="rate-item"><div class="rate-disc">Actor / Activator</div><div class="rate-num">$500–$950</div><div class="rate-note">per day</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section class="how">
+  <div class="hi">
+    <div class="sec-eye">The Process</div>
+    <h2 class="sec-h">Four steps from<br><em>application to live.</em></h2>
+    <div class="how-steps">
+      <div class="hs"><div class="hs-num">01</div><div class="hs-t">You Apply</div><div class="hs-d">Fill in the form, upload your 4×5 demo, agree to the terms. Takes 5 minutes.</div><div class="hs-arr">›</div></div>
+      <div class="hs"><div class="hs-num">02</div><div class="hs-t">We Review</div><div class="hs-d">RS reviews your application and demo reel within 48 hours. Personal, not automated.</div><div class="hs-arr">›</div></div>
+      <div class="hs"><div class="hs-num">03</div><div class="hs-t">You're Approved</div><div class="hs-d">We email you with your rate floor, a call to confirm details, and your agreement copy.</div><div class="hs-arr">›</div></div>
+      <div class="hs"><div class="hs-num">04</div><div class="hs-t">You Go Live</div><div class="hs-d">Profile live on the platform. Spotlight reel created and posted. Jobs start coming through.</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- APPLICATION FORM -->
+<section class="form-section" id="apply">
+  <div class="fi">
+    <div class="form-card">
+      <div class="form-hdr">
+        <div class="form-hdr-t">Apply to Become Rowly Studios Approved</div>
+        <div class="form-hdr-s">Every application is reviewed personally. We respond within 48 hours.</div>
+      </div>
+
+      <!-- FORM -->
+      <form class="form-body" id="mainForm" novalidate>
+        <div class="err-msg" id="errMsg"></div>
+
+        <!-- STEP 1 -->
+        <div class="step-label"><div class="step-num">1</div>Your Details</div>
+        <div class="fr">
+          <div class="fg"><label class="fl">First Name</label><input class="fi2" id="f_firstName" placeholder="First name" required></div>
+          <div class="fg"><label class="fl">Last Name</label><input class="fi2" id="f_lastName" placeholder="Last name" required></div>
+        </div>
+        <div class="fg"><label class="fl">Email Address</label><input class="fi2" id="f_email" type="email" placeholder="your@email.com" required></div>
+        <div class="fr">
+          <div class="fg"><label class="fl">Phone <span class="opt">(optional)</span></label><input class="fi2" id="f_phone" type="tel" placeholder="+1 (000) 000 0000"></div>
+          <div class="fg"><label class="fl">Based In</label><input class="fi2" id="f_location" placeholder="e.g. Los Angeles, CA" required></div>
+        </div>
+
+        <!-- STEP 2 -->
+        <div class="step-label"><div class="step-num">2</div>Your Craft</div>
+        <div class="fg">
+          <label class="fl">Primary Discipline</label>
+          <select class="fs" id="f_discipline" required>
+            <option value="">Select your discipline</option>
+            <optgroup label="Production Crew">
+              <option>Director</option><option>DP / Camera Operator</option><option>Videographer</option>
+              <option>Editor</option><option>Photographer</option><option>Motion Designer</option><option>Sound Engineer</option>
+            </optgroup>
+            <optgroup label="Beauty & Style">
+              <option>Makeup Artist</option><option>Hair Stylist</option><option>Fashion Stylist</option><option>Prop Stylist</option>
+            </optgroup>
+            <optgroup label="On-Screen Talent">
+              <option>Actor / Talent</option><option>Host / Presenter</option><option>Voiceover Artist</option>
+            </optgroup>
+            <optgroup label="IRL & Activation">
+              <option>Brand Activator</option><option>Street Performer</option><option>Event Host</option>
+            </optgroup>
+            <optgroup label="Creative Leadership">
+              <option>Creative Director</option><option>Brand Strategist</option>
+            </optgroup>
+          </select>
+        </div>
+        <div class="fr">
+          <div class="fg">
+            <label class="fl">Years of Experience</label>
+            <select class="fs" id="f_experience" required>
+              <option value="">Select</option>
+              <option>Junior 0-2yrs</option><option>Mid 3-6yrs</option><option>Senior 7+ yrs</option>
+            </select>
+          </div>
+          <div class="fg"><label class="fl">Current Day Rate</label><input class="fi2" id="f_currentRate" placeholder="e.g. $350/day" required></div>
+        </div>
+        <div class="fg"><label class="fl">Your Specialty</label><input class="fi2" id="f_specialty" placeholder="e.g. Fashion campaigns and editorial photography" required></div>
+        <div class="fg">
+          <label class="fl">Tell Us About Your Work <span class="opt">(2–4 sentences)</span></label>
+          <textarea class="fta" id="f_bio" placeholder="Write as you'd speak. What do you do, who do you work with, what makes your work distinctive?" required></textarea>
+        </div>
+        <div class="fr">
+          <div class="fg"><label class="fl">Notable Brand or Credit <span class="opt">(optional)</span></label><input class="fi2" id="f_credit" placeholder="e.g. Campaigns for Nike, Glossier"></div>
+          <div class="fg"><label class="fl">Equipment or Skills <span class="opt">(optional)</span></label><input class="fi2" id="f_equipment" placeholder="e.g. Sony FX3, Premiere Pro, full kit"></div>
+        </div>
+        <div class="fg"><label class="fl">Portfolio or Reel Link</label><input class="fi2" id="f_portfolioLink" type="url" placeholder="Vimeo, website, or Google Drive link" required></div>
+
+        <!-- STEP 3 — DEMO REEL -->
+        <div class="step-label"><div class="step-num">3</div>Your 4×5 Demo Reel</div>
+        <p style="font-size:12px;color:var(--mid);margin-bottom:14px;line-height:1.7">Upload your best 60–90 seconds of work in 4×5 format. This is what we review to assess your quality standard. Your existing reel is perfect — no need to create something new.</p>
+
+        <div class="reel-box" id="reelZone" onclick="document.getElementById('reelFile').click()">
+          <input type="file" id="reelFile" accept="video/mp4,video/quicktime,video/mov,video/*" style="display:none" onchange="handleReel(this)">
+          <div class="reel-icon">🎬</div>
+          <div class="reel-t">Drop your 4×5 demo reel here</div>
+          <div class="reel-s">Click to browse · MP4 or MOV · Max 200MB</div>
+          <div class="reel-spec">4×5 format · 60–90 seconds ideal</div>
+        </div>
+        <div class="reel-preview" id="reelPreview">
+          <span>✓</span><span class="reel-name" id="reelName"></span>
+          <span class="reel-remove" onclick="removeReel()">Remove</span>
+        </div>
+        <div class="reel-or">or share a link instead</div>
+        <div class="fg" style="margin-bottom:4px"><input class="fi2" id="f_reelLink" type="url" placeholder="Google Drive, Dropbox, Vimeo, or WeTransfer link to your 4×5 reel"></div>
+        <p style="font-size:11px;color:var(--lt);margin-bottom:0;line-height:1.6">A link or an upload — one of the two is required. Both is fine too.</p>
+
+        <!-- STEP 4 -->
+        <div class="step-label"><div class="step-num">4</div>Availability</div>
+        <div class="fg">
+          <label class="fl">Your Availability</label>
+          <select class="fs" id="f_availability" required>
+            <option value="">Select</option>
+            <option>Full-time freelance</option><option>Part-time select days</option><option>Project by project</option>
+          </select>
+        </div>
+        <div class="fg">
+          <label class="fl">What are you looking for that you're not getting from your current setup?</label>
+          <textarea class="fta" id="f_openQuestion" placeholder="Be honest. This is the question that matters most." required></textarea>
+        </div>
+
+        <!-- STEP 5 — AGREEMENT -->
+        <div class="step-label"><div class="step-num">5</div>Contractor Agreement</div>
+        <p style="font-size:12px;color:var(--mid);margin-bottom:14px;line-height:1.7">Read the full agreement below before checking the box. A copy will be emailed to you upon approval.</p>
+
+        <div class="agree-box">
+          <div class="agree-hdr">
+            <span class="agree-hdr-t">Rowly Studios — Contractor Agreement</span>
+            <span class="agree-badge">READ IN FULL</span>
+          </div>
+          <div class="agree-body">
+            <h4>Introduction</h4>
+            <p>This agreement is between Rowly Studios ("the Agency") and you ("the Contractor"). It is written in plain language. Our goal is a partnership that works for both of us.</p>
+
+            <h4>1. What Rowly Studios Provides</h4>
+            <p>As a Rowly Studios Approved contractor you receive: consistent client job placement; a guaranteed rate floor on every RS-sourced job (starting at <strong>$450/day and up</strong>, confirmed at onboarding); a profile on the RS talent roster with regular social media spotlight features; and professional infrastructure including client communication, invoicing support, and brief management handled by the Agency.</p>
+
+            <h4>2. Rates & Payment</h4>
+            <p>Your agreed minimum day rate will be confirmed in your approval email. RS applies a placement markup to the client rate. Your agreed day rate is what you receive — the markup is the Agency fee and is <strong>never deducted from your payment</strong>.</p>
+            <p>RS pays contractors <strong>within 14 days of invoice approval</strong>, regardless of when the client pays RS. You invoice RS only — never the client directly.</p>
+            <p>Rates are reviewed by mutual agreement every 6 months.</p>
+
+            <h4>3. Your Existing Clients — Fully Protected</h4>
+            <p><strong>Your existing client relationships are entirely and unconditionally yours.</strong> This agreement does not affect them in any way. You may continue to work with any client you currently have, independently and without any obligation to the Agency. This cannot be changed.</p>
+            <p>If you choose to bring an existing client under the Rowly Studios umbrella to access insurance or production infrastructure, a reduced referral rate applies. This is always optional and agreed in advance.</p>
+
+            <h4>4. Non-Solicitation</h4>
+            <p>This clause applies <strong>only to clients that Rowly Studios introduces you to</strong> — it does not apply to your existing clients under any circumstances whatsoever.</p>
+            <p>For 12 months following the completion of a Rowly-sourced project, you agree not to work directly with that specific client outside of the Agency without prior written consent from RS. If a Rowly-sourced client approaches you directly, you agree to notify the Agency within 7 days.</p>
+            <p><strong>This is not a non-compete.</strong> You are free to work with any other agency, platform, or client independently at any time.</p>
+
+            <h4>5. Intellectual Property</h4>
+            <p>IP terms are agreed per project in the brief. Default: the client owns final deliverables upon full payment. The contractor retains no rights to deliverables from RS-placed projects unless separately negotiated. Behind-the-scenes content may be used in your portfolio with Agency approval.</p>
+
+            <h4>6. Conduct & Brand Standards</h4>
+            <p>On RS engagements you represent the Agency. You agree to: conduct yourself professionally in all client interactions; not use the RS name or logo in personal marketing without written approval; credit RS-placed work as "via Rowly Studios" unless otherwise agreed; and notify the Agency immediately if any on-set issue arises.</p>
+
+            <h4>7. Social Media & Spotlight Rights</h4>
+            <p>By submitting your demo reel and joining the network, you grant Rowly Studios the right to use your submitted footage and profile information to create and publish branded spotlight content across RS social channels. You will be tagged and credited in all posts and may reshare this content to your own channels.</p>
+
+            <h4>8. Confidentiality</h4>
+            <p>You agree to keep client information, project details, and RS rate structures confidential during and after your time in the network.</p>
+
+            <h4>9. Term & Termination</h4>
+            <p>This agreement begins on the date of your approval and continues until terminated by either party with 30 days written notice. Either party may terminate immediately in the event of a material breach. The non-solicitation clause (Section 4) survives termination for 12 months from the last completed RS project.</p>
+
+            <h4>10. Independent Contractor Status</h4>
+            <p>You are an independent contractor, not an employee of Rowly Studios. You are responsible for your own taxes and compliance. RS provides set and kit liability coverage on RS-placed jobs only.</p>
+          </div>
+          <div class="agree-check-area">
+            <input type="checkbox" id="agreeCheck" onchange="validate()">
+            <label for="agreeCheck">I have read the Rowly Studios Contractor Agreement in full and I agree to its terms. I understand that <strong>my existing clients are fully protected</strong>, that the non-solicitation clause applies only to clients RS introduces me to, and that I will receive a copy of this agreement by email upon approval.</label>
+          </div>
+        </div>
+
+        <div class="loading" id="loadingState">
+          <p style="color:var(--lt);font-size:13px">Submitting your application...</p>
+        </div>
+        <button type="submit" class="submit-btn" id="submitBtn" disabled>Submit My Application →</button>
+        <p class="submit-note">You will receive a confirmation email immediately. We respond within 48 hours.</p>
+      </form>
+
+      <!-- SUCCESS -->
+      <div class="success" id="successState">
+        <div class="success-tick">✓</div>
+        <h2 class="success-h">Application received.</h2>
+        <p class="success-p">Thank you. We've received everything and will review your application and demo reel within 48 hours. A confirmation email is on its way to you now.</p>
+        <div class="next-steps">
+          <div class="next-steps-t">What Happens Next</div>
+          <div class="ns"><div class="ns-num">1</div><div>RS reviews your application and demo reel — usually within 48 hours</div></div>
+          <div class="ns"><div class="ns-num">2</div><div>If approved, you receive an email with your confirmed rate floor and next steps</div></div>
+          <div class="ns"><div class="ns-num">3</div><div>Your contractor agreement is sent to you by email for your records</div></div>
+          <div class="ns"><div class="ns-num">4</div><div>We create your branded RS spotlight reel and post it across our channels</div></div>
+          <div class="ns"><div class="ns-num">5</div><div>Your Rowly Studios Approved profile goes live — jobs start coming through</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div style="display:flex;align-items:center;gap:8px;justify-content:center;margin-bottom:10px">
+    <div class="nb" style="width:28px;height:28px;font-size:10px">RS</div>
+    <span style="color:#9098b0;font-size:11px;font-weight:600;letter-spacing:2px">ROWLY STUDIOS</span>
+  </div>
+  <p>Los Angeles, CA · rowlystudios.com</p>
+  <p style="margin-top:5px;font-size:11px">© 2025 Rowly Studios. All rights reserved.</p>
+</footer>
+
+<script>
+// ─────────────────────────────────────────────────────────────
+// ZAPIER WEBHOOK — replace this URL with your Zapier Catch Hook
+// ─────────────────────────────────────────────────────────────
+const ZAPIER_WEBHOOK = 'YOUR_ZAPIER_WEBHOOK_URL_HERE';
+
+let reelFile = null;
+let reelAttached = false;
+
+// Drag and drop
+const zone = document.getElementById('reelZone');
+zone.addEventListener('dragover', e => { e.preventDefault(); zone.classList.add('drag'); });
+zone.addEventListener('dragleave', () => zone.classList.remove('drag'));
+zone.addEventListener('drop', e => {
+  e.preventDefault(); zone.classList.remove('drag');
+  const f = e.dataTransfer.files[0];
+  if (f) processReel(f);
+});
+
+function handleReel(input) { if (input.files[0]) processReel(input.files[0]); }
+
+function processReel(f) {
+  if (f.size > 200 * 1024 * 1024) { showErr('File too large — maximum 200MB. Use a Google Drive link instead.'); return; }
+  reelFile = f; reelAttached = true;
+  document.getElementById('reelName').textContent = f.name + ' (' + (f.size/1024/1024).toFixed(1) + 'MB)';
+  document.getElementById('reelPreview').classList.add('show');
+  validate();
+}
+
+function removeReel() {
+  reelFile = null; reelAttached = false;
+  document.getElementById('reelFile').value = '';
+  document.getElementById('reelPreview').classList.remove('show');
+  validate();
+}
+
+// Validation
+const required = ['f_firstName','f_lastName','f_email','f_location','f_discipline','f_experience','f_currentRate','f_specialty','f_bio','f_portfolioLink','f_availability','f_openQuestion'];
+required.forEach(id => {
+  const el = document.getElementById(id);
+  if (el) { el.addEventListener('input', validate); el.addEventListener('change', validate); }
+});
+document.getElementById('f_reelLink').addEventListener('input', validate);
+
+function validate() {
+  const allFilled = required.every(id => document.getElementById(id)?.value.trim() !== '');
+  const agreed = document.getElementById('agreeCheck').checked;
+  const hasReel = reelAttached || document.getElementById('f_reelLink').value.trim() !== '';
+  document.getElementById('submitBtn').disabled = !(allFilled && agreed && hasReel);
+}
+
+function showErr(msg) {
+  const el = document.getElementById('errMsg');
+  el.textContent = msg; el.classList.add('show');
+  el.scrollIntoView({ behavior: 'smooth', block: 'center' });
+}
+
+// Submit
+document.getElementById('mainForm').addEventListener('submit', async e => {
+  e.preventDefault();
+  document.getElementById('errMsg').classList.remove('show');
+  document.getElementById('submitBtn').style.display = 'none';
+  document.getElementById('loadingState').classList.add('show');
+
+  // Build payload — field names match Notion DB properties exactly
+  const payload = {
+    'Name': document.getElementById('f_firstName').value.trim() + ' ' + document.getElementById('f_lastName').value.trim(),
+    'Email': document.getElementById('f_email').value.trim(),
+    'Phone': document.getElementById('f_phone').value.trim(),
+    'Location': document.getElementById('f_location').value.trim(),
+    'Discipline': document.getElementById('f_discipline').value,
+    'Experience Tier': document.getElementById('f_experience').value,
+    'Current Day Rate': document.getElementById('f_currentRate').value.trim(),
+    'Specialty': document.getElementById('f_specialty').value.trim(),
+    'Bio': document.getElementById('f_bio').value.trim(),
+    'Notable Credit': document.getElementById('f_credit').value.trim(),
+    'Equipment / Skills': document.getElementById('f_equipment').value.trim(),
+    'Portfolio Link': document.getElementById('f_portfolioLink').value.trim(),
+    'Demo Reel Link': document.getElementById('f_reelLink').value.trim() || (reelFile ? 'File uploaded: ' + reelFile.name : ''),
+    'Availability': document.getElementById('f_availability').value,
+    'Open Question Response': document.getElementById('f_openQuestion').value.trim(),
+    'Status': '🟡 Applied',
+    'Application Date': new Date().toISOString().split('T')[0],
+    'Agreement Signed': true,
+  };
+
+  // If webhook is configured, POST to Zapier
+  if (ZAPIER_WEBHOOK && ZAPIER_WEBHOOK !== 'YOUR_ZAPIER_WEBHOOK_URL_HERE') {
+    try {
+      await fetch(ZAPIER_WEBHOOK, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload),
+        mode: 'no-cors' // Zapier doesn't support CORS from browser — use no-cors
+      });
+    } catch (err) {
+      console.warn('Webhook error — data still logged:', err);
+    }
+  } else {
+    // Dev mode — log to console so you can see the payload
+    console.log('=== FORM SUBMISSION (Add Zapier URL to activate) ===');
+    console.log(JSON.stringify(payload, null, 2));
+  }
+
+  // Show success either way
+  setTimeout(() => {
+    document.getElementById('mainForm').style.display = 'none';
+    document.getElementById('successState').classList.add('show');
+    window.scrollTo({ top: document.getElementById('apply').offsetTop - 80, behavior: 'smooth' });
+  }, 1200);
+});
+</script>
+</body>
+</html>
