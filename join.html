@@ -16,7 +16,23 @@
   --green:#2d7a3a;--green-lt:#e8f5ec;--rose:#8b2252;
 }
 html{scroll-behavior:smooth}
-body{font-family:'DM Sans',sans-serif;background:var(--grey);color:var(--txt)}
+body<nav>
+  <a href="index.html" class="nav-logo">
+    <div class="nav-logo-ring">
+      <svg width="24" height="24" viewBox="0 0 40 40" fill="none">
+        <text x="20" y="27" text-anchor="middle" font-family="DM Sans,sans-serif" font-weight="700" font-size="18" fill="white">RS</text>
+      </svg>
+    </div>
+    <span class="nav-logo-text">Rowly Studios</span>
+  </a>
+  <ul class="nav-links">
+    <li><a href="index.html" id="nav-home">Home</a></li>
+    <li><a href="services.html" id="nav-services">Services</a></li>
+    <li><a href="#work" onclick="window.location='index.html#work';return false;">Work</a></li>
+    <li><a href="index.html#about">ABOUT</a><a href="join.html">TALENT</a></li>
+  </ul>
+  <a href="mailto:rowlystudios@gmail.com?subject=Free%2015-Minute%20Consultation" class="nav-btn">Book Free Consult</a>
+</nav>{font-family:'DM Sans',sans-serif;background:var(--grey);color:var(--txt)}
 
 /* NAV */
 .nav{background:var(--navy);padding:0 40px;height:60px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:100;box-shadow:0 2px 12px rgba(30,48,112,.25)}
