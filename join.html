@@ -499,7 +499,17 @@ document.getElementById('talentForm').addEventListener('submit', async e => {
       headers:{'Content-Type':'application/json'},
       body: JSON.stringify(payload)
     });
-    if (!res.ok) throw new Error('Request failed: ' + res.status);
+    const json = await res.json().catch(() => ({}));
+    if (!res.ok || json.success === false) {
+      document.getElementById('talentLoading').classList.remove('show');
+      document.getElementById('talentSubmit').style.display = 'block';
+      if (json.error === 'already_applied') {
+        showErr('talentErr', "An application with this email already exists. If you've been accepted, sign in at app.rowlystudios.com");
+      } else {
+        showErr('talentErr', 'Something went wrong. Please try again or email rowlystudios@gmail.com');
+      }
+      return;
+    }
     document.getElementById('talentLoading').classList.remove('show');
     document.getElementById('talentForm').style.display = 'none';
     document.getElementById('talentEmailEcho').textContent = payload.email;
@@ -543,7 +553,17 @@ document.getElementById('clientForm').addEventListener('submit', async e => {
       headers:{'Content-Type':'application/json'},
       body: JSON.stringify(payload)
     });
-    if (!res.ok) throw new Error('Request failed: ' + res.status);
+    const json = await res.json().catch(() => ({}));
+    if (!res.ok || json.success === false) {
+      document.getElementById('clientLoading').classList.remove('show');
+      document.getElementById('clientSubmit').style.display = 'block';
+      if (json.error === 'already_applied') {
+        showErr('clientErr', "An application with this email already exists. If you've been accepted, sign in at app.rowlystudios.com");
+      } else {
+        showErr('clientErr', 'Something went wrong. Please try again or email rowlystudios@gmail.com');
+      }
+      return;
+    }
     document.getElementById('clientLoading').classList.remove('show');
     document.getElementById('clientForm').style.display = 'none';
     document.getElementById('clientEmailEcho').textContent = payload.email;
