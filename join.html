@@ -151,6 +151,41 @@ footer{background:var(--navy-deep);padding:2.8rem 5%;display:flex;justify-conten
   .chooser-h{font-size:clamp(1.8rem,9vw,2.4rem);}
   .path-btn{font-size:.72rem;padding:.9rem 1.2rem;}
 }
+
+/* ── Consult Modal (ported from index.html) ─────────────────── */
+.modal-overlay{position:fixed;inset:0;background:rgba(5,12,28,.88);backdrop-filter:blur(8px);z-index:9999;display:flex;align-items:center;justify-content:center;padding:1.5rem;opacity:0;pointer-events:none;transition:opacity .35s ease;}
+.modal-overlay.open{opacity:1;pointer-events:all;}
+.modal-box{background:#0F1B33;border:1px solid rgba(0,194,224,.2);border-radius:6px;width:100%;max-width:560px;max-height:90vh;overflow-y:auto;position:relative;transform:translateY(24px);transition:transform .35s ease;box-shadow:0 40px 80px rgba(0,0,0,.6);}
+.modal-overlay.open .modal-box{transform:translateY(0);}
+.modal-head{padding:2rem 2rem 1.2rem;border-bottom:1px solid rgba(255,255,255,.07);position:relative;}
+.modal-tag{font-family:'brandon-grotesque','DM Sans',sans-serif;font-size:.55rem;letter-spacing:.28em;text-transform:uppercase;color:var(--cyan);margin-bottom:.6rem;}
+.modal-title{font-family:'Playfair Display',serif;font-size:1.55rem;font-weight:800;color:white;line-height:1.2;padding-right:2.5rem;}
+.modal-close{position:absolute;top:1.2rem;right:1.2rem;width:36px;height:36px;border-radius:50%;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.12);color:rgba(255,255,255,.5);font-size:1rem;display:flex;align-items:center;justify-content:center;cursor:pointer;transition:all .2s;line-height:1;flex-shrink:0;}
+.modal-close:hover{background:rgba(0,194,224,.15);color:white;border-color:rgba(0,194,224,.4);}
+.modal-body{padding:1.5rem 2rem 2rem;}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-bottom:0;}
+.form-group{display:flex;flex-direction:column;gap:.4rem;margin-bottom:1rem;}
+.form-group label{font-family:'brandon-grotesque','DM Sans',sans-serif;font-size:.55rem;letter-spacing:.18em;text-transform:uppercase;color:rgba(255,255,255,.45);}
+.form-group input,.form-group textarea,.form-group select{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);border-radius:3px;padding:.75rem 1rem;color:white;font-family:'DM Sans',sans-serif;font-size:.85rem;width:100%;box-sizing:border-box;transition:border-color .2s,background .2s;outline:none;-webkit-appearance:none;appearance:none;}
+.form-group select{cursor:pointer;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='rgba(255,255,255,.4)' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 1rem center;padding-right:2.5rem;background-color:rgba(255,255,255,.05);}
+.form-group select option{background:#0F1B33;color:white;}
+.form-group input:focus,.form-group textarea:focus,.form-group select:focus{border-color:rgba(0,194,224,.55);background:rgba(0,194,224,.04);}
+.form-group input::placeholder,.form-group textarea::placeholder{color:rgba(255,255,255,.18);}
+.form-group textarea{resize:vertical;min-height:100px;line-height:1.6;}
+.form-time-label{font-family:'brandon-grotesque','DM Sans',sans-serif;font-size:.55rem;letter-spacing:.18em;text-transform:uppercase;color:rgba(255,255,255,.45);margin-bottom:.4rem;display:block;}
+.form-time-row{display:grid;grid-template-columns:1fr 1fr;gap:1rem;}
+.form-submit{width:100%;padding:1rem;background:var(--cyan);color:#0F1B33;font-family:'brandon-grotesque','DM Sans',sans-serif;font-size:.75rem;font-weight:700;letter-spacing:.15em;text-transform:uppercase;border:none;border-radius:3px;cursor:pointer;transition:all .25s;margin-top:.8rem;}
+.form-submit:hover{background:#00d9f9;transform:translateY(-2px);box-shadow:0 8px 30px rgba(0,194,224,.3);}
+.form-submit:disabled{opacity:.5;cursor:not-allowed;transform:none;box-shadow:none;}
+.form-success{text-align:center;padding:3.5rem 2rem;}
+.form-success-icon{font-size:2rem;color:var(--cyan);margin-bottom:1rem;}
+.form-success-t{font-family:'Playfair Display',serif;font-size:1.5rem;color:white;margin-bottom:.8rem;}
+.form-success-b{font-family:'DM Sans',sans-serif;font-size:.85rem;color:rgba(255,255,255,.4);line-height:1.8;}
+@media(max-width:520px){
+  .modal-box{border-radius:4px;max-height:96vh;}
+  .modal-head,.modal-body{padding-left:1.2rem;padding-right:1.2rem;}
+  .form-row,.form-time-row{grid-template-columns:1fr;}
+}
 </style>
 </head>
 <body>
@@ -172,7 +207,7 @@ footer{background:var(--navy-deep);padding:2.8rem 5%;display:flex;justify-conten
     <li><a href="index.html#about">About</a></li>
     <li><a href="join.html" class="active">Join</a></li>
   </ul>
-  <a href="mailto:rowlystudios@gmail.com?subject=Free%2015-Minute%20Consultation" class="nav-btn">Book Free Consult</a>
+  <a href="#" onclick="openModal();return false;" class="nav-btn">Book Free Consult</a>
   <button class="hamburger" id="hamburger" aria-label="Open menu" onclick="toggleMenu()"><span></span><span></span><span></span></button>
 </nav>
 <div class="mobile-menu" id="mobileMenu">
@@ -182,7 +217,7 @@ footer{background:var(--navy-deep);padding:2.8rem 5%;display:flex;justify-conten
     <li><a href="index.html#work">Work</a></li>
     <li><a href="index.html#about">About</a></li>
     <li><a href="join.html">Join</a></li>
-    <li><a href="mailto:rowlystudios@gmail.com?subject=Free%2015-Minute%20Consultation">Book Free Consult</a></li>
+    <li><a href="#" onclick="openModal();return false;">Book Free Consult</a></li>
   </ul>
 </div>
 
@@ -424,6 +459,73 @@ footer{background:var(--navy-deep);padding:2.8rem 5%;display:flex;justify-conten
   <div class="ft-copy">© 2026 Rowly Studios · Los Angeles</div>
 </footer>
 
+<!-- ═══ Consult Modal (ported from index.html) ═══ -->
+<div class="modal-overlay" id="consultModal" role="dialog" aria-modal="true">
+  <div class="modal-box">
+    <div class="modal-head">
+      <div class="modal-tag">Free 15-Minute Consultation</div>
+      <div class="modal-title">Let's talk about your brand</div>
+      <button class="modal-close" onclick="closeModal()" aria-label="Close">&#10005;</button>
+    </div>
+    <div class="modal-body" id="modalFormBody">
+      <form id="consultForm" action="https://formspree.io/f/xdayybvz" method="POST">
+        <div class="form-row">
+          <div class="form-group">
+            <label for="cf-name">Full Name *</label>
+            <input type="text" id="cf-name" name="Name" placeholder="Your full name" required>
+          </div>
+          <div class="form-group">
+            <label for="cf-phone">Phone Number *</label>
+            <input type="tel" id="cf-phone" name="Phone" placeholder="+1 555 000 0000" required>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="cf-website">Website</label>
+            <input type="text" id="cf-website" name="Website" placeholder="yoursite.com">
+          </div>
+          <div class="form-group">
+            <label for="cf-instagram">Instagram</label>
+            <input type="text" id="cf-instagram" name="Instagram" placeholder="@yourhandle">
+          </div>
+        </div>
+        <span class="form-time-label">Best Time to Chat</span>
+        <div class="form-time-row">
+          <div class="form-group">
+            <select id="cf-day" name="Best Day">
+              <option value="" disabled selected>Preferred day</option>
+              <option>Monday</option>
+              <option>Tuesday</option>
+              <option>Wednesday</option>
+              <option>Thursday</option>
+              <option>Friday</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <select id="cf-ampm" name="Best Time">
+              <option value="" disabled selected>Morning or afternoon</option>
+              <option value="AM — Morning">AM — Morning</option>
+              <option value="PM — Afternoon">PM — Afternoon</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="cf-message">Tell us about your brand *</label>
+          <textarea id="cf-message" name="Message" placeholder="What are you working on? What would you like help with?" required></textarea>
+        </div>
+        <input type="hidden" name="_subject" value="New Consultation Request — Rowly Studios">
+        <input type="hidden" name="_next" value="">
+        <button type="submit" class="form-submit" id="cfSubmitBtn">Send My Request &#8594;</button>
+      </form>
+    </div>
+    <div class="form-success" id="modalSuccess" style="display:none;">
+      <div class="form-success-icon">&#10022;</div>
+      <div class="form-success-t">Request received.</div>
+      <div class="form-success-b">Thank you — we will be in touch within 24 hours to confirm your consultation time.</div>
+    </div>
+  </div>
+</div>
+
 <script>
 const ENDPOINT = 'https://vmsgainaazabertluxbo.supabase.co/functions/v1/set-user-password?action=submit-application';
 
@@ -603,6 +705,44 @@ const autoOpen = urlParams.get('as');
 if (autoOpen === 'talent' || autoOpen === 'client') {
   showForm(autoOpen);
 }
+
+/* ── Consult Modal (ported from index.html) ──────────────────── */
+function openModal(){
+  var m = document.getElementById('consultModal');
+  if(m){ m.classList.add('open'); document.body.style.overflow='hidden'; }
+}
+function closeModal(){
+  var m = document.getElementById('consultModal');
+  if(m){ m.classList.remove('open'); document.body.style.overflow=''; }
+}
+document.addEventListener('DOMContentLoaded', function(){
+  var overlay = document.getElementById('consultModal');
+  if(overlay) overlay.addEventListener('click', function(e){ if(e.target===this) closeModal(); });
+  document.addEventListener('keydown', function(e){ if(e.key==='Escape') closeModal(); });
+
+  var form = document.getElementById('consultForm');
+  if(form) form.addEventListener('submit', function(e){
+    e.preventDefault();
+    var btn = document.getElementById('cfSubmitBtn');
+    btn.disabled = true;
+    btn.textContent = 'Sending…';
+    var data = new FormData(form);
+    fetch(form.action,{ method:'POST', body:data, headers:{'Accept':'application/json'} })
+    .then(function(r){
+      if(r.ok){
+        document.getElementById('modalFormBody').style.display='none';
+        document.getElementById('modalSuccess').style.display='block';
+      } else {
+        btn.disabled=false; btn.textContent='Send My Request →';
+        alert('Something went wrong. Please email us at rowlystudios@gmail.com');
+      }
+    })
+    .catch(function(){
+      btn.disabled=false; btn.textContent='Send My Request →';
+      alert('Something went wrong. Please email us at rowlystudios@gmail.com');
+    });
+  });
+});
 </script>
 </body>
 </html>
