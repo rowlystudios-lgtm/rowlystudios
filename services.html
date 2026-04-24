@@ -2,8 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-<meta name="theme-color" content="#0F1B2E">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Rowly Studios — Brand Development & Strategy</title>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://use.typekit.net/zkw4lrb.css">
@@ -15,7 +14,7 @@
   --white:#FFFFFF;--off-white:#F4F7FC;--light-gray:#E8EDF5;
   --mid-gray:#8A96AA;--text:#1A2030;
 }
-html{scroll-behavior:smooth;width:100%;background-color:#0F1B2E;}
+html{scroll-behavior:smooth;width:100%;overflow-x:hidden;}
 body{font-family:'DM Sans',sans-serif;background:var(--white);color:var(--text);overflow-x:hidden;cursor:none;width:100%;max-width:100%;margin:0;padding:0;box-sizing:border-box;}
 *{box-sizing:border-box;}
 
@@ -24,17 +23,7 @@ body{font-family:'DM Sans',sans-serif;background:var(--white);color:var(--text);
 .ring{position:fixed;width:40px;height:40px;border:1.5px solid rgba(0,194,224,.45);border-radius:50%;pointer-events:none;z-index:9998;transform:translate(-50%,-50%);transition:width .3s,height .3s,border-color .3s;}
 
 /* NAV */
-nav{position:fixed;top:0;left:0;right:0;width:100%;z-index:1000;display:flex;align-items:center;justify-content:space-between;padding:1.4rem 5%;padding-top:calc(1.4rem + env(safe-area-inset-top, 0px));background:#0F1B2E;border-bottom:1px solid rgba(255,255,255,.07);}
-.hamburger{display:none;width:40px;height:40px;background:transparent;border:none;cursor:pointer;padding:0;flex-direction:column;align-items:center;justify-content:center;gap:5px;}
-.hamburger span{display:block;width:24px;height:2px;background:var(--white);transition:transform .3s,opacity .3s;}
-.hamburger.open span:nth-child(1){transform:translateY(7px) rotate(45deg);}
-.hamburger.open span:nth-child(2){opacity:0;}
-.hamburger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg);}
-.mobile-menu{display:none;position:fixed;top:0;left:0;right:0;background:#0F1B2E;padding:calc(4.5rem + env(safe-area-inset-top, 0px)) 5% 2rem;z-index:900;border-bottom:1px solid rgba(255,255,255,.1);transform:translateY(-100%);transition:transform .35s ease;}
-.mobile-menu.open{transform:translateY(0);}
-.mobile-menu ul{list-style:none;display:flex;flex-direction:column;gap:1.5rem;}
-.mobile-menu a{font-family:"brandon-grotesque",sans-serif;font-size:.9rem;letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,.85);text-decoration:none;display:block;padding:.5rem 0;border-bottom:1px solid rgba(255,255,255,.06);}
-.mobile-menu a:hover{color:var(--cyan);}
+nav{position:fixed;top:0;left:0;right:0;width:100%;z-index:200;display:flex;align-items:center;justify-content:space-between;padding:1.4rem 5%;background:rgba(15,27,51,.95);backdrop-filter:blur(14px);border-bottom:1px solid rgba(255,255,255,.07);}
 .nav-logo{display:flex;align-items:center;gap:.9rem;text-decoration:none;cursor:none;}
 .nav-logo-ring{width:40px;height:40px;min-width:40px;min-height:40px;border-radius:50%;border:2.5px solid var(--electric);display:flex;align-items:center;justify-content:center;flex-shrink:0;}
 .nav-logo-text{font-family:"brandon-grotesque",sans-serif;font-weight:400;font-style:normal;font-size:.9rem;letter-spacing:.28em;text-transform:uppercase;color:var(--white);}
@@ -96,8 +85,8 @@ nav{position:fixed;top:0;left:0;right:0;width:100%;z-index:1000;display:flex;ali
 .stitle em{font-style:italic;color:var(--electric);}
 .stitle.light{color:var(--white);}
 .stitle.light em{color:var(--cyan);}
-.reveal{opacity:0;transform:translateY(24px);transition:opacity 0.7s ease,transform 0.7s ease;}
-.reveal.visible{opacity:1;transform:translateY(0);}
+.reveal{opacity:0;transform:translateY(36px);transition:opacity .85s ease,transform .85s ease;}
+.reveal.visible{opacity:1;transform:none;}
 .d1{transition-delay:.12s;}.d2{transition-delay:.24s;}.d3{transition-delay:.36s;}.d4{transition-delay:.48s;}
 
 /* INTRO */
@@ -203,7 +192,7 @@ nav{position:fixed;top:0;left:0;right:0;width:100%;z-index:1000;display:flex;ali
 /* ============================================================
    SERVICES PAGE
    ============================================================ */
-.page-hero{background:var(--navy-deep);padding:6.5rem 5% 3.5rem;padding-top:calc(6.5rem + env(safe-area-inset-top, 0px));position:relative;overflow:hidden;}
+.page-hero{background:var(--navy-deep);padding:6.5rem 5% 3.5rem;position:relative;overflow:hidden;}
 .page-hero-inner{position:relative;z-index:2;max-width:800px;}
 .page-hero-tag{display:inline-flex;align-items:center;gap:.8rem;padding:.45rem 1.1rem;border:1px solid rgba(0,194,224,.32);border-radius:100px;font-size:.6rem;font-weight:600;letter-spacing:.24em;text-transform:uppercase;color:var(--cyan);margin-bottom:2rem;opacity:0;animation:fadeUp .8s ease .2s forwards;}
 .page-hero-tag span{width:5px;height:5px;background:var(--cyan);border-radius:50%;animation:pulse 2s ease infinite;}
@@ -319,11 +308,9 @@ footer{background:var(--navy-deep);border-top:1px solid rgba(255,255,255,.06);pa
   img,video,iframe{max-width:100%;}
 
   /* Nav */
-  nav{padding:1rem 5%;padding-top:calc(1rem + env(safe-area-inset-top, 0px));}
+  nav{padding:1rem 5%;}
   .nav-links{display:none;}
-  .nav-btn{display:none;}
-  .hamburger{display:flex;}
-  .mobile-menu{display:block;}
+  .nav-btn{font-size:.62rem;padding:.5rem .9rem;letter-spacing:.08em;}
 
   /* Page hero */
   .page-hero{padding:5rem 5% 2.5rem;}
@@ -417,9 +404,132 @@ footer{background:var(--navy-deep);border-top:1px solid rgba(255,255,255,.06);pa
   .cp-campaign{display:none;}
   .cp-wrap{padding:.5rem;}
 }
+
+/* ═══════════════════════════════
+   CONSULT FORM MODAL
+═══════════════════════════════ */
+.modal-overlay{position:fixed;inset:0;background:rgba(5,12,28,.88);backdrop-filter:blur(8px);z-index:9999;display:flex;align-items:center;justify-content:center;padding:1.5rem;opacity:0;pointer-events:none;transition:opacity .35s ease;}
+.modal-overlay.open{opacity:1;pointer-events:all;}
+.modal-box{background:#0F1B33;border:1px solid rgba(0,194,224,.2);border-radius:6px;width:100%;max-width:560px;max-height:90vh;overflow-y:auto;position:relative;transform:translateY(24px);transition:transform .35s ease;box-shadow:0 40px 80px rgba(0,0,0,.6);}
+.modal-overlay.open .modal-box{transform:translateY(0);}
+.modal-head{padding:2rem 2rem 1.2rem;border-bottom:1px solid rgba(255,255,255,.07);position:relative;}
+.modal-tag{font-family:'brandon-grotesque','DM Sans',sans-serif;font-size:.55rem;letter-spacing:.28em;text-transform:uppercase;color:var(--cyan);margin-bottom:.6rem;}
+.modal-title{font-family:'Playfair Display',serif;font-size:1.55rem;font-weight:800;color:white;line-height:1.2;padding-right:2.5rem;}
+.modal-close{position:absolute;top:1.2rem;right:1.2rem;width:36px;height:36px;border-radius:50%;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.12);color:rgba(255,255,255,.5);font-size:1rem;display:flex;align-items:center;justify-content:center;cursor:pointer;transition:all .2s;line-height:1;flex-shrink:0;}
+.modal-close:hover{background:rgba(0,194,224,.15);color:white;border-color:rgba(0,194,224,.4);}
+.modal-body{padding:1.5rem 2rem 2rem;}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-bottom:0;}
+.form-group{display:flex;flex-direction:column;gap:.4rem;margin-bottom:1rem;}
+.form-group label{font-family:'brandon-grotesque','DM Sans',sans-serif;font-size:.55rem;letter-spacing:.18em;text-transform:uppercase;color:rgba(255,255,255,.45);}
+.form-group input,.form-group textarea,.form-group select{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);border-radius:3px;padding:.75rem 1rem;color:white;font-family:'DM Sans',sans-serif;font-size:.85rem;width:100%;box-sizing:border-box;transition:border-color .2s,background .2s;outline:none;-webkit-appearance:none;appearance:none;}
+.form-group select{cursor:pointer;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='rgba(255,255,255,.4)' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 1rem center;padding-right:2.5rem;background-color:rgba(255,255,255,.05);}
+.form-group select option{background:#0F1B33;color:white;}
+.form-group input:focus,.form-group textarea:focus,.form-group select:focus{border-color:rgba(0,194,224,.55);background:rgba(0,194,224,.04);}
+.form-group input::placeholder,.form-group textarea::placeholder{color:rgba(255,255,255,.18);}
+.form-group textarea{resize:vertical;min-height:100px;line-height:1.6;}
+.form-time-label{font-family:'brandon-grotesque','DM Sans',sans-serif;font-size:.55rem;letter-spacing:.18em;text-transform:uppercase;color:rgba(255,255,255,.45);margin-bottom:.4rem;display:block;}
+.form-time-row{display:grid;grid-template-columns:1fr 1fr;gap:1rem;}
+.form-submit{width:100%;padding:1rem;background:var(--cyan);color:#0F1B33;font-family:'brandon-grotesque','DM Sans',sans-serif;font-size:.75rem;font-weight:700;letter-spacing:.15em;text-transform:uppercase;border:none;border-radius:3px;cursor:pointer;transition:all .25s;margin-top:.8rem;}
+.form-submit:hover{background:#00d9f9;transform:translateY(-2px);box-shadow:0 8px 30px rgba(0,194,224,.3);}
+.form-submit:disabled{opacity:.5;cursor:not-allowed;transform:none;box-shadow:none;}
+.form-success{text-align:center;padding:3.5rem 2rem;}
+.form-success-icon{font-size:2rem;color:var(--cyan);margin-bottom:1rem;}
+.form-success-t{font-family:'Playfair Display',serif;font-size:1.5rem;color:white;margin-bottom:.8rem;}
+.form-success-b{font-family:'DM Sans',sans-serif;font-size:.85rem;color:rgba(255,255,255,.4);line-height:1.8;}
+@media(max-width:520px){
+  .modal-box{border-radius:4px;max-height:96vh;}
+  .modal-head,.modal-body{padding-left:1.2rem;padding-right:1.2rem;}
+  .form-row,.form-time-row{grid-template-columns:1fr;}
+}
 </style>
 </head>
 <body>
+
+<!-- ═══ CONSULT FORM MODAL ═══ -->
+<div class="modal-overlay" id="consultModal" role="dialog" aria-modal="true">
+  <div class="modal-box">
+
+    <!-- Header -->
+    <div class="modal-head">
+      <div class="modal-tag">Free 15-Minute Consultation</div>
+      <div class="modal-title">Let's talk about your brand</div>
+      <button class="modal-close" onclick="closeModal()" aria-label="Close">&#10005;</button>
+    </div>
+
+    <!-- Form body -->
+    <div class="modal-body" id="modalFormBody">
+      <form id="consultForm" action="https://formspree.io/f/xdayybvz" method="POST">
+
+        <!-- Row 1: Name + Phone -->
+        <div class="form-row">
+          <div class="form-group">
+            <label for="cf-name">Full Name *</label>
+            <input type="text" id="cf-name" name="Name" placeholder="Your full name" required>
+          </div>
+          <div class="form-group">
+            <label for="cf-phone">Phone Number *</label>
+            <input type="tel" id="cf-phone" name="Phone" placeholder="+1 555 000 0000" required>
+          </div>
+        </div>
+
+        <!-- Row 2: Website + Instagram -->
+        <div class="form-row">
+          <div class="form-group">
+            <label for="cf-website">Website</label>
+            <input type="text" id="cf-website" name="Website" placeholder="yoursite.com">
+          </div>
+          <div class="form-group">
+            <label for="cf-instagram">Instagram</label>
+            <input type="text" id="cf-instagram" name="Instagram" placeholder="@yourhandle">
+          </div>
+        </div>
+
+        <!-- Best time to chat -->
+        <span class="form-time-label">Best Time to Chat</span>
+        <div class="form-time-row">
+          <div class="form-group">
+            <select id="cf-day" name="Best Day">
+              <option value="" disabled selected>Preferred day</option>
+              <option>Monday</option>
+              <option>Tuesday</option>
+              <option>Wednesday</option>
+              <option>Thursday</option>
+              <option>Friday</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <select id="cf-ampm" name="Best Time">
+              <option value="" disabled selected>Morning or afternoon</option>
+              <option value="AM — Morning">AM — Morning</option>
+              <option value="PM — Afternoon">PM — Afternoon</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- Message -->
+        <div class="form-group">
+          <label for="cf-message">Tell us about your brand *</label>
+          <textarea id="cf-message" name="Message" placeholder="What are you working on? What would you like help with?" required></textarea>
+        </div>
+
+        <!-- Hidden Formspree config -->
+        <input type="hidden" name="_subject" value="New Consultation Request — Rowly Studios">
+        <input type="hidden" name="_next" value="">
+
+        <button type="submit" class="form-submit" id="cfSubmitBtn">Send My Request &#8594;</button>
+      </form>
+    </div>
+
+    <!-- Success state (hidden until submit) -->
+    <div class="form-success" id="modalSuccess" style="display:none;">
+      <div class="form-success-icon">&#10022;</div>
+      <div class="form-success-t">Request received.</div>
+      <div class="form-success-b">Thank you — we will be in touch within 24 hours to confirm your consultation time.</div>
+    </div>
+
+  </div>
+</div>
+
 
 <div class="cur" id="cur"></div>
 <div class="ring" id="ring"></div>
@@ -439,27 +549,9 @@ footer{background:var(--navy-deep);border-top:1px solid rgba(255,255,255,.06);pa
     <li><a href="services.html" id="nav-services" class="active">Services</a></li>
     <li><a href="index.html#work">Work</a></li>
     <li><a href="index.html#about">About</a></li>
-    <li><a href="join.html">Join</a></li>
   </ul>
-  <a href="mailto:rowlystudios@gmail.com?subject=Free%2015-Minute%20Consultation" class="nav-btn">Book Free Consult</a>
-  <button class="hamburger" id="hamburger" aria-label="Open menu" onclick="toggleMenu()"><span></span><span></span><span></span></button>
+  <a href="#" onclick="openModal();return false;" class="nav-btn">Book Free Consult</a>
 </nav>
-<div class="mobile-menu" id="mobileMenu">
-  <ul>
-    <li><a href="index.html">Home</a></li>
-    <li><a href="services.html">Services</a></li>
-    <li><a href="index.html#work">Work</a></li>
-    <li><a href="index.html#about">About</a></li>
-    <li><a href="join.html">Join</a></li>
-    <li><a href="mailto:rowlystudios@gmail.com?subject=Free%2015-Minute%20Consultation">Book Free Consult</a></li>
-  </ul>
-</div>
-<script>
-function toggleMenu(){
-  document.getElementById('hamburger').classList.toggle('open');
-  document.getElementById('mobileMenu').classList.toggle('open');
-}
-</script>
 
 <!-- ═══════════════════════════════════════════════════════════
      HOME PAGE
@@ -501,7 +593,7 @@ function toggleMenu(){
         <div class="who-col good"><div class="who-col-title">Ideal For</div><div class="who-item"><div class="who-dot"></div><div class="who-item-txt">Startups building their identity from scratch</div></div><div class="who-item"><div class="who-dot"></div><div class="who-item-txt">Corporate brands ready for a refresh</div></div><div class="who-item"><div class="who-dot"></div><div class="who-item-txt">Luxury brands needing premium positioning</div></div></div>
         <div class="who-col bad"><div class="who-col-title">You Might Not Need This If</div><div class="who-item"><div class="who-dot"></div><div class="who-item-txt">Your brand identity is less than 2 years old</div></div><div class="who-item"><div class="who-dot"></div><div class="who-item-txt">You just need a logo tweak, not a full system</div></div></div>
       </div>
-      <a href="mailto:rowlystudios@gmail.com?subject=Free%2015-Minute%20Consultation" class="svc-cta-link">Start a Brand Identity Project</a>
+      <a href="#" onclick="openModal();return false;" class="svc-cta-link">Start a Brand Identity Project</a>
     </div>
     <div class="svc-visual">
       <div class="vis-panel vis-01">
@@ -594,7 +686,7 @@ function toggleMenu(){
       <div class="ps-item"><div class="ps-num-col"><div class="ps-num">2</div><div class="ps-line"></div></div><div><div class="ps-t">Creative Direction</div><div class="ps-b">Moodboards, shot lists, and a production plan signed off before shoot day.</div></div></div>
       <div class="ps-item"><div class="ps-num-col"><div class="ps-num">3</div><div class="ps-line"></div></div><div><div class="ps-t">Production Day</div><div class="ps-b">We handle everything — location, talent, direction, and on-set brand consistency.</div></div></div>
       <div class="ps-item"><div class="ps-num-col"><div class="ps-num">4</div></div><div><div class="ps-t">Delivery & Handoff</div><div class="ps-b">Edited, formatted, and ready to publish — with a full asset library you own completely.</div></div></div>
-      <a href="mailto:rowlystudios@gmail.com?subject=Free%2015-Minute%20Consultation" class="svc-cta-link">Start a Content Project</a>
+      <a href="#" onclick="openModal();return false;" class="svc-cta-link">Start a Content Project</a>
     </div>
     <div class="svc-visual">
       <div class="vis-panel vis-02">
@@ -642,7 +734,7 @@ function toggleMenu(){
         <div class="who-col good"><div class="who-col-title">Ideal For</div><div class="who-item"><div class="who-dot"></div><div class="who-item-txt">Brands ready to grow ROAS and scale</div></div><div class="who-item"><div class="who-dot"></div><div class="who-item-txt">Corporates needing marketing consistency</div></div><div class="who-item"><div class="who-dot"></div><div class="who-item-txt">Companies launching a new product or service</div></div></div>
         <div class="who-col bad"><div class="who-col-title">You'll Get More From This If</div><div class="who-item"><div class="who-dot"></div><div class="who-item-txt">Your brand identity is already established</div></div><div class="who-item"><div class="who-dot"></div><div class="who-item-txt">You have a clear idea of your target audience</div></div></div>
       </div>
-      <a href="mailto:rowlystudios@gmail.com?subject=Free%2015-Minute%20Consultation" class="svc-cta-link">Build Your Marketing Strategy</a>
+      <a href="#" onclick="openModal();return false;" class="svc-cta-link">Build Your Marketing Strategy</a>
     </div>
     <div class="svc-visual">
       <div class="vis-panel vis-03">
@@ -714,7 +806,7 @@ function toggleMenu(){
       <div class="ps-item"><div class="ps-num-col"><div class="ps-num">2</div><div class="ps-line"></div></div><div><div class="ps-t">Deep-Dive Audit</div><div class="ps-b">We review your brand thoroughly before any sessions so our time together is 100% strategic.</div></div></div>
       <div class="ps-item"><div class="ps-num-col"><div class="ps-num">3</div><div class="ps-line"></div></div><div><div class="ps-t">Strategy Session(s)</div><div class="ps-b">Focused, collaborative sessions with your founder or leadership team to align on direction.</div></div></div>
       <div class="ps-item"><div class="ps-num-col"><div class="ps-num">4</div></div><div><div class="ps-t">Roadmap Handoff</div><div class="ps-b">A written strategic plan and priority roadmap you can implement immediately — with or without us.</div></div></div>
-      <a href="mailto:rowlystudios@gmail.com?subject=Free%2015-Minute%20Consultation" class="svc-cta-link">Book a Consultancy Session</a>
+      <a href="#" onclick="openModal();return false;" class="svc-cta-link">Book a Consultancy Session</a>
     </div>
     <div class="svc-visual">
       <div class="vis-panel vis-04">
@@ -817,9 +909,9 @@ function toggleMenu(){
     <p class="svc-cta-banner-sub">That's exactly what the free consultation is for. We'll spend 15 minutes understanding your business — whether you're a startup, a law firm, a corporate, or a luxury brand — identifying your biggest brand challenge, and mapping the fastest path to measurable ROAS growth.</p>
   </div>
   <div class="svc-cta-right reveal d2">
-    <a href="mailto:rowlystudios@gmail.com?subject=Free%2015-Minute%20Consultation" class="cta-big-btn">Book Your Free 15-Min Call →</a>
+    <a href="#" onclick="openModal();return false;" class="cta-big-btn">Book Your Free 15-Min Call →</a>
     <div class="cta-or">or</div>
-    <a href="mailto:rowlystudios@gmail.com?subject=Free%2015-Minute%20Consultation" class="cta-email-lnk">hello@rowlystudios.com</a>
+    <a href="#" onclick="openModal();return false;" class="cta-email-lnk">hello@rowlystudios.com</a>
     <div style="font-size:.58rem;color:rgba(255,255,255,.2);letter-spacing:.05em;margin-top:.2rem;">We respond within 24 hours</div>
   </div>
 </div>
@@ -856,21 +948,13 @@ function scrollToSection(id){
 }
 
 // Reveal on scroll
-const revealObserver = new IntersectionObserver(function(entries) {
-  entries.forEach(function(entry) {
-    if (entry.isIntersecting) {
-      entry.target.classList.add('visible');
-      revealObserver.unobserve(entry.target);
-    }
-  });
-}, {
-  threshold: 0,
-  rootMargin: '0px 0px -60px 0px'
-});
-
-document.querySelectorAll('.reveal').forEach(function(el) {
-  revealObserver.observe(el);
-});
+function initReveal(){
+  const obs = new IntersectionObserver(entries=>{
+    entries.forEach(e=>{ if(e.isIntersecting) e.target.classList.add('visible'); });
+  },{threshold:.1});
+  document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+}
+initReveal();
 
 // Tell Wix iframe height
 function sendHeight(){
@@ -883,6 +967,44 @@ window.addEventListener('load', sendHeight);
 setTimeout(sendHeight, 500);
 setTimeout(sendHeight, 1500);
 new ResizeObserver(sendHeight).observe(document.body);
+
+/* ── Consult Modal ───────────────────────────────────────────── */
+function openModal(){
+  var m = document.getElementById('consultModal');
+  if(m){ m.classList.add('open'); document.body.style.overflow='hidden'; }
+}
+function closeModal(){
+  var m = document.getElementById('consultModal');
+  if(m){ m.classList.remove('open'); document.body.style.overflow=''; }
+}
+document.addEventListener('DOMContentLoaded', function(){
+  var overlay = document.getElementById('consultModal');
+  if(overlay) overlay.addEventListener('click', function(e){ if(e.target===this) closeModal(); });
+  document.addEventListener('keydown', function(e){ if(e.key==='Escape') closeModal(); });
+
+  var form = document.getElementById('consultForm');
+  if(form) form.addEventListener('submit', function(e){
+    e.preventDefault();
+    var btn = document.getElementById('cfSubmitBtn');
+    btn.disabled = true;
+    btn.textContent = 'Sending…';
+    var data = new FormData(form);
+    fetch(form.action,{ method:'POST', body:data, headers:{'Accept':'application/json'} })
+    .then(function(r){
+      if(r.ok){
+        document.getElementById('modalFormBody').style.display='none';
+        document.getElementById('modalSuccess').style.display='block';
+      } else {
+        btn.disabled=false; btn.textContent='Send My Request →';
+        alert('Something went wrong. Please email us at rowlystudios@gmail.com');
+      }
+    })
+    .catch(function(){
+      btn.disabled=false; btn.textContent='Send My Request →';
+      alert('Something went wrong. Please email us at rowlystudios@gmail.com');
+    });
+  });
+});
 </script>
 </body>
 </html>
