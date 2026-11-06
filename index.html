@@ -3,7 +3,22 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
-<title>Rowly Studios — Brand Development & Strategy</title>
+<title>Rowly Studios — Los Angeles Production for Brands, Agencies &amp; Campaigns</title>
+<meta name="description" content="Los Angeles production company for brands, agencies and campaigns: brand films, broadcast and digital ads, social content and live activations. Every industry. One standard.">
+<link rel="canonical" href="https://www.rowlystudios.com/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Rowly Studios">
+<meta property="og:title" content="Rowly Studios — Los Angeles Production for Brands, Agencies &amp; Campaigns">
+<meta property="og:description" content="Los Angeles production company for brands, agencies and campaigns: brand films, broadcast and digital ads, social content and live activations. Every industry. One standard.">
+<meta property="og:url" content="https://www.rowlystudios.com/">
+<meta property="og:image" content="https://www.rowlystudios.com/og-image.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="favicon.ico" sizes="any">
+<link rel="icon" href="favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Organization", "name": "Rowly Studios", "legalName": "Rowly Studios Inc.", "url": "https://www.rowlystudios.com/", "logo": "https://www.rowlystudios.com/apple-touch-icon.png", "email": "hello@rowlystudios.com", "slogan": "Every industry. One standard.", "description": "Los Angeles production company for brands, agencies and campaigns.", "address": {"@type": "PostalAddress", "addressLocality": "Los Angeles", "addressRegion": "CA", "addressCountry": "US"}, "sameAs": ["https://www.instagram.com/rowlystudios/", "https://www.facebook.com/rowlystudios"]}</script>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://use.typekit.net/zkw4lrb.css">
 <style>
@@ -422,6 +437,14 @@ footer{background:var(--navy-deep);border-top:1px solid rgba(255,255,255,.06);pa
   section[style*="padding:7rem 5%"]{padding:3.5rem 5% !important;}
   section[style*="padding:6rem 5%"]{padding:3rem 5% !important;}
   section[style*="padding:4rem 5% 3rem"]{padding:3rem 5% 2rem !important;}
+
+  /* Booking section: card stacks under the text on phones (live site pushes it off-screen right) */
+  .home-cta{grid-template-columns:1fr;gap:2.5rem;padding:3.5rem 5%;}
+  .cta-card{padding:2rem 1.5rem;}
+
+  /* Footer */
+  footer{flex-direction:column;gap:1rem;text-align:center;padding:2rem 5%;}
+  .ft-links{justify-content:center;flex-wrap:wrap;gap:1rem;}
 }
 
 @media(max-width:480px){
@@ -598,6 +621,7 @@ section, .hero, .intro, .home-svc, .why, .portfolio, .home-cta, .testi, .mq{
   <ul class="nav-links">
     <li><a href="index.html" id="nav-home" class="active">Home</a></li>
     <li><a href="services.html" id="nav-services">Services</a></li>
+    <li><a href="campaigns.html" id="nav-campaigns">Campaigns</a></li>
     <li><a href="#work" onclick="scrollToSection('work');return false;">Work</a></li>
     <li><a href="#about" onclick="scrollToSection('about');return false;">About</a></li>
     <li><a href="join.html" id="nav-join">Join</a></li>
@@ -609,6 +633,7 @@ section, .hero, .intro, .home-svc, .why, .portfolio, .home-cta, .testi, .mq{
   <ul>
     <li><a href="index.html" class="active">Home</a></li>
     <li><a href="services.html">Services</a></li>
+    <li><a href="campaigns.html">Campaigns</a></li>
     <li><a href="#work" onclick="document.getElementById('mobileMenu').classList.remove('open');document.getElementById('hamburger').classList.remove('open');scrollToSection('work');return false;">Work</a></li>
     <li><a href="#about" onclick="document.getElementById('mobileMenu').classList.remove('open');document.getElementById('hamburger').classList.remove('open');scrollToSection('about');return false;">About</a></li>
     <li><a href="join.html">Join</a></li>
@@ -644,7 +669,7 @@ section, .hero, .intro, .home-svc, .why, .portfolio, .home-cta, .testi, .mq{
     <div class="hero-stats">
       <div><span class="stat-num">20<span>+</span></span><span class="stat-lbl">Years in LA</span></div>
       <div><span class="stat-num">400<span>%+</span></span><span class="stat-lbl">Avg. Client ROAS</span></div>
-      <div><span class="stat-num">All<span style="font-size:2rem"> ✦</span></span><span class="stat-lbl">Startups · Corporates · Luxury</span></div>
+      <div><span class="stat-num">All<span style="font-size:2rem"> ✦</span></span><span class="stat-lbl">Brands · Agencies · Campaigns</span></div>
     </div>
   </div>
 </section>
@@ -816,6 +841,14 @@ section, .hero, .intro, .home-svc, .why, .portfolio, .home-cta, .testi, .mq{
   <a href="services.html" class="view-all-services reveal">See Full Service Details</a>
 </section>
 
+<!-- CAMPAIGNS BAND -->
+<section id="campaigns-band" style="background:var(--navy-dark);border-top:1px solid rgba(255,255,255,.06);padding:4rem 5%;text-align:center;">
+  <div style="font-family:'brandon-grotesque','DM Sans',sans-serif;font-size:.7rem;letter-spacing:.3em;text-transform:uppercase;color:var(--cyan);margin-bottom:1rem;">Campaigns</div>
+  <h3 style="font-family:'Playfair Display',serif;font-size:clamp(1.6rem,3.4vw,2.4rem);color:#fff;margin-bottom:.9rem;font-weight:800;line-height:1.2;">Production for deadlines that <em style="color:var(--cyan);">don't move.</em></h3>
+  <p style="max-width:720px;margin:0 auto 1.8rem;color:rgba(255,255,255,.55);font-size:.95rem;line-height:1.75;">Campaigns for brands, firms, causes and public figures — the story, the shoot and every version it needs to run. One client per category, confidential by default, disclaimer-ready.</p>
+  <a href="campaigns.html" class="cta-btn" style="display:inline-block;width:auto;padding:1.05rem 2.6rem;">How We Build Campaigns &#8594;</a>
+</section>
+
 <!-- WHY -->
 <section class="why" id="about">
   <div class="stag reveal">Why Rowly Studios</div>
@@ -867,7 +900,7 @@ section, .hero, .intro, .home-svc, .why, .portfolio, .home-cta, .testi, .mq{
         <div style="position:absolute;bottom:-1rem;right:-1rem;font-family:'Playfair Display',serif;font-size:5rem;font-weight:900;color:rgba(0,194,224,.05);line-height:1;pointer-events:none;">✦</div>
         <div style="font-family:'brandon-grotesque','DM Sans',sans-serif;font-size:.55rem;letter-spacing:.22em;text-transform:uppercase;color:var(--cyan);margin-bottom:.8rem;display:flex;align-items:center;gap:.5rem;"><span style="display:block;width:14px;height:2px;background:var(--cyan);"></span>Clients</div>
         <div style="font-family:'Playfair Display',serif;font-size:1.5rem;font-weight:800;color:white;line-height:1.2;margin-bottom:.8rem;">Every industry. Every <em style="color:var(--cyan);">ambition.</em></div>
-        <p style="font-family:'DM Sans',sans-serif;font-size:.75rem;line-height:1.75;color:rgba(255,255,255,.45);font-weight:300;">Startups, law firms, corporates, luxury brands — we adapt to your world.</p>
+        <p style="font-family:'DM Sans',sans-serif;font-size:.75rem;line-height:1.75;color:rgba(255,255,255,.45);font-weight:300;">Startups, law firms, corporates, luxury brands, campaigns and causes — we adapt to your world.</p>
       </div>
 
     </div>
@@ -1327,9 +1360,9 @@ section, .hero, .intro, .home-svc, .why, .portfolio, .home-cta, .testi, .mq{
       <div class="cta-perk"><div class="cta-chk"><svg viewBox="0 0 12 12"><polyline points="2,6 5,9 10,3"/></svg></div><span class="cta-pt">Brand snapshot — what's working, what isn't</span></div>
       <div class="cta-perk"><div class="cta-chk"><svg viewBox="0 0 12 12"><polyline points="2,6 5,9 10,3"/></svg></div><span class="cta-pt">Clear next steps tailored to your goals</span></div>
       <div class="cta-perk"><div class="cta-chk"><svg viewBox="0 0 12 12"><polyline points="2,6 5,9 10,3"/></svg></div><span class="cta-pt">No obligation — just genuine expertise</span></div>
-      <div class="cta-perk"><div class="cta-chk"><svg viewBox="0 0 12 12"><polyline points="2,6 5,9 10,3"/></svg></div><span class="cta-pt">Open to startups, mid-size & luxury brands</span></div>
+      <div class="cta-perk"><div class="cta-chk"><svg viewBox="0 0 12 12"><polyline points="2,6 5,9 10,3"/></svg></div><span class="cta-pt">Open to brands, agencies &amp; campaigns</span></div>
     </div>
-    <a href="#" onclick="openModal();return false;" class="cta-btn">Email Us to Book → hello@rowlystudios.com</a>
+    <a href="#" onclick="openModal();return false;" class="cta-btn">Request a Call →</a>
     <div class="cta-note">We typically respond within 24 hours</div>
   </div>
 </section>
@@ -1347,13 +1380,14 @@ section, .hero, .intro, .home-svc, .why, .portfolio, .home-cta, .testi, .mq{
   <div class="ft-logo"><div class="ft-ring"><svg width="20" height="20" viewBox="0 0 40 40" fill="none"><text x="20" y="26" text-anchor="middle" font-family="DM Sans,sans-serif" font-weight="700" font-size="16" fill="white">RS</text></svg></div><span class="ft-brand">Rowly Studios</span></div>
   <ul class="ft-links">
     <li><a href="services.html">Services</a></li>
+    <li><a href="campaigns.html">Campaigns</a></li>
     <li><a href="#work">Work</a></li>
     <li><a href="join.html">Join</a></li>
     <li><a href="https://www.instagram.com/rowlystudios/" target="_blank" rel="noopener">Instagram</a></li>
     <li><a href="https://www.facebook.com/rowlystudios" target="_blank" rel="noopener">Facebook</a></li>
     <li><a href="mailto:hello@rowlystudios.com">Email</a></li>
   </ul>
-  <div class="ft-copy">© 2026 Rowly Studios · Los Angeles</div>
+  <div class="ft-copy">© 2026 Rowly Studios Inc. · Los Angeles</div>
 </footer>
 
 <script>
